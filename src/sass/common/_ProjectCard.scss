@@ -1,0 +1,55 @@
+@use "../abstracts/variables" as *;
+
+.project-card {
+  text-decoration: none;
+  color: $hight-contrast-color;
+  cursor: pointer;
+  &__icons-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__icon-text {
+    font-size: 1.4rem;
+  }
+  &__icons {
+    display: flex;
+    gap: 0.25em;
+    font-size: 1.7rem;
+    svg {
+      color: #FF5572;
+    }
+  }
+  &__label {
+    width: 100%;
+    margin-block: 1.75em 1.25em;
+    display: flex;
+    justify-content: space-between;
+    color: $accent-text;
+    border-bottom: 1px solid $accent-text;
+  }
+  &__content {
+    display: flex;
+    gap: 0.75rem;
+  }
+  &__logo {
+    width: 50%;
+    align-self: center;
+  }
+  &__text {
+    width: 45%;
+    &-title {
+      font-size: 1.1rem;
+    }
+    &-description {
+      margin-block: 1.5em;
+    }
+    &-link {
+      color: $accent-text;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,97 @@
+@use '../abstracts/variables' as *;
+
+.main-nav {
+  max-width: 1440px;
+  height: 6vh;
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+  background: $card-gradient-100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8125rem;
+  font-weight: 300;
+  &__logo {
+    max-width: 12%;
+    display: flex;
+    align-items: center;
+    gap: 0.25em;
+    &-img-container{
+    margin: 0 auto;
+    border-radius: 15px;
+    padding-inline: 0.2em 0.25em;
+    text-align: center;
+    background: $accent-color;
+    font-weight: 900;
+    font-style: italic;
+    line-height: 1em;
+    font-size: 2.1rem;
+    }
+    &-subtext {
+      position: relative;
+      top: 1px;
+      line-height: 1em;
+    }
+  }
+  &__menu {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    width: 70%;
+    text-transform: uppercase;
+    &-item {
+      transition: 0.2s ease;
+    }
+    &-item > a {
+      text-decoration: none;
+    }
+    &-item:hover {
+      color: $accent-text;
+      padding-inline: 1.25em;
+      border-inline: 2px solid $accent-text;
+      transition: 0.2s ease;
+    }
+  }
+  &__languages-toggler {
+    max-width: 10%;
+    margin: 0 auto;
+    padding-inline: 0.2em;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5em;
+    background: $accent-color;
+    border-radius: 20px;
+    > img {
+      width: 35px;
+      height: 35px;
+    }
+  }
+  &__theme-toggler {
+    max-width: 10%;
+    margin: 0 auto;
+    display: flex;
+    gap: 0.5em;
+    .theme-icon-1 {
+      background: $theme-gradient-1;
+      clip-path: circle();
+      width: 35px;
+      height: 35px;
+    }
+    .theme-icon-2 {
+      @extend .theme-icon-1;
+      background: $theme-gradient-2;
+    }
+  }
+}
+
+.nav-container {
+  position: sticky;
+  top: 0%;
+  z-index: 10;
+  background: $card-gradient-100;
+  box-shadow: 20px 20px 22px -4px rgba(0,0,0,0.5);
+}
+
+.inactive {
+  filter: grayscale(100%);
+}

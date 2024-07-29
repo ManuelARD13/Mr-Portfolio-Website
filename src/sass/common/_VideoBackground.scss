@@ -1,0 +1,12 @@
+.video-background {
+  background: rgba(0,0,0,0.9);
+  background-blend-mode: overlay;
+  position: fixed;
+  z-index: -1;
+  video {
+    width: 100%;
+    height: 100%;
+    transform: scaleY(1.3);
+    opacity: 0.4;
+  }
+}

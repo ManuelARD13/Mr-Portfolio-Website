@@ -1,0 +1,44 @@
+@use '../abstracts/variables' as *;
+
+/* General Elements */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  background-color: $background-100;
+  color: $hight-contrast-color;
+  font-family: "Inter", sans-serif;
+}
+
+section {
+  max-width: 1440px;
+  margin: 0 auto;
+  border-top: 0;
+}
+
+button {
+  font-size: 0.9125rem;
+  letter-spacing: 0.05em;
+  background: $accent-color;
+  font-weight: 600;
+  padding: 0.5em 0.825em;
+  color: $hight-contrast-color;
+  border: none;
+  border-radius: 0.15rem;
+  cursor: pointer;
+  box-shadow: 20px 20px 22px -4px rgba(0,0,0,0.5);
+ }
+
+/* Utility Classes */
+
+.rounded-corners {
+  border-radius: 1rem;
+}
+
+.box-shadow {
+  box-shadow: 20px 20px 22px -4px rgba(0,0,0,0.75);
+}
+

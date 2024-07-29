@@ -1,0 +1,160 @@
+/* Color Palette */
+
+$background-100: #242529;
+$background-200: #181920;
+$background-300: #131519;
+$container-light-100: #27282F;
+$container-light-200: #202128;
+$container-light-400: #1A1C22; /*???*/
+$container-dark-100: #1C1D23;
+$container-dark-200: #15161C;
+
+$highlight-100: #24252B;
+$accent-text: hsl(178, 90%, 50%);
+$accent-color: linear-gradient(180deg, 	hsl(186, 100%, 50%) 0%, hsl(178, 90%, 50%) 100%);
+$hight-contrast-color: #FAFAFA;
+
+/* Gradients */
+
+$features-gradient-100: linear-gradient(
+  180deg,
+  $container-light-100 0%,
+  $container-light-200 100%
+);
+$card-gradient-100: linear-gradient(
+  180deg,
+  $container-dark-100 0%,
+  $container-dark-200 100%
+);
+
+$theme-gradient-1: linear-gradient(
+  125deg,
+  hsl(228deg 6% 15%) 1%,
+  hsl(227deg 11% 17%) 33%,
+  hsl(223deg 15% 18%) 41%,
+  hsl(221deg 18% 20%) 46%,
+  hsl(218deg 23% 22%) 48%,
+  hsl(217deg 26% 23%) 50%,
+  hsl(213deg 30% 25%) 51%,
+  hsl(212deg 34% 27%) 51%,
+  hsl(209deg 38% 28%) 51%,
+  hsl(207deg 42% 30%) 51%,
+  hsl(204deg 46% 32%) 50%,
+  hsl(202deg 51% 33%) 50%,
+  hsl(200deg 54% 35%) 49%,
+  hsl(197deg 58% 37%) 49%,
+  hsl(195deg 62% 38%) 49%,
+  hsl(192deg 66% 40%) 49%,
+  hsl(190deg 70% 42%) 50%,
+  hsl(188deg 74% 43%) 52%,
+  hsl(185deg 78% 45%) 54%,
+  hsl(183deg 82% 47%) 59%,
+  hsl(181deg 86% 48%) 67%,
+  hsl(178deg 90% 50%) 99%
+);
+
+$theme-gradient-2: linear-gradient(
+  125deg,
+  hsl(223deg 13% 33%) 1%,
+  hsl(224deg 16% 34%) 33%,
+  hsl(226deg 18% 34%) 41%,
+  hsl(229deg 21% 35%) 46%,
+  hsl(230deg 23% 36%) 48%,
+  hsl(233deg 26% 37%) 50%,
+  hsl(234deg 29% 37%) 51%,
+  hsl(235deg 32% 38%) 51%,
+  hsl(237deg 35% 39%) 51%,
+  hsl(239deg 38% 40%) 51%,
+  hsl(241deg 41% 40%) 50%,
+  hsl(243deg 43% 41%) 50%,
+  hsl(245deg 46% 42%) 49%,
+  hsl(247deg 49% 43%) 49%,
+  hsl(248deg 52% 44%) 49%,
+  hsl(250deg 54% 45%) 49%,
+  hsl(252deg 57% 45%) 50%,
+  hsl(254deg 60% 46%) 52%,
+  hsl(256deg 63% 47%) 54%,
+  hsl(257deg 65% 47%) 59%,
+  hsl(259deg 68% 48%) 67%,
+  hsl(261deg 71% 49%) 99%
+);
+
+$gradient-test-1: linear-gradient(
+  145deg,
+  hsl(178deg 90% 50%) 0%,
+  hsl(181deg 86% 48%) 13%,
+  hsl(183deg 82% 47%) 19%,
+  hsl(185deg 78% 45%) 24%,
+  hsl(188deg 74% 43%) 28%,
+  hsl(190deg 70% 42%) 32%,
+  hsl(192deg 66% 40%) 35%,
+  hsl(195deg 62% 38%) 39%,
+  hsl(197deg 58% 37%) 42%,
+  hsl(200deg 54% 35%) 45%,
+  hsl(202deg 51% 33%) 48%,
+  hsl(204deg 46% 32%) 52%,
+  hsl(207deg 42% 30%) 55%,
+  hsl(209deg 38% 28%) 58%,
+  hsl(212deg 34% 27%) 61%,
+  hsl(213deg 30% 25%) 65%,
+  hsl(217deg 26% 23%) 68%,
+  hsl(218deg 23% 22%) 72%,
+  hsl(221deg 18% 20%) 76%,
+  hsl(223deg 15% 18%) 81%,
+  hsl(227deg 11% 17%) 87%,
+  hsl(228deg 6% 15%) 100%
+);
+
+$gradient-test-2: linear-gradient(
+  110deg,
+  hsl(178deg 90% 50%) 1%,
+  hsl(181deg 86% 48%) 21%,
+  hsl(183deg 82% 47%) 29%,
+  hsl(185deg 78% 45%) 35%,
+  hsl(188deg 74% 43%) 40%,
+  hsl(190deg 70% 42%) 44%,
+  hsl(192deg 66% 40%) 47%,
+  hsl(195deg 62% 38%) 50%,
+  hsl(197deg 58% 37%) 53%,
+  hsl(200deg 54% 35%) 56%,
+  hsl(202deg 51% 33%) 59%,
+  hsl(204deg 46% 32%) 62%,
+  hsl(207deg 42% 30%) 64%,
+  hsl(209deg 38% 28%) 67%,
+  hsl(212deg 34% 27%) 69%,
+  hsl(213deg 30% 25%) 72%,
+  hsl(217deg 26% 23%) 74%,
+  hsl(218deg 23% 22%) 77%,
+  hsl(221deg 18% 20%) 80%,
+  hsl(223deg 15% 18%) 84%,
+  hsl(227deg 11% 17%) 89%,
+  hsl(228deg 6% 15%) 100%
+);
+
+$gradient-test-3: linear-gradient(
+  110deg,
+  hsl(0deg 0% 0%) 0%,
+  hsl(240deg 14% 1%) 13%,
+  hsl(0deg 0% 3%) 19%,
+  hsl(240deg 5% 4%) 23%,
+  hsl(240deg 7% 5%) 27%,
+  hsl(220deg 9% 7%) 31%,
+  hsl(240deg 5% 8%) 34%,
+  hsl(220deg 6% 10%) 38%,
+  hsl(225deg 7% 11%) 41%,
+  hsl(228deg 8% 12%) 44%,
+  hsl(225deg 6% 14%) 47%,
+  hsl(228deg 6% 15%) 50%,
+  hsl(228deg 7% 15%) 53%,
+  hsl(228deg 7% 14%) 56%,
+  hsl(230deg 8% 14%) 59%,
+  hsl(223deg 10% 14%) 62%,
+  hsl(231deg 10% 13%) 66%,
+  hsl(231deg 11% 13%) 69%,
+  hsl(231deg 11% 12%) 73%,
+  hsl(233deg 13% 12%) 77%,
+  hsl(233deg 13% 12%) 81%,
+  hsl(233deg 14% 11%) 87%,
+  hsl(233deg 14% 11%) 100%
+);
+

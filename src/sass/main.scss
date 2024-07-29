@@ -1,0 +1,15 @@
+@use "./abstracts/variables" as *;
+@use "./base/resets";
+@use "./base/base";
+
+@use "./components/Hero";
+@use "./components/DescriptionCard";
+@use "./components/Nav";
+@use "./components/About";
+@use "./components/Projects";
+@use "./components/Contact";
+@use "./components/Footer";
+
+@use "./common/VideoBackground";
+@use "./common/BackToTopBtn";
+@use "./common/ProjectCard";

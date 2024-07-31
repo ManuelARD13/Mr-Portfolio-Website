@@ -18,7 +18,7 @@ function Contact() {
             <TSIcon />
             <h6 className="contact__card-name">Manuel A. Rojas</h6>
           </div>
-          <div className="contact__card-img">
+          <div className="contact__card-img" onClick={() => (location.href = "/")}>
             <p className="contact__card-img-logo">Mr.</p>
             <p className="contact__card-img-title">Front-end Engineer</p>
           </div>
@@ -30,25 +30,25 @@ function Contact() {
               <CustomIcon>
                 <BiLogoTelegram />
               </CustomIcon>
-              <p>t.me/ManuelARD13</p>
+              <a href="https://t.me/ManuelARD13" target="_blank">@ManuelARD13</a>
             </li>
             <li className="contact__card-details-item">
               <CustomIcon>
                 <BiLogoGmail />
               </CustomIcon>
-              <p>duranalejandro661@gmail.com</p>
+              <a href="mailto:duranalejandro661@gmail">duranalejandro661@gmail.com</a>
             </li>
             <li className="contact__card-details-item">
               <CustomIcon>
                 <BiLogoLinkedinSquare />
               </CustomIcon>
-              <p>linkedin.com/in/manuelard13</p>
+              <a href="https://www.linkedin.com/in/manuelard13" target="_blank">Manuel Alejandro Rojas Duran</a>
             </li>
             <li className="contact__card-details-item">
               <CustomIcon>
                 <BiLogoGithub />
               </CustomIcon>
-              <p>github.com/ManuelARD13</p>
+              <a href="https://github.com/ManuelARD13" target="_blank">ManuelARD13</a>
             </li>
           </ul>
           <div className="contact__card-footer">

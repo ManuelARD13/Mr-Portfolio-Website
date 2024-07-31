@@ -6,7 +6,7 @@ function Nav() {
   return (
     <div className="nav-container">
       <nav className="main-nav">
-        <div className="main-nav__logo">
+        <div className="main-nav__logo" onClick={() => (location.href = "/")}>
           <div className="main-nav__logo-img-container">
             <p className="main-nav__logo-img">Mr.</p>
           </div>

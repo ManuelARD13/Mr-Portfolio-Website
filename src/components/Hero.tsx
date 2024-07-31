@@ -1,5 +1,10 @@
-import { LuArrowDownCircle } from "react-icons/lu";
+import { useEffect, useState } from "react";
+
+import CustomIcon from "../common/CustomIcon";
 import DescriptionCard from "../common/DescriptionCard/DescriptionCard";
+import ProjectCard from "../common/ProjectCard/ProjectCard";
+
+import { LuArrowDownCircle } from "react-icons/lu";
 import { RiHomeGearFill } from "react-icons/ri";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import {
@@ -9,35 +14,36 @@ import {
   BiLogoReact,
   BiLogoSass,
   BiLogoGit,
+  BiLogoGithub,
+  BiLogoLinkedinSquare,
+  BiLogoTelegram,
+  BiLogoGmail,
 } from "react-icons/bi";
-import CustomIcon from "../common/CustomIcon";
-import { useEffect, useState } from "react";
-import ProjectCard from "../common/ProjectCard/ProjectCard";
 
-// const cards = [
-//   {
-//     img: "../assets/react.svg",
-//     title: "Lorem",
-//     description:
-//       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, doloremque?",
-//     button: "Lorem",
-//     button2: "Lorem",
-//   },
-//   {
-//     img: "../assets/react.svg",
-//     title: "Lorem",
-//     description:
-//       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, doloremque?",
-//     button: "Lorem",
-//     button2: "Lorem",
-//   },
-// ];
+type IndexBounderies = {
+  indexMin: number;
+  indexMax: number;
+};
 
+/* Courses List. Keep it in a 2 to 20 items range. */
 const cards = [
   { title: "React.js" },
   { title: "TypeScript" },
   { title: "Front-end Development" },
   { title: "Sass" },
+  { title: "React.js" },
+  { title: "TypeScript" },
+  { title: "Front-end Development" },
+  { title: "Sass" },
+  { title: "React.js" },
+  { title: "TypeScript" },
+  { title: "Front-end Development" },
+  { title: "Sass" },
+  { title: "React.js" },
+  { title: "TypeScript" },
+  { title: "Front-end Development" },
+  { title: "Sass" },
+  { title: "React.js" }
 ];
 
 const features = [
@@ -78,14 +84,28 @@ const features = [
   },
 ];
 
-type IndexBounderies = {
-  indexMin: number;
-  indexMax: number;
-};
+const socialMediaIcons: { icon: JSX.Element; link: string }[] = [
+  {
+    icon: <BiLogoGithub />,
+    link: "https://github.com/manuelard13",
+  },
+  {
+    icon: <BiLogoLinkedinSquare />,
+    link: "https://www.linkedin.com/in/manuel-a-rojas/",
+  },
+  {
+    icon: <BiLogoTelegram />,
+    link: "https://t.me/ManuelARD13",
+  },
+  {
+    icon: <BiLogoGmail />,
+    link: "mailto:duranalejandro661@gmail",
+  },
+];
 
 function Hero() {
   /* TODO: add scroll behavior to features aside list */
-  const [isMouseOver, setIsMouseOver] = useState<boolean>(false);
+
   const [indexBounderies, setIndexBounderies] = useState<IndexBounderies>({
     indexMin: 0,
     indexMax: 2,
@@ -93,48 +113,37 @@ function Hero() {
   const [slicedCards, setSlicedCards] = useState(cards.slice(1, 3));
 
   useEffect(() => {
-    document.querySelector(".cardss")?.addEventListener("mouseover", () => {
-      setIsMouseOver(true);
-    });
-    document.querySelector(".cardss")?.addEventListener("mouseleave", () => {
-      setIsMouseOver(false);
-    });
-  }, []);
-
-  useEffect(() => {
-    if (!isMouseOver) {
-      const changeSlide = () => {
-        if (indexBounderies.indexMax < cards.length) {
-          setIndexBounderies({
-            ...indexBounderies,
-            indexMin: indexBounderies.indexMin + 1,
-            indexMax: indexBounderies.indexMax + 1,
-          });
-        } else {
-          setIndexBounderies({
-            ...indexBounderies,
-            indexMin: 0,
-            indexMax: 2,
-          });
-        }
-      };
-      const interval = setInterval(() => {
-        changeSlide();
-      }, 2500);
-      return () => clearInterval(interval);
-    }
-  }, [indexBounderies, isMouseOver]);
+    const changeSlide = () => {
+      if (indexBounderies.indexMax < cards.length) {
+        setIndexBounderies({
+          ...indexBounderies,
+          indexMin: indexBounderies.indexMin + 1,
+          indexMax: indexBounderies.indexMax + 1,
+        });
+      } else {
+        setIndexBounderies({
+          ...indexBounderies,
+          indexMin: 0,
+          indexMax: 2,
+        });
+      }
+    };
+    const interval = setInterval(() => {
+      changeSlide();
+    }, 2500);
+    return () => clearInterval(interval);
+  }, [indexBounderies]);
 
   useEffect(() => {
     setSlicedCards(
       cards.slice(indexBounderies.indexMin, indexBounderies.indexMax)
     );
-    console.log("hey");
   }, [indexBounderies]);
+
   return (
     <section className="hero">
-      <aside className="hero__header">
-        <div className="hero__features rounded-corners box-shadow">
+      <div className="hero__header">
+        <aside className="hero__features rounded-corners box-shadow">
           <h3 className="hero__features-title">Main Skills</h3>
           <div className="hero__features-top">
             <p>+2 Years Experience in Front-end Development Technologies:</p>
@@ -155,11 +164,18 @@ function Hero() {
               </li>
             ))}
           </ul>
-          <div className="hero__features-bottom">
+          <div className="hero__features-bottom" onClick={() => (location.href = "/academics")}>
             <p>Explore More</p>
           </div>
-        </div>
+        </aside>
         <div className="hero__img rounded-corners box-shadow">
+          <div className="hero__img-social-media">
+            {socialMediaIcons.map(({ icon, link }) => (
+              <a href={link} target="_blank" key={link}>
+                <CustomIcon color="#FAFAFA">{icon}</CustomIcon>
+              </a>
+            ))}
+          </div>
           <h1 className="hero__img-title">
             Manuel <br /> Rojas Duran
           </h1>
@@ -167,11 +183,11 @@ function Hero() {
           <a href="#projects">
             <button className="hero__img-button">Live Projects</button>
           </a>
-          <a className="hero__img-link">
+          <a href="/academics" className="hero__img-link">
             Academics {<MdKeyboardDoubleArrowRight />}
           </a>
         </div>
-      </aside>
+      </div>
       <div className="hero__cards-container">
         <div className="hero__cards-container-left rounded-corners box-shadow">
           <ProjectCard />
@@ -188,8 +204,11 @@ function Hero() {
             {cards.map((_card, index) => {
               return (
                 <div
+                  key={index}
                   className={`hero-cards__slider-marker box-shadow}
-                       ${index === 3 ? "active" : ""}`}
+                       ${
+                         index === indexBounderies.indexMax - 1 ? "active" : ""
+                       }`}
                 ></div>
               );
             })}

@@ -1,49 +1,102 @@
 @use "../abstracts/variables" as *;
 
 .footer {
-  height: 25svh;
-  display: grid;
-  place-items: center;
-  grid-template-rows: 60px 60px 70px 25px;
-  grid-template-columns: 1fr 1fr;
-  background: $background-300;
+  position: relative;
   width: 100%;
-  padding-block: 2em 0;
-  &__menu-container {
-    grid-row: 1;
-    grid-column: 1/-1;
-    display: flex;
-    align-items: center;
-    gap: 3em;
-    h6 {
-      text-transform: uppercase;
-      font-size: 1rem;
-      letter-spacing: 0.1em;
+  background: $background-300;
+  h5 {
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+  }
+  &-container {
+    height: 42svh;
+    display: grid;
+    grid-template-rows: calc(40 * 0.75) svh calc(40 * 0.25) svh;
+    grid-template-columns: 55% 11% 20% 14%;
+    max-width: 1440px;
+    padding-block: 2em 0;
+    margin: 0 auto;
+    padding-inline: 1em;
+  }
+  &__text-container {
+    .footer__text-logo {
+      font-size: 5rem;
+      font-weight: bolder;
+      font-style: italic;
+      text-shadow: 5px 5px $accent-text;
+    }
+    p {
+      max-width: 75%;
     }
   }
-  &__menu {
-    display: flex;
-    gap: 3em;
-    width: 70%;
-    &-item {
-      transition: 0.2s ease;
+  &__menu-container {
+    grid-row: 1 / span 1;
+    grid-column: 2 / span 1;
+    width: 75%;
+    * + * {
+      margin-top: 1em;
     }
   }
   &__social-media {
-    grid-row: 2;
-    grid-column: 1/-1;
+    grid-row: 1 / span 1;
+    grid-column: 4 / span 1;
+    width: 70%;
+    height: 100%;
     font-size: 24px;
-    display: flex;
-    gap: 0.5em;
+    &-icons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.1em;
+    }
+    // h5 {
+    //   margin-bottom: 0;
+    // }
+    a {
+      height: 50px;
+    }
+  }
+  &__contact_container {
+    grid-row: 1 / span 1;
+    grid-column: 3 / span 1;
+  }
+  &__contact-details {
+    &-item + &-item {
+      margin-top: 0.5em;
+    }
+    &-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+  }
+  &__contact-footer {
+    @extend .footer__contact-details-item;
+    margin-top: 0.5em;
+    svg {
+      position: relative;
+      top: -12px;
+      font-size: 1.5rem;
+    }
   }
   &__copyright {
-    grid-row: 4/-1;
-    grid-column: 1/-1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    padding: 0.35em;
     background-color: $highlight-100;
+    &-container {
+      margin: 0 auto;
+      padding-inline: 1em;
+      max-width: 1440px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding-block: 0.5em;
+      a + a {
+        margin-left: 3em;
+      }
+    }
   }
 }

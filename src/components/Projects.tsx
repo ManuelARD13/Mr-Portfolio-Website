@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import MRPWImg from "../assets/portfolio-website.jpg";
 import PFQCImg from "../assets/PFCQImg3.jpg";
 import HSImg from "../assets/HSImg.jpg";
@@ -7,7 +7,9 @@ import { TbBrandFramerMotion } from "react-icons/tb";
 
 /*TODO: Finish Slider component:
     - test add change slide while clicking the whole left or right side of the section
-    - Complete each project data
+    - Complete each project data and test cards background contrast
+    - add final arrow icons
+    - add slide transition animations
 */
 
 type Project = {
@@ -226,7 +228,9 @@ function Projects() {
         </div>
         <div className="projects__header rounded-corners glass-card box-shadow">
           <div className="projects__header-label box-shadow">
-            {projects[projectIndex].technologies}
+            {projects[projectIndex].technologies.map((technology, index) => (
+              <React.Fragment key={index}>{technology}</React.Fragment>
+            ))}
           </div>
           <h2 className="projects__header-title">
             {projects[projectIndex].title}
@@ -257,6 +261,7 @@ function Projects() {
             {projects.map((_project, index) => {
               return (
                 <div
+                  key={index}
                   className={`slider-marker box-shadow ${
                     index === projectIndex ? "active" : ""
                   }`}

@@ -1,5 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './pages/Home'
+import Academics from './pages/Academics'
+import NotFound from './pages/NotFound'
 
 //TODO: Review loaders
 
@@ -10,8 +12,11 @@ const router = createBrowserRouter([
   },
   {
     path: '/academics',
-    element: <><Home /></>,
-  }
+    element: <><Academics /></>,
+  },
+  {
+    path: '*',
+    element: <><NotFound /></>,}
 ])
 
 function App() {

@@ -1,40 +1,119 @@
-import Menu from '../common/Menu/Menu';
-import CustomIcon from '../common/CustomIcon';
+import Menu from "../common/Menu/Menu";
+import CustomIcon from "../common/CustomIcon";
 import {
   BiLogoGmail,
   BiLogoTelegram,
   BiLogoGithub,
   BiLogoLinkedinSquare,
-  BiLogoWhatsapp
+  BiLogoWhatsapp,
 } from "react-icons/bi";
+import { FaMapLocationDot } from "react-icons/fa6";
+
+const socialMediaIcons: { icon: JSX.Element; link: string }[] = [
+  {
+    icon: <BiLogoGithub />,
+    link: "https://github.com/manuelard13",
+  },
+  {
+    icon: <BiLogoLinkedinSquare />,
+    link: "https://www.linkedin.com/in/manuel-a-rojas/",
+  },
+  {
+    icon: <BiLogoTelegram />,
+    link: "https://t.me/ManuelARD13",
+  },
+  {
+    icon: <BiLogoGmail />,
+    link: "mailto:duranalejandro661@gmail",
+  },
+  {
+    icon: <BiLogoWhatsapp />,
+    link: "https://api.whatsapp.com/send/?phone=5491124090119&text&type=phone_number&app_absent=0",
+  },
+];
 
 function Footer() {
   return (
     <footer className="footer">
+      <div className="footer-container">
+        <div className="footer__text-container">
+          <p className="footer__text-logo">Mr.</p>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Voluptates, culpa, laboriosam qui eos possimus nobis esse nisi
+            aliquid magnam, impedit quisquam nostrum voluptatem quo officiis
+            error dicta facilis temporibus provident sit obcaecati itaque
+            dolores aspernatur?
+          </p>
+        </div>
         <div className="footer__menu-container">
+          <h5>Menu</h5>
           <Menu className="footer__menu" />
         </div>
         <div className="footer__social-media">
-          <CustomIcon>
-            <BiLogoGithub />
-          </CustomIcon>
-          <CustomIcon>
-            <BiLogoLinkedinSquare />
-          </CustomIcon>
-          <CustomIcon>
-            <BiLogoTelegram />
-          </CustomIcon>
-          <CustomIcon>
-            <BiLogoGmail />
-          </CustomIcon>
-          <CustomIcon>
-            <BiLogoWhatsapp />
-          </CustomIcon>
+          <h5>Social Media</h5>
+          <div className="footer__social-media-icons">
+            {socialMediaIcons.map(({ icon, link }) => (
+              <a href={link} target="_blank" key={link}>
+                <CustomIcon>{icon}</CustomIcon>
+              </a>
+            ))}
+          </div>
+        </div>
+        <div className="footer__contact_container">
+          <h5>Contact</h5>
+          <ul className="footer__contact-details">
+            <li className="footer__contact-details-item">
+              <CustomIcon>
+                <BiLogoTelegram />
+              </CustomIcon>
+              <a href="https://t.me/ManuelARD13" target="_blank">
+                @ManuelARD13
+              </a>
+            </li>
+            <li className="footer__contact-details-item">
+              <CustomIcon>
+                <BiLogoGmail />
+              </CustomIcon>
+              <a href="mailto:duranalejandro661@gmail">
+                duranalejandro661@gmail.com
+              </a>
+            </li>
+            <li className="footer__contact-details-item">
+              <CustomIcon>
+                <BiLogoLinkedinSquare />
+              </CustomIcon>
+              <a href="https://www.linkedin.com/in/manuelard13" target="_blank">
+                Manuel Alejandro Rojas Duran
+              </a>
+            </li>
+            <li className="footer__contact-details-item">
+              <CustomIcon>
+                <BiLogoGithub />
+              </CustomIcon>
+              <a href="https://github.com/ManuelARD13" target="_blank">
+                ManuelARD13
+              </a>
+            </li>
+          </ul>
+          <div className="footer__contact-footer">
+            <CustomIcon>
+              <FaMapLocationDot />
+            </CustomIcon>
+            <p>Autonomous City of Buenos Aires, Argentina. 2024</p>
+          </div>
         </div>
         <div className="footer__copyright">
-          <p>©Copyright. 2024 Manuel A. Rojas</p>
+          <div className="footer__copyright-container">
+            <p>Copyright © 2024. Manuel Rojas</p>
+            <div className="footer__copyright-links">
+              <a href="">Privacy Policy</a>
+              <a href="">Terms of Service</a>
+            </div>
+          </div>
         </div>
-      </footer>
+      </div>
+    </footer>
   );
 }
 

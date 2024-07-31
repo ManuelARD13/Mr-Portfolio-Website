@@ -1,10 +1,11 @@
-@use '../abstracts/variables' as *;
+@use "../abstracts/variables" as *;
 
 .main-nav {
   max-width: 1440px;
   height: 6vh;
   margin: 0 auto;
-  border-bottom: 1px solid rgba(0,0,0,0.5);
+  padding-inline: 1em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
   background: $card-gradient-100;
   display: flex;
   justify-content: space-between;
@@ -16,16 +17,18 @@
     display: flex;
     align-items: center;
     gap: 0.25em;
-    &-img-container{
-    margin: 0 auto;
-    border-radius: 15px;
-    padding-inline: 0.2em 0.25em;
-    text-align: center;
-    background: $accent-color;
-    font-weight: 900;
-    font-style: italic;
-    line-height: 1em;
-    font-size: 2.1rem;
+    cursor: pointer;
+    user-select: none;
+    &-img-container {
+      margin: 0 auto;
+      border-radius: 15px;
+      padding-inline: 0.2em 0.25em;
+      text-align: center;
+      background: $accent-color;
+      font-weight: 900;
+      font-style: italic;
+      line-height: 1em;
+      font-size: 2.1rem;
     }
     &-subtext {
       position: relative;
@@ -64,6 +67,7 @@
     > img {
       width: 35px;
       height: 35px;
+      cursor: pointer;
     }
   }
   &__theme-toggler {
@@ -76,6 +80,7 @@
       clip-path: circle();
       width: 35px;
       height: 35px;
+      cursor: pointer;
     }
     .theme-icon-2 {
       @extend .theme-icon-1;
@@ -89,7 +94,7 @@
   top: 0%;
   z-index: 10;
   background: $card-gradient-100;
-  box-shadow: 20px 20px 22px -4px rgba(0,0,0,0.5);
+  box-shadow: 20px 20px 22px -4px rgba(0, 0, 0, 0.5);
 }
 
 .inactive {

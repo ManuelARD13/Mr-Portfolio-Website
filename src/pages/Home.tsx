@@ -1,6 +1,6 @@
 
 // import Footer from "../components/Footer";
-// import Contact from "../components/Contact";
+import Contact from "../components/Contact";
 // import Projects from "../components/Projects";
 import About from "../components/About";
 import Hero from "../components/Hero";
@@ -20,7 +20,7 @@ function Home() {
         <Hero />
         <About />{/*Section #1*/}
         {/*<Projects />{/*Section #2*/}
-        {/*<Contact />{/*Section #3*/}
+        <Contact />{/*Section #3*/}
         {/*<Footer />*/}
 
     </div>

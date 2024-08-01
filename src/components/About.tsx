@@ -1,4 +1,5 @@
 import profilePic from "../assets/profile.png";
+import mobilePic from "../assets/profile-mobile.png";
 
 function About() {
   return (
@@ -9,6 +10,7 @@ function About() {
           <img src={profilePic} alt="about" className="about__img" />
         </div>
         <div className="about__column-2">
+          <div className="about__img-container--mobile"><img src={mobilePic} alt="about" className="about__img--mobile" /></div>
           <h3 className="about__title">Front-end Engineer</h3>
           <div className="about__description">
             <p>

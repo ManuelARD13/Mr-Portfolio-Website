@@ -6,16 +6,16 @@
 import Hero from "../components/Hero";
 // import Nav from "../components/Nav";
 
-// import VideoBackground from "../common/VideoBackground/VideoBackground";
+import VideoBackground from "../common/VideoBackground/VideoBackground";
 import BacktoTopBtn from "../common/BackToTopBtn/BacktoTopBtn";
 
 function Home() {
   return (
     <div>
       {/* Miscelaneous */}
-      <BacktoTopBtn anchorId="#top" />
-      {/* <VideoBackground /> */}
-      {/* Main Estructure */}
+        <BacktoTopBtn anchorId="#top" />
+        <VideoBackground />
+        {/* Main Estructure */}
         {/* <Nav /> */}
         <Hero />
         {/*<About />Section #1*/}

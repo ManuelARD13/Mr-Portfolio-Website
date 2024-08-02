@@ -10,16 +10,19 @@
     letter-spacing: 0.1em;
   }
   &-container {
-    height: 42svh;
-    display: grid;
-    grid-template-rows: calc(40 * 0.75) svh calc(40 * 0.25) svh;
-    grid-template-columns: 55% 11% 20% 14%;
+    // height: 42svh; /*mobile*/
+    display: flex; /*mobile*/
+    flex-direction: column; /*mobile*/
+    align-items: center;
+    // grid-template-rows: calc(40 * 0.75) svh calc(40 * 0.25) svh; /*mobile*/
+    // grid-template-columns: 55% 11% 20% 14%; /*mobile*/
     max-width: 1440px;
-    padding-block: 2em 0;
+    padding-block: 4em 10em; /*mobile*/
     margin: 0 auto;
-    padding-inline: 1em;
+    padding-inline: 3em; /*mobile*/
   }
   &__text-container {
+    display: none; /*mobile*/
     .footer__text-logo {
       font-size: 5rem;
       font-weight: bolder;
@@ -33,15 +36,16 @@
   &__menu-container {
     grid-row: 1 / span 1;
     grid-column: 2 / span 1;
-    width: 75%;
+    width: 100%; /*mobile*/
     * + * {
       margin-top: 1em;
     }
   }
   &__social-media {
+    display: none; /*mobile*/
     grid-row: 1 / span 1;
     grid-column: 4 / span 1;
-    width: 70%;
+    width: 75%;
     height: 100%;
     font-size: 24px;
     &-icons {
@@ -49,9 +53,6 @@
       flex-wrap: wrap;
       gap: 0.1em;
     }
-    // h5 {
-    //   margin-bottom: 0;
-    // }
     a {
       height: 50px;
     }
@@ -59,6 +60,7 @@
   &__contact_container {
     grid-row: 1 / span 1;
     grid-column: 3 / span 1;
+    margin-top: 2em; /*mobile*/
   }
   &__contact-details {
     &-item + &-item {
@@ -85,15 +87,20 @@
     left: 0;
     width: 100%;
     background-color: $highlight-100;
+    font-size: 0.8135rem; /*mobile*/
     &-container {
       margin: 0 auto;
       padding-inline: 1em;
       max-width: 1440px;
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
       align-items: center;
       width: 100%;
       padding-block: 0.5em;
+      a {
+        color: $accent-text;
+      } /*mobile*/
       a + a {
         margin-left: 3em;
       }

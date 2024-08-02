@@ -1,5 +1,5 @@
 
-// import Footer from "../components/Footer";
+import Footer from "../components/Footer";
 import Contact from "../components/Contact";
 // import Projects from "../components/Projects";
 import About from "../components/About";
@@ -21,7 +21,7 @@ function Home() {
         <About />{/*Section #1*/}
         {/*<Projects />{/*Section #2*/}
         <Contact />{/*Section #3*/}
-        {/*<Footer />*/}
+        <Footer />
 
     </div>
   );

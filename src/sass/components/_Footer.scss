@@ -10,19 +10,16 @@
     letter-spacing: 0.1em;
   }
   &-container {
-    // height: 42svh; /*mobile*/
-    display: flex; /*mobile*/
-    flex-direction: column; /*mobile*/
+    display: flex; 
+    flex-direction: column; 
     align-items: center;
-    // grid-template-rows: calc(40 * 0.75) svh calc(40 * 0.25) svh; /*mobile*/
-    // grid-template-columns: 55% 11% 20% 14%; /*mobile*/
     max-width: 1440px;
-    padding-block: 2em 10em; /*mobile*/
+    padding-block: 2em 10em; 
     margin: 0 auto;
-    padding-inline: 3em; /*mobile*/
+    padding-inline: 3em; 
   }
   &__text-container {
-    display: none; /*mobile*/
+    display: none; 
     .footer__text-logo {
       font-size: 5rem;
       font-weight: bolder;
@@ -36,13 +33,13 @@
   &__menu-container {
     grid-row: 1 / span 1;
     grid-column: 2 / span 1;
-    width: 100%; /*mobile*/
+    width: 100%; 
     * + * {
       margin-top: 1em;
     }
   }
   &__social-media {
-    display: none; /*mobile*/
+    display: none; 
     grid-row: 1 / span 1;
     grid-column: 4 / span 1;
     width: 75%;
@@ -60,7 +57,7 @@
   &__contact_container {
     grid-row: 1 / span 1;
     grid-column: 3 / span 1;
-    margin-top: 2em; /*mobile*/
+    margin-top: 2em; 
   }
   &__contact-details {
     &-item + &-item {
@@ -87,7 +84,7 @@
     left: 0;
     width: 100%;
     background-color: $highlight-100;
-    font-size: 0.8135rem; /*mobile*/
+    font-size: 0.8135rem; 
     &-container {
       margin: 0 auto;
       padding-inline: 1em;
@@ -100,9 +97,40 @@
       padding-block: 0.5em;
       a {
         color: $accent-text;
-      } /*mobile*/
+      } 
       a + a {
         margin-left: 3em;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1050px) {
+  .footer {
+    &-container {
+      display: grid;
+      height: 42svh; 
+      grid-template-rows: calc(40 * 0.75) svh calc(40 * 0.25) svh; 
+      grid-template-columns: 55% 11% 20% 14%; 
+      align-items: initial;
+    }
+    &__text-container {
+      display: initial;
+    }
+    &__menu-container {
+      width: 75%;
+    }
+    &__social-media {
+      display: initial;
+    }
+    &__contact_container {
+      margin-top: 0;
+    }
+    &__copyright {
+      font-size: initial;
+      color: $hight-contrast-color;
+      &-container {
+        flex-direction: row;
       }
     }
   }

@@ -1,116 +1,28 @@
 @use "../abstracts/variables" as *;
 
-// .contact {
-//   display: grid;
-//   place-items: center;
-//   height: 80vh;
-//   &__card {
-//     display: flex;
-//     width: 60%;
-//     padding: 3em 4em;
-//     background-color: $background-300;
-//     &-left {
-//       display: flex;
-//       flex-direction: column;
-//       justify-content: center;
-//       width: 50%;
-//       h6 {
-//         margin-left: 1em;
-//       }
-//     }
-//     &-right {
-//       border-left: 2px solid $accent-text;
-//       width: 50%;
-//       padding: 1em 1.2em 1em 3.75em;
-//     }
-//     &-logo {
-//       transform: translate(0%, 0%);
-//       font-size: 3rem;
-//       display: flex;
-//       align-items: center;
-//       gap: 0.25em;
-//       max-width: 90%;
-//       line-height: 0.7em;
-//       > svg {
-//         font-size: 4rem;
-//       }
-//     }
-//     &-name {
-//       margin: 0;
-//     }
-//     &-img {
-//       translate: -7% 0%;
-//       margin-top: 2em;
-//       margin-bottom: 3.5em;
-//       text-align: center;
-//       line-height: 3em;
-//       cursor: pointer;
-//       &-logo {
-//         font-size: 5rem;
-//         font-weight: bolder;
-//         font-style: italic;
-//         text-shadow: 5px 5px $accent-text;
-//       }
-//     }
-//     &-title {
-//       margin: 0;
-//       font-size: 1.5rem;
-//     }
-//     &-details {
-//       margin-top: 1em;
-//       padding-top: 1em;
-//       border-top: 1px solid $accent-text;
-//       &-item {
-//         display: flex;
-//         align-items: center;
-//         gap: 0.75em;
-//         margin-bottom: 1.5em;
-//         > svg {
-//           font-size: 1.5rem;
-//         }
-//       }
-//     }
-//     &-footer {
-//       display: flex;
-//       justify-content: center;
-//       gap: 1em;
-//       border-top: 1px solid $accent-text;
-//       padding-top: 0.5em;
-//       > svg {
-//         font-size: 1.5rem;
-//       }
-//     }
-//   }
-// }
-
 .contact {
   display: grid;
-  padding-block: 5em; /*mobile*/
-  // place-items: center; /*mobile*/
-  // height: 80vh; /*mobile*/
+  padding-block: 5em;  
   &__card {
     display: flex;
-    flex-direction: column; /*mobile*/
-    width: 85%; /*mobile*/
-    padding: 3em 1em; /*mobile*/
+    flex-direction: column; 
+    width: 85%; 
+    padding: 3em 1em; 
     background-color: $background-300;
     margin: 0 auto;
     &-left {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center; /*mobile*/
-      // width: 50%; /*mobile*/
+      align-items: center; 
       h6 {
         margin-left: 1em;
       }
     }
-     &-right {
-        // border-left: 2px solid $accent-text; /*mobile*/
-        // width: 50%; /*mobile*/
-        padding: 0.4em; /*mobile*/
-        font-size: 0.9rem; /*mobile*/
-     }
+    &-right {
+      padding: 0.4em; 
+      font-size: 0.9rem; 
+    }
     &-logo {
       transform: translate(0%, 0%);
       font-size: 3rem;
@@ -125,12 +37,10 @@
     }
     &-name {
       margin: 0;
-      display: none; /*mobile*/
+      display: none; 
     }
     &-img {
       translate: 0% 0%;
-      // margin-top: 2em; /*mobile*/
-      // margin-bottom: 3.5em; /*mobile*/
       margin-block: 2em;
       text-align: center;
       line-height: 3em;
@@ -144,7 +54,7 @@
     }
     &-title {
       margin: 0;
-      font-size: 1.25rem; /*mobile*/
+      font-size: 1.25rem; 
     }
     &-details {
       margin-top: 1em;
@@ -156,7 +66,7 @@
         gap: 0.75em;
         margin-bottom: 1.5em;
         > svg {
-          font-size: 1.25rem; /*mobile*/
+          font-size: 1.25rem; 
         }
       }
     }
@@ -167,7 +77,53 @@
       border-top: 1px solid $accent-text;
       padding-top: 0.5em;
       > svg {
-        font-size: 1.7rem; /*mobile*/
+        font-size: 1.7rem; 
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1050px) {
+  .contact {
+    padding-block: 0; 
+    place-items: center; 
+    height: 80vh; 
+    &__card {
+      flex-direction: row; 
+      width: 60%; 
+      padding: 3em 4em; 
+      margin: initial;
+      &-left {
+        align-items: initial;
+        width: 50%; 
+      }
+      &-right {
+        border-left: 2px solid $accent-text;
+        width: 50%; 
+        padding: 1em 1.2em 1em 3.75em;
+        font-size: initial; 
+      }
+      &-name {
+        display: initial;
+      }
+      &-img {
+        translate: -7% 0%;
+        margin-block: 2em 3.5em; 
+      }
+      &-title {
+        font-size: 1.5rem;
+      }
+      &-details {
+        &-item {
+          > svg {
+            font-size: 1.5rem; 
+          }
+        }
+      }
+      &-footer {
+        > svg {
+          font-size: 1.5rem; 
+        }
       }
     }
   }

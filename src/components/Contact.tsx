@@ -7,8 +7,7 @@ import {
   BiLogoGithub,
   BiLogoLinkedinSquare,
 } from "react-icons/bi";
-//TODO: Add links to each social media
-
+//TODO: Improve MR. Logo size and position (Name above??)
 function Contact() {
   return (
     <section className="contact" id="contact">

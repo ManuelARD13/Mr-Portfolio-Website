@@ -2,7 +2,7 @@
 
 .section-projects {
   height: 100svh - 6svh;
-  display: grid;
+  display: none;
   place-items: center;
 }
 .projects {
@@ -149,3 +149,10 @@
   border-radius: 1rem;
   border: 2px solid rgba(255, 255, 255, 0.18);
 }
+
+@media screen and (min-width: 1050px) {
+  .section-projects {
+    display: grid;
+  }
+}
+

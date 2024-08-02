@@ -1,5 +1,4 @@
 .mobile-projects {
-  
   padding-block: 4em;
   &__card {
     position: relative;
@@ -21,12 +20,11 @@
         font-size: 1.5rem;
         line-height: 1.25em;
         padding-bottom: 0.5em;
-        border-bottom: 1px solid #FF5572;
+        border-bottom: 1px solid #ff5572;
       }
       &-description {
         margin-block: 1em 2em;
         font-size: 0.8135rem;
-
       }
     }
     &-links {
@@ -53,6 +51,12 @@
     font-size: 1.25rem;
     padding: 0.5em 0.1em;
     border-radius: 0.5em;
-    background-color: #FF5572;
+    background-color: #ff5572;
+  }
+}
+
+@media screen and (min-width: 1050px) {
+  .mobile-projects {
+    display: none;
   }
 }

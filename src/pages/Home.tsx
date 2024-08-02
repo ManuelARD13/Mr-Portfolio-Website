@@ -1,10 +1,9 @@
-
 import Footer from "../components/Footer";
 import Contact from "../components/Contact";
-// import Projects from "../components/Projects";
+import Projects from "../components/Projects";
 import About from "../components/About";
 import Hero from "../components/Hero";
-// import Nav from "../components/Nav";
+import Nav from "../components/Nav";
 
 import VideoBackground from "../common/VideoBackground/VideoBackground";
 import BacktoTopBtn from "../common/BackToTopBtn/BacktoTopBtn";
@@ -13,21 +12,27 @@ import MobileNav from "../components/MobileNav";
 
 function Home() {
   return (
-    <div>
+    <>
       {/* Miscelaneous */}
-        <BacktoTopBtn anchorId="#top" />
-        <VideoBackground />
-        {/* Main Estructure */}
-        {/* <Nav /> */}
-        <MobileNav />
-        <Hero />
-        <About />{/*Section #1*/}
-        {/*<Projects />{/*Section #2*/}
-        <MobileProjects />
-        <Contact />{/*Section #3*/}
-        <Footer />
+      <BacktoTopBtn anchorId="#top" />
+      <VideoBackground />
 
-    </div>
+      {/* Main Estructure */}
+
+      <Nav />
+      <MobileNav />
+
+      {/*Section #1*/}
+      <Hero />
+      <About />
+      {/*Section #2*/}
+      <Projects />
+      <MobileProjects />
+      {/*Section #3*/}
+      <Contact />
+
+      <Footer />
+    </>
   );
 }
 

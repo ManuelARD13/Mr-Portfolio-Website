@@ -8,6 +8,7 @@ import Hero from "../components/Hero";
 
 import VideoBackground from "../common/VideoBackground/VideoBackground";
 import BacktoTopBtn from "../common/BackToTopBtn/BacktoTopBtn";
+import MobileProjects from "../components/MobileProjects";
 
 function Home() {
   return (
@@ -20,6 +21,7 @@ function Home() {
         <Hero />
         <About />{/*Section #1*/}
         {/*<Projects />{/*Section #2*/}
+        <MobileProjects />
         <Contact />{/*Section #3*/}
         <Footer />
 

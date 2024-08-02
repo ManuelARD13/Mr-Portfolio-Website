@@ -17,9 +17,17 @@
   position: fixed;
   z-index: -1;
   video {
-    // width: 100%; /*mobile*/
-    height: 100svh; /*mobile*/
+    height: 100svh;
     transform: scaleY(1.3);
     opacity: 0.4;
+  }
+}
+
+@media screen and (min-width: 1050px) {
+  .video-background {
+    video {
+      width: 100%;
+      height: 100%;
+    }
   }
 }

@@ -3,7 +3,7 @@ import mobilePic from "../assets/profile-mobile.png";
 
 function About() {
   return (
-    <section className="section-about" id="about">
+    <section id="about">
       <div className="about">
         <div className="about__column-1">
           <div className="about__background"></div>

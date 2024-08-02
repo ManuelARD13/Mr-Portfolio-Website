@@ -9,6 +9,7 @@ import Hero from "../components/Hero";
 import VideoBackground from "../common/VideoBackground/VideoBackground";
 import BacktoTopBtn from "../common/BackToTopBtn/BacktoTopBtn";
 import MobileProjects from "../components/MobileProjects";
+import MobileNav from "../components/MobileNav";
 
 function Home() {
   return (
@@ -18,6 +19,7 @@ function Home() {
         <VideoBackground />
         {/* Main Estructure */}
         {/* <Nav /> */}
+        <MobileNav />
         <Hero />
         <About />{/*Section #1*/}
         {/*<Projects />{/*Section #2*/}

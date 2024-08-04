@@ -11,6 +11,16 @@ import MobileProjects from "../components/MobileProjects";
 import MobileNav from "../components/MobileNav";
 
 function Home() {
+  const detectDevice = (): string => {
+    if (document.body.clientWidth < 1050) {
+      // TODO: test efficient way to test user's device type
+      // if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      return "mobile";
+    } else {
+      return "desktop";
+    }
+  };
+
   return (
     <>
       {/* Miscelaneous */}
@@ -19,15 +29,13 @@ function Home() {
 
       {/* Main Estructure */}
 
-      <Nav />
-      <MobileNav />
+      {detectDevice() === "desktop" ? <Nav /> : <MobileNav />}
 
       {/*Section #1*/}
       <Hero />
       <About />
       {/*Section #2*/}
-      <Projects />
-      <MobileProjects />
+      {detectDevice() === "desktop" ? <Projects /> : <MobileProjects />}
       {/*Section #3*/}
       <Contact />
 

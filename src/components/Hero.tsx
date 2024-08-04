@@ -91,7 +91,7 @@ const socialMediaIcons: { icon: JSX.Element; link: string }[] = [
   },
   {
     icon: <BiLogoLinkedinSquare />,
-    link: "https://www.linkedin.com/in/manuel-a-rojas/",
+    link: "https://www.linkedin.com/in/manuelard13/",
   },
   {
     icon: <BiLogoTelegram />,
@@ -105,6 +105,7 @@ const socialMediaIcons: { icon: JSX.Element; link: string }[] = [
 
 function Hero() {
   /* TODO: add scroll behavior to features aside list */
+  //TODO: Change the width behavior for better responsive design: use 100% and max-width: (to calc) with some padding.
 
   const [indexBounderies, setIndexBounderies] = useState<IndexBounderies>({
     indexMin: 0,
@@ -181,7 +182,7 @@ function Hero() {
           </h1>
           <p className="hero__img-subtitle">Front-end Engineer</p>
           <a href="#projects">
-            <button className="hero__img-button">Live Projects</button>
+            <button className="hero__img-button" onClick={() => (location.href = "#projects")}>Live Projects</button>
           </a>
           <a href="/academics" className="hero__img-link">
             Academics {<MdKeyboardDoubleArrowRight />}

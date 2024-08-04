@@ -4,8 +4,9 @@ import PFQCImg from "../assets/PFCQImg3.jpg";
 import HSImg from "../assets/HSImg.jpg";
 import { BiLogoReact, BiLogoTypescript, BiLogoSass } from "react-icons/bi";
 import { TbBrandFramerMotion } from "react-icons/tb";
-
+//TODO: Work on a responsive padding and font sizes
 /*TODO: Finish Slider component:
+    - adjust colored links in the slides
     - test add change slide while clicking the whole left or right side of the section
     - Complete each project data and test cards background contrast
     - add final arrow icons

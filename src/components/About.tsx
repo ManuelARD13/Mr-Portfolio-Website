@@ -2,6 +2,7 @@ import profilePic from "../assets/profile.png";
 import mobilePic from "../assets/profile-mobile.png";
 
 function About() {
+  //TODO: Work on a responsive padding and font sizes
   return (
     <section id="about">
       <div className="about">

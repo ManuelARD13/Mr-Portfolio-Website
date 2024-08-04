@@ -16,7 +16,7 @@ const socialMediaIcons: { icon: JSX.Element; link: string }[] = [
   },
   {
     icon: <BiLogoLinkedinSquare />,
-    link: "https://www.linkedin.com/in/manuel-a-rojas/",
+    link: "https://www.linkedin.com/in/manuelard13/",
   },
   {
     icon: <BiLogoTelegram />,
@@ -33,6 +33,11 @@ const socialMediaIcons: { icon: JSX.Element; link: string }[] = [
 ];
 
 function Footer() {
+  //TODO: Add same spacing of the menu items to the contact items in mobile version
+  //TODO: Adjust spacing between colums in the right section
+  //TODO: Add grid columns adjusting behavior depending on the screen size
+  //TODO: Check the footer position behavior
+ 
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -107,8 +112,12 @@ function Footer() {
           <div className="footer__copyright-container">
             <p>Copyright © 2024. Manuel Rojas</p>
             <div className="footer__copyright-links">
-              <a href="">Privacy Policy</a>
-              <a href="">Terms of Service</a>
+              <a href="https://www.freeprivacypolicy.com/live/78160001-6cbb-4963-82db-d7dfa2080341" target="_blank">
+                Privacy Policy
+              </a>
+              <a href="https://www.freeprivacypolicy.com/live/20508db2-1d13-4760-9855-336763a722d8" target="_blank">
+                Terms of Service
+              </a>
             </div>
           </div>
         </div>

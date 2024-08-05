@@ -14,6 +14,8 @@
   padding-block: 4em;
   &__column-1 {
     position: absolute;
+    display: flex;
+    justify-content: right;
     top: 0;
     height: 100%;
     min-width: 100vw;
@@ -21,7 +23,7 @@
     .about__background {
       position: absolute;
       width: 100%;
-      height: 100%;
+      height: min(100%, 725px);
       background-image: url("../assets/shuffled.png");
       background-attachment: fixed;
       background-position: initial;
@@ -43,7 +45,7 @@
   }
   &__description {
     margin-block: 2em;
-    max-width: max(55% - 2em, 350px);
+    max-width: min(100%, 402px);
     position: relative;
     z-index: 3;
     font-size: 0.8135rem;
@@ -58,13 +60,13 @@
   }
   &__img {
     position: relative;
+    margin-right: 1em;
     z-index: 2;
-    top: 13.5%;
-    left: 50%;
-    width: max(78%, 652px);
-    scale: 1.5;
-    transform: rotateY(180deg);
+    width: 345px;
+    scale: 1.1;
+    translate: 0 -4.9%;
     display: none;
+    max-width: none;
   }
   &__img--mobile {
     position: absolute;
@@ -85,7 +87,6 @@
 
   .about {
     max-width: 100%;
-    height: 75vh;
     flex-direction: row;
     justify-content: center;
     align-items: initial;
@@ -94,33 +95,41 @@
       width: 50%;
     }
     &__column-1 {
-      position: relative;
-      top: 0;
-      height: initial;
+      position: initial;
       min-width: initial;
     }
     &__column-2 {
       position: initial;
       z-index: 3;
       width: initial;
+      height: 100%;
       padding: 5em;
-      border-radius: none;
+      border-radius: 0%;
     }
     &__description {
-      font-size: initial;
+      font-size: 1rem;
     }
     &__title {
-      width: 55%;
-      font-size: 1.5rem;
+      width: min(100%, 435px);
+      font-size: 1.75rem;
     }
     &__img {
-      display: initial;
+      display: block;
     }
     &__img-container--mobile {
       display: none;
     }
     &__img--mobile {
       display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 1050px) and (max-width: 1370px) {
+  .about {
+    align-self: end;
+    &__img {
+      width: 265px;
     }
   }
 }

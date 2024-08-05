@@ -1,7 +1,7 @@
 import { BiUpArrowAlt } from "react-icons/bi";
 
 function BacktoTopBtn({ anchorId }: { anchorId: string }) {
-  // TODO: Adjust mobile styles
+  // TODO: hide when in hero section: Use final image over it??
   return (
     <a href={anchorId} className="back-to-top">
 

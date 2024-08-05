@@ -2,14 +2,14 @@
 
 .back-to-top {
   position: fixed;
-  z-index: 10;
-  width: 4vw;
-  height: 3.5vw;
+  z-index: 2;
+  width: 4rem;
+  height: 3.5rem;
   bottom: 5%;
   right: 0;
   background-color: rgba($background-100, 0.5);
   border-radius: 1rem 0 0 1rem;
-  opacity: 0.5;
+  opacity: 0.75;
   > * {
     position: absolute;
     top: 50%;
@@ -24,8 +24,19 @@
     font-weight: lighter;
     font-size: 3rem;
   }
-  &:hover {
-    background: $accent-color;
-    opacity: 1;
+}
+
+@media screen and (min-width: 1050px) {
+  .back-to-top {
+    width: 4vw;
+    height: 3.5vw;
+    opacity: 0.5;
+    > * {
+      font-size: 3rem;
+    }
+    &:hover {
+      background: $accent-color;
+      opacity: 1;
+    }
   }
 }

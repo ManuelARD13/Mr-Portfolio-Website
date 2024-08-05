@@ -1,6 +1,8 @@
 @use "../abstracts/variables" as *;
 
 .hero {
+  position: relative;
+  z-index: 2;
   &__img {
     position: relative;
     background-image: url("../assets/profile-mobile.png");

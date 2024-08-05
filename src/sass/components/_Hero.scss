@@ -21,11 +21,9 @@
       display: flex;
       flex-direction: column;
       gap: 0.25em;
-      padding: 0.2em 0.35em;
-      border-radius: 0.25em;
       font-size: 1.25rem;
       a {
-        height: 35px;
+        height: 2.25rem;
       }
     }
     &-title {
@@ -157,8 +155,9 @@
   &__down-btn {
     display: none;
     position: absolute;
-    bottom: 0;
+    bottom: 1%;
     left: 50%;
+    height: 38px;
     transform: translateX(-50%);
     color: rgba($hight-contrast-color, 0.5);
     font-size: 2.375rem;
@@ -192,17 +191,15 @@
 @media screen and (min-width: 1050px) {
   .hero {
     position: relative;
-    height: 100svh - 6svh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding-bottom: 5vh;
+    padding-block: 1em 3.5em;
     gap: 1.5rem;
     &__header {
       display: flex;
       justify-content: center;
       gap: 1.5rem;
-      height: 57.5%;
+      height: 489px;
     }
     &__img {
       background-image: url("../assets/profile-pic.jpg");
@@ -229,6 +226,23 @@
     }
     &-cards__slider-markers {
       display: flex;
+    }
+  }
+}
+
+@media screen and (min-width: 1050px) and (max-width: 1370px) {
+  .hero {
+    &__header {
+      height: 450px;
+    }
+    &__features {
+      font-size: 0.9rem;
+    }
+    &__cards-container {
+      font-size: 0.7rem;
+      &-left {
+        padding-top: 3em;
+      }
     }
   }
 }

@@ -94,18 +94,17 @@ const socialMediaIcons: { icon: JSX.Element; link: string }[] = [
     link: "https://www.linkedin.com/in/manuelard13/",
   },
   {
-    icon: <BiLogoTelegram />,
-    link: "https://t.me/ManuelARD13",
-  },
-  {
     icon: <BiLogoGmail />,
     link: "mailto:duranalejandro661@gmail",
   },
+  {
+    icon: <BiLogoTelegram />,
+    link: "https://t.me/ManuelARD13",
+  }
 ];
 
 function Hero() {
   /* TODO: add scroll behavior to features aside list */
-  //TODO: Change the width behavior for better responsive design: use 100% and max-width: (to calc) with some padding.
 
   const [indexBounderies, setIndexBounderies] = useState<IndexBounderies>({
     indexMin: 0,

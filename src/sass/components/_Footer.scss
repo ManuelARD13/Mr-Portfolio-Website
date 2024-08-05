@@ -61,7 +61,7 @@
   }
   &__contact-details {
     &-item + &-item {
-      margin-top: 0.5em;
+      margin-top: 1em;
     }
     &-item {
       display: flex;
@@ -71,7 +71,7 @@
   }
   &__contact-footer {
     @extend .footer__contact-details-item;
-    margin-top: 0.5em;
+    margin-top: 1em;
     svg {
       position: relative;
       top: -12px;
@@ -90,7 +90,7 @@
       padding-inline: 1em;
       max-width: 1440px;
       display: flex;
-      flex-direction: column;
+      flex-direction: column-reverse;
       justify-content: space-between;
       align-items: center;
       width: 100%;

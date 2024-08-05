@@ -133,8 +133,7 @@ const mobileProjects: MobileProject[] = [
 ];
 
 function MobileProjects() {
-  //TODO: Decrease the card's size
-  //TODO: Adjust the Techs Badges sizing
+  //TODO: style description scrollbar
   return (
     <section className="mobile-projects" id="projects">
       <div className="mobile-projects__container">

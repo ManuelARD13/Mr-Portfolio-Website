@@ -1,23 +1,23 @@
 .mobile-projects {
-  padding-block: 4em;
+  padding-block: 3em;
   &__card {
     position: relative;
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
     padding: 2.5em 1.5em;
-    margin-block: 3em;
+    margin-block: 2em;
     text-align: center;
     &-img {
       display: grid;
       place-items: center;
-      width: 85%;
+      width: 80%;
       min-height: 120px;
       margin: 0 auto;
     }
     &-text {
       margin-block: 1em;
       &-title {
-        font-size: 1.5rem;
+        font-size: 1.35rem;
         line-height: 1.25em;
         padding-bottom: 0.5em;
         border-bottom: 1px solid #ff5572;
@@ -25,6 +25,8 @@
       &-description {
         margin-block: 1em 2em;
         font-size: 0.8135rem;
+        height: 5rem;
+        overflow-y: scroll;
       }
     }
     &-links {

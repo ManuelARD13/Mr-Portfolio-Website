@@ -14,7 +14,6 @@ function DescriptionCard({className, cardInfo} : {className?: string, cardInfo: 
       </div>
       <div className="description-card__label">
         <p>Web Development School</p>
-        {/* <TbBrandTypescript /> */}
       </div>
       <div className="description-card__text">
         <h3 className="description-card__text-title">{cardInfo.title}</h3>

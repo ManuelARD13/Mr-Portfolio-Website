@@ -33,7 +33,6 @@ const socialMediaIcons: { icon: JSX.Element; link: string }[] = [
 ];
 
 function Footer() {
-  //TODO: Add same spacing of the menu items to the contact items in mobile version
   //TODO: Adjust spacing between colums in the right section
   //TODO: Add grid columns adjusting behavior depending on the screen size
   //TODO: Check the footer position behavior

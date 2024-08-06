@@ -7,9 +7,7 @@ import {
   BiLogoGithub,
   BiLogoLinkedinSquare,
 } from "react-icons/bi";
-//TODO: Improve MR. Logo size and position (Name above?? maybe it's size?)
-//TODO: Change the width behavior for better responsive design: use 100% and max-width: (to calc) with some padding.
-//TODO: Watch out for the email string size!
+
 function Contact() {
   return (
     <section className="contact" id="contact">

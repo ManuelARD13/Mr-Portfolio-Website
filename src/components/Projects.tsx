@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import MRPWImg from "../assets/portfolio-website.jpg";
-import PFQCImg from "../assets/PFCQImg3.jpg";
+import MRPWImg from "../assets/MRPWImg.jpg";
+import PFQCImg from "../assets/PFQCImg.jpg";
 import HSImg from "../assets/HSImg.jpg";
 import { BiLogoReact, BiLogoTypescript, BiLogoSass } from "react-icons/bi";
 import { TbBrandFramerMotion } from "react-icons/tb";

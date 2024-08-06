@@ -10,7 +10,7 @@ import { CgFileDocument } from "react-icons/cg";
 
 import MRPWImg from "../assets/portfolio-website.jpg";
 import MRPWLogo from "../assets/Mr-logo-removebg-preview.png";
-import PFQCImg from "../assets/PFCQImg3.jpg";
+import PFQCImg from "../assets/PFQCImg.jpg";
 import PFQCLogo from "../assets/pathfinderLogo.png";
 import HSImg from "../assets/HSImg.jpg";
 import HSLogo from "../assets/hiragana-shuffle-logo-removebg-preview.png";

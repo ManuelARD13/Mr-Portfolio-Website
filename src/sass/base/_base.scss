@@ -56,4 +56,7 @@ button {
   html {
     font-size: 13.2px;
   }
+  section + section, footer {
+    margin-top: 5em;
+  }
 }

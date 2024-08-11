@@ -25,7 +25,7 @@ const projectTechs: JSX.Element[] = [
 const featuredProjectInfo: ProjectCard = {
   title: "Japanese Learning App",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, doloremque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, doloremque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, doloremque?",
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, doloremque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, doloremque? Lorem ipsum dolor sit amet",
   logo: projectoLogo,
   technologies: projectTechs,
   liveLink: "https://manuelard13.github.io/hiragana-shuffle-app/",

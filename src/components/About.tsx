@@ -23,11 +23,6 @@ function About() {
               quod dolorem aut velit?
             </p>
             <br />
-            <p>
-              {" "}
-              Dolore repudiandae tempore soluta tenetur porro, illo dolores
-              neque impedit{" "}
-            </p>
             <br />
             <p>
               {" "}

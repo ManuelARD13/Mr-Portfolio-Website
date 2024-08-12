@@ -4,7 +4,6 @@
   display: grid;
   place-items: center;
   max-width: none;
-  height: 100svh;
 }
 
 .about {
@@ -82,9 +81,9 @@
 }
 
 @media screen and (min-width: 1050px) {
-  // #about {
-  //   height: 100svh - 6svh;
-  // }
+  #about {
+    height: 100svh;
+  }
 
   .about {
     max-width: 100%;

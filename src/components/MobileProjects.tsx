@@ -8,7 +8,7 @@ import CustomIcon from "../common/CustomIcon";
 import { TbBrandFramerMotion } from "react-icons/tb";
 import { CgFileDocument } from "react-icons/cg";
 
-import MRPWImg from "../assets/portfolio-website.jpg";
+import MRPWImg from "../assets/MRPWImg.jpg";
 import MRPWLogo from "../assets/Mr-logo-removebg-preview.png";
 import PFQCImg from "../assets/PFQCImg.jpg";
 import PFQCLogo from "../assets/pathfinderLogo.png";
@@ -141,7 +141,7 @@ function MobileProjects() {
           <div
             key={index}
             className="mobile-projects__card rounded-corners box-shadow glass-card"
-            style={{ borderColor: project.mainColor }}
+            style={{ borderColor: project.mainColor, backgroundImage: `url(${project.image})` }}
           >
             <div className="mobile-projects__card-img">
               <img src={project.logo} alt={project.title} />

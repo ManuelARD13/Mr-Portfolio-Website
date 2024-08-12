@@ -4,49 +4,53 @@
   height: 100svh - 6svh;
   display: none;
   place-items: center;
+  max-width: none;
 }
 .projects {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  height: min(calc(98svh - 6svh), 810px);
+  height: 55em;
+  width: min(120em, 1600px);
+  padding: 1.5em;
   background-color: rgba(0, 0, 0, 0.1);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-blend-mode: overlay;
-  font-size: 0.8125rem;
+  font-size: 0.65rem;
   &__header {
     position: relative;
-    width: 50%;
-    padding: 3em;
-    margin-block: 8em 3em;
+    width: 47.5%;
+    padding: 2.75em 3em;
+    margin-block: 0em 2.25em;
     display: flex;
     flex-direction: column;
 
     &-label {
       position: absolute;
-      top: 0.75em;
+      top: 0.25em;
       left: -1em;
       display: flex;
       flex-direction: column;
-      gap: 0.35em;
-      padding: 0.35em 0.2em;
+      gap: 0.25em;
+      padding: 0.25em 0.15em;
       background: var(--accent-color, $accent-color);
       border-radius: 0.25em;
       color: whitesmoke;
       font-size: 1.75rem;
     }
     &-title {
-      font-size: 2.5rem;
+      font-size: 2rem;
     }
     &-subtext {
+      max-width: 75ch;
       margin-top: 2em;
     }
     &-links {
-      margin-top: 3em;
+      margin-top: 2.5em;
       color: var(--accent-color, $accent-text);
     }
   }
@@ -55,8 +59,8 @@
     top: 32%;
     display: flex;
     justify-content: space-between;
-    width: 67.5%;
-    font-size: 4rem;
+    width: 16em;
+    font-size: 3rem;
     color: rgba(255, 255, 255, 0.5);
     transform: scaleY(2);
     cursor: pointer;
@@ -71,20 +75,25 @@
     }
   }
   &__description {
-    width: 50%;
-    font-size: 1rem;
+    width: 47.5%;
+    min-height: 13.5em;
+    font-size: 0.75rem;
     padding: 1em;
     line-height: 1.75em;
     border-left: 7.5px solid var(--accent-color, $accent-text);
     background: rgba(0, 0, 0, 0.35);
     backdrop-filter: blur(3px);
-    border-radius: 0 1rem 1rem 0;
+    border-radius: 0 2rem;
+    p {
+      max-width: 75ch;
+    }
   }
   &__aside {
     position: absolute;
     bottom: 0;
-    left: 3%;
-    width: 13.5rem;
+    left: 5%;
+    width: 17em;
+    height: 30em;
     background: $background-300;
     padding: 2.5em 1.5em;
     border-bottom-left-radius: 0;
@@ -107,7 +116,7 @@
 
   &__slider-markers {
     position: absolute;
-    bottom: -3%;
+    bottom: -4%;
     right: 50%;
     transform: translateX(50%);
     display: flex;
@@ -154,11 +163,11 @@
   }
 }
 
-@media screen and (min-width: 1050px) and (max-width: 1440px) {
-  .projects {
-    width: 90%;
-    &__header {
-      margin-block: 3em;
-    }
-  }
-}
+// @media screen and (min-width: 1050px) and (max-width: 1440px) {
+//   .projects {
+//     width: 90%;
+//     &__header {
+//       margin-block: 3em;
+//     }
+//   }
+// }

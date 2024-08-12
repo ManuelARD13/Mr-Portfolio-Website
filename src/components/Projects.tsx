@@ -47,10 +47,6 @@ const projects: Project[] = [
         possimus placeat molestias. Voluptatum reprehenderit doloremque
         voluptatem alias. Saepe, pariatur minima voluptatibus eaque quae culpa
         fugiat officia et odio vitae dolore magni.
-        <br />
-        <br />
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nobis
-        saepe unde mollitia aperiam repudiandae
       </p>
     ),
     githubLink: "https://github.com",
@@ -84,10 +80,6 @@ const projects: Project[] = [
         possimus placeat molestias. Voluptatum reprehenderit doloremque
         voluptatem alias. Saepe, pariatur minima voluptatibus eaque quae culpa
         fugiat officia et odio vitae dolore magni.
-        <br />
-        <br />
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nobis
-        saepe unde mollitia aperiam repudiandae
       </p>
     ),
     githubLink: "https://github.com",
@@ -121,10 +113,6 @@ const projects: Project[] = [
         possimus placeat molestias. Voluptatum reprehenderit doloremque
         voluptatem alias. Saepe, pariatur minima voluptatibus eaque quae culpa
         fugiat officia et odio vitae dolore magni.
-        <br />
-        <br />
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nobis
-        saepe unde mollitia aperiam repudiandae
       </p>
     ),
     githubLink: "https://github.com",

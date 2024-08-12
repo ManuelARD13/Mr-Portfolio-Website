@@ -18,7 +18,7 @@ function DescriptionCard({className, cardInfo} : {className?: string, cardInfo: 
       <div className="description-card__text">
         <h3 className="description-card__text-title">{cardInfo.title}</h3>
         <p className="description-card__text-description">
-        React Components, Props, States, and Effects. Implementing React Context, React Portals, Local Storage, and more.
+        Components, Props, States, and Effects. Implementing React Context, Local Storage, and more.
         </p>
         <a href="/" className="description-card__text-link">
           july 2023. Platzi.com

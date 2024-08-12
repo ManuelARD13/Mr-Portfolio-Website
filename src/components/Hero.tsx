@@ -4,7 +4,6 @@ import CustomIcon from "../common/CustomIcon";
 import DescriptionCard from "../common/DescriptionCard/DescriptionCard";
 import ProjectCard from "../common/ProjectCard/ProjectCard";
 
-import { LuArrowDownCircle } from "react-icons/lu";
 import { RiHomeGearFill } from "react-icons/ri";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import {
@@ -215,9 +214,6 @@ function Hero() {
           </div>
         </div>
       </div>
-      <a href="#about" className="hero__down-btn">
-        <LuArrowDownCircle />
-      </a>
     </section>
   );
 }

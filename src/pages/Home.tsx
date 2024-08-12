@@ -8,6 +8,7 @@ import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
 import VideoBackground from "../common/VideoBackground/VideoBackground";
+import BacktoTopBtn from "../common/BackToTopBtn/BacktoTopBtn";
 
 function Home() {
   const detectDevice = (): string => {
@@ -24,7 +25,7 @@ function Home() {
 
   return (
     <>
-
+      <BacktoTopBtn anchorId="#top"/>
       <VideoBackground />
 
       {/* Main Estructure */}

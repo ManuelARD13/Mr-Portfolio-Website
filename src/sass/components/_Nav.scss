@@ -2,9 +2,9 @@
 
 .main-nav {
   max-width: 1440px;
-  height: 6vh;
+  height: 3em;
   margin: 0 auto;
-  padding-inline: 1em;
+  padding-inline: 3em;
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
   background: $card-gradient-100;
   display: none;
@@ -21,7 +21,7 @@
     user-select: none;
     &-img-container {
       margin: 0 auto;
-      border-radius: 15px;
+      border-radius: 0.75em;
       padding-inline: 0.2em 0.25em;
       text-align: center;
       background: $accent-color;
@@ -40,7 +40,7 @@
     display: flex;
     justify-content: center;
     gap: 3rem;
-    width: 70%;
+    width: 76%;
     text-transform: uppercase;
     &-item {
       transition: 0.2s ease;
@@ -56,7 +56,7 @@
     }
   }
   &__languages-toggler {
-    max-width: 10%;
+    max-width: 6%;
     margin: 0 auto;
     padding-inline: 0.2em;
     display: flex;
@@ -65,21 +65,20 @@
     background: $accent-color;
     border-radius: 20px;
     > img {
-      width: 35px;
-      height: 35px;
+      width: 2.15em;
+      height: 2.15em;
       cursor: pointer;
     }
   }
   &__theme-toggler {
-    max-width: 10%;
-    margin: 0 auto;
+    max-width: 6%;
     display: flex;
     gap: 0.5em;
     .theme-icon-1 {
       background: $theme-gradient-1;
       clip-path: circle();
-      width: 35px;
-      height: 35px;
+      width: 2.15em;
+      height: 2.15em;
       cursor: pointer;
     }
     .theme-icon-2 {
@@ -106,3 +105,20 @@
     display: flex;
   }
 }
+
+@media screen and (min-width: 1370px) {
+  .main-nav {
+    max-width: 1600px;
+    height: 3.5em;
+    font-size: 0.7rem;
+    &__logo{
+      &-img-container {
+        font-size: 1.75rem;
+      }
+      &-subtext {
+        font-size: 0.7rem;
+      }
+    }
+  }
+}
+

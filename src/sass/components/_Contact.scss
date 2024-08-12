@@ -15,9 +15,6 @@
       flex-direction: column;
       justify-content: center;
       align-items: center; 
-      h6 {
-        font-size: 1.75rem;
-      }
     }
     &-right {
       padding: 0.4em; 
@@ -35,6 +32,7 @@
       }
     }
     &-name {
+      font-size: 1.4rem;
       margin: 0;
       display: none; 
     }
@@ -71,9 +69,9 @@
     &-footer {
       display: flex;
       justify-content: center;
+      align-items: center;
       gap: 1em;
       border-top: 1px solid $accent-text;
-      padding-top: 0.5em;
       > svg {
         margin-left: 0.2em;
         font-size: 1.7rem; 
@@ -86,10 +84,10 @@
   .contact {
     padding-block: 0; 
     place-items: center; 
-    height: 80vh; 
+    height: 90svh; 
     &__card {
       flex-direction: row; 
-      width: 60%; 
+      width: 47.5em; 
       padding: 3em 4em; 
       margin: initial;
       &-left {
@@ -100,46 +98,46 @@
         border-left: 2px solid $accent-text;
         width: 50%; 
         padding: 1em 1.2em 1em 3.75em;
-        font-size: initial; 
+        font-size: 0.8135rem; 
       }
       &-name {
         display: initial;
-        translate: 20% 0%;
+        translate: 27.5% 0%;
       }
       &-img {
         translate: -7% 0%;
         margin-block: 2em 3.5em; 
       }
       &-title {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
       }
       &-details {
         &-item {
           > svg {
-            font-size: 1.5rem; 
+            font-size: 1.25rem; 
           }
         }
       }
       &-footer {
         > svg {
-          font-size: 2rem; 
+          font-size: 1.75rem; 
         }
       }
     }
   }
 }
 
-@media screen and (min-width: 1050px) and (max-width: 1370px) {
-  .contact {
-    &__card {
-      &-left {
-        h6 {
-          translate: 30% 0%;
-        }
-      }
-      &-right {
-        font-size: 1.15rem;
-      }
-    }
-  }
-}
+// @media screen and (min-width: 1050px) and (max-width: 1370px) {
+//   .contact {
+//     &__card {
+//       &-left {
+//         h6 {
+//           translate: 30% 0%;
+//         }
+//       }
+//       &-right {
+//         font-size: 1.15rem;
+//       }
+//     }
+//   }
+// }

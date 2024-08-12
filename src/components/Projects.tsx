@@ -1,7 +1,9 @@
+/* React */
 import React, { useEffect, useState } from "react";
-import PortfolioWebsiteImg from "../assets/MRPWImg.jpg";
+/* Images */
 import PathfinderDemoImg from "../assets/PFQCImg.jpg";
 import HiraganaShuffleImg from "../assets/HSImg.jpg";
+/* Icons */
 import { BiLogoReact, BiLogoTypescript, BiLogoSass } from "react-icons/bi";
 import { TbBrandFramerMotion } from "react-icons/tb";
 
@@ -58,7 +60,7 @@ const projects: Project[] = [
       "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
       "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
     ],
-    image: PortfolioWebsiteImg,
+    image: "",
     mainColor: "hsl(178, 90%, 50%)",
   },
   {
@@ -193,7 +195,7 @@ function Projects() {
         className="projects"
         style={{ backgroundImage: `url(${projects[projectIndex].image})` }}
       >
-        <div className="projects__slider-controls">
+        <div className="projects__slider-controls" style={{ color: projects[projectIndex].mainColor }}>
           <div
             className="projects__slider-controls-arrow-right"
             onClick={() =>

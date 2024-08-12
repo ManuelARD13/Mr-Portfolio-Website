@@ -163,8 +163,8 @@ function Hero() {
               </li>
             ))}
           </ul>
-          <div className="hero__features-bottom" onClick={() => (location.href = "/academics")}>
-            <p>Explore More</p>
+          <div className="hero__features-bottom">
+            <a href="/academic">Explore More</a>
           </div>
         </aside>
         <div className="hero__img rounded-corners box-shadow">
@@ -179,11 +179,11 @@ function Hero() {
             Manuel <br /> Rojas Duran
           </h1>
           <p className="hero__img-subtitle">Front-end Engineer</p>
-          <a href="#projects">
-            <button className="hero__img-button" onClick={() => (location.href = "#projects")}>Live Projects</button>
+          <a href="#about">
+            <button className="hero__img-button">My Experience</button>
           </a>
-          <a href="/academics" className="hero__img-link">
-            Academics {<MdKeyboardDoubleArrowRight />}
+          <a href="#projects" className="hero__img-link">
+            Live Projects {<MdKeyboardDoubleArrowRight />}
           </a>
         </div>
       </div>

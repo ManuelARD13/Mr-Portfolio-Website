@@ -10,7 +10,9 @@ function About() {
           <img src={profilePic} alt="about" className="about__img" />
         </div>
         <div className="about__column-2">
-          <div className="about__img-container--mobile"><img src={mobilePic} alt="about" className="about__img--mobile" /></div>
+          <div className="about__img-container--mobile">
+            <img src={mobilePic} alt="about" className="about__img--mobile" />
+          </div>
           <h3 className="about__title">Front-end Engineer</h3>
           <div className="about__description">
             <p>
@@ -25,14 +27,15 @@ function About() {
             <br />
             <br />
             <p>
-              {" "}
               Dllo dolores neque impedit omnis in veritatis animi ad illum alias
-              consequuntur numquam sapiente! Dllo dolores neque impedit omnis in veritatis animi ad illum alias
-              consequuntur numquam sapiente!
+              consequuntur numquam sapiente! Dllo dolores neque impedit omnis in
+              veritatis animi ad illum alias consequuntur numquam sapiente!
             </p>
           </div>
           <div className="about__btn">
-            <button>Lorem Ipsum</button>
+            <a href="#projects">
+              <button>Watch my work!</button>
+            </a>
           </div>
         </div>
       </div>

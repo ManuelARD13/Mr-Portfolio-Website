@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import MRPWImg from "../assets/MRPWImg.jpg";
-import PFQCImg from "../assets/PFQCImg.jpg";
-import HSImg from "../assets/HSImg.jpg";
+import PortfolioWebsiteImg from "../assets/MRPWImg.jpg";
+import PathfinderDemoImg from "../assets/PFQCImg.jpg";
+import HiraganaShuffleImg from "../assets/HSImg.jpg";
 import { BiLogoReact, BiLogoTypescript, BiLogoSass } from "react-icons/bi";
 import { TbBrandFramerMotion } from "react-icons/tb";
-//TODO: Work on a responsive padding and font sizes
+
 /*TODO: Finish Slider component:
     - adjust colored links in the slides
     - test add change slide while clicking the whole left or right side of the section
@@ -30,7 +30,7 @@ type Project = {
 const projects: Project[] = [
   {
     title:
-      "Lorem ipsum dolor, sit amet lo consectetur adipisicing elit. Itaque, harum.",
+      "Front-end Portfolio Website, o consectetur adipisicing elit. Itaque, harum.",
     subtext:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima optio facilis at necessitatibus quasi praesentium aliquam quod nam,earum exercitationem aperiam nulla dolores dolor tempora.",
     technologies: [
@@ -49,21 +49,21 @@ const projects: Project[] = [
         fugiat officia et odio vitae dolore magni.
       </p>
     ),
-    githubLink: "https://github.com",
-    liveLink: "https://github.com",
-    pageLink: "https://github.com",
+    githubLink: "https://github.com/ManuelARD13/Mr-Portfolio-Website-draft",
+    liveLink: "https://manuelrojas.tech",
+    pageLink: "https://github.com/ManuelARD13/Mr-Portfolio-Website-draft",
     mainFeatures: [
       "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
       "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
       "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
       "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
     ],
-    image: MRPWImg,
+    image: PortfolioWebsiteImg,
     mainColor: "hsl(178, 90%, 50%)",
   },
   {
     title:
-      "Lorem ipsum dolor, sit amet lo consectetur adipisicing elit. Itaque, harum.",
+      "Videogame UI DEMO, sit amet lo consectetur adipisicing elit. Itaque, harum.",
     subtext:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima optio facilis at necessitatibus quasi praesentium aliquam quod nam,earum exercitationem aperiam nulla dolores dolor tempora.",
     technologies: [
@@ -82,21 +82,21 @@ const projects: Project[] = [
         fugiat officia et odio vitae dolore magni.
       </p>
     ),
-    githubLink: "https://github.com",
-    liveLink: "https://github.com",
-    pageLink: "https://github.com",
+    githubLink: "https://github.com/ManuelARD13/pathfinders-adventures-demo",
+    liveLink: "https://pathfinders-adventures-demo-6s4r.vercel.app/",
+    pageLink: "https://github.com/ManuelARD13/pathfinders-adventures-demo",
     mainFeatures: [
       "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
       "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
       "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
       "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
     ],
-    image: PFQCImg,
+    image: PathfinderDemoImg,
     mainColor: "#CCAE27",
   },
   {
     title:
-      "Lorem ipsum dolor, sit amet lo consectetur adipisicing elit. Itaque, harum.",
+      "Japanese learning app, met lo consectetur adipisicing elit. Itaque, harum.",
     subtext:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima optio facilis at necessitatibus quasi praesentium aliquam quod nam,earum exercitationem aperiam nulla dolores dolor tempora.",
     technologies: [
@@ -115,16 +115,16 @@ const projects: Project[] = [
         fugiat officia et odio vitae dolore magni.
       </p>
     ),
-    githubLink: "https://github.com",
-    liveLink: "https://github.com",
-    pageLink: "https://github.com",
+    githubLink: "https://github.com/ManuelARD13/hiragana-shuffle-app",
+    liveLink: "https://manuelard13.github.io/hiragana-shuffle-app/",
+    pageLink: "https://github.com/ManuelARD13/hiragana-shuffle-app",
     mainFeatures: [
       "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
       "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
       "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
       "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
     ],
-    image: HSImg,
+    image: HiraganaShuffleImg,
     mainColor: "#FF5572",
   },
 ];

@@ -25,7 +25,7 @@ function DescriptionCard({className, cardInfo} : {className?: string, cardInfo: 
         </a>
       </div>
       <div className="description-card__button">
-        <button onClick={() => location.href = "/academics"}>View Details</button>
+        <a href={`/academics/${cardInfo.title}`}><button>View Details</button></a>
       </div>
     </div>
   );

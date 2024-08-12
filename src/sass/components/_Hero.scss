@@ -192,8 +192,10 @@
 @media screen and (min-width: 1050px) {
   .hero {
     position: relative;
-    display: flex;
-    flex-direction: column;
+    height: 100svh;
+    display: grid;
+    place-items: center;
+    gap: 0.5rem;
     padding-block: 0.5em 3.5em;
     gap: 0.5rem;
     &__header {
@@ -246,6 +248,14 @@
     }
     &-cards__slider-markers {
       display: flex;
+    }
+  }
+}
+
+@media screen and (min-width: 1370px) {
+  .hero {
+    &__header {
+      height: 100%;
     }
   }
 }

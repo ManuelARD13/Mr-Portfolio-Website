@@ -7,7 +7,7 @@
     display: flex;
     flex-direction: column; 
     width: 85%; 
-    padding: 3em 1.3em; 
+    padding: 3em 1.5em; 
     background-color: $background-300;
     margin: 0 auto;
     &-left {
@@ -62,7 +62,7 @@
         gap: 0.75em;
         margin-bottom: 1.5em;
         > svg {
-          font-size: 1.25rem; 
+          font-size: 1rem; 
         }
       }
     }
@@ -71,6 +71,7 @@
       justify-content: center;
       align-items: center;
       gap: 1em;
+      padding-top: 1em;
       border-top: 1px solid $accent-text;
       > svg {
         margin-left: 0.2em;
@@ -119,6 +120,7 @@
         }
       }
       &-footer {
+        padding-top: 0;
         > svg {
           font-size: 1.75rem; 
         }
@@ -126,18 +128,3 @@
     }
   }
 }
-
-// @media screen and (min-width: 1050px) and (max-width: 1370px) {
-//   .contact {
-//     &__card {
-//       &-left {
-//         h6 {
-//           translate: 30% 0%;
-//         }
-//       }
-//       &-right {
-//         font-size: 1.15rem;
-//       }
-//     }
-//   }
-// }

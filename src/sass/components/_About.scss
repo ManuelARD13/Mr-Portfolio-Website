@@ -97,13 +97,10 @@
     &__column-1 {
       position: initial;
       min-width: initial;
-      // .about__background {
-      //   height: min(100%, 725px);
-      // }
     }
     &__column-2 {
       position: initial;
-      z-index: 2;
+      z-index: 1;
       width: initial;
       height: 100%;
       padding: 4em;
@@ -128,12 +125,3 @@
     }
   }
 }
-
-// @media screen and (min-width: 1050px) and (max-width: 1370px) {
-//   .about {
-//     align-self: end;
-//     &__img {
-//       width: 265px;
-//     }
-//   }
-// }

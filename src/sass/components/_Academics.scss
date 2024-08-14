@@ -1,0 +1,76 @@
+.academics__header {
+  display: flex;
+  width: 70em;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 4em 2em;
+  &-left {
+    position: relative;
+    width: 50%;
+  }
+  &-right {
+    position: relative;
+    width: 50%;
+    min-height: 25em;
+    padding-inline: 2em 5em;
+    p {
+      max-width: 50ch;
+    }
+  }
+
+  &-featured-certification {
+    width: 70%;
+    position: relative;
+  }
+
+  &-title {
+    display: flex;
+    justify-content: space-between;
+    h1 {
+      width: 75%;
+      font-size: 3rem;
+    }
+    svg {
+      width: 25%;
+      font-size: 6rem;
+    }
+  }
+
+  &-description {
+    margin-block: 1.5em;
+    max-width: 50ch;
+  }
+
+  &-button {
+    position: absolute;
+    bottom: 7.5%;
+  }
+
+  &-slide-arrow {
+    position: absolute;
+    right: 0;
+    bottom: 50%;
+    font-size: 3rem;
+    cursor: pointer;
+  }
+}
+
+.img-1 {
+  z-index: 2;
+  top: 0%;
+  right: -25%;
+}
+
+.img-2 {
+  position: absolute;
+  z-index: 1;
+  top: 15%;
+  right: 15%;
+}
+
+.img-3 {
+  position: absolute;
+  z-index: 0;
+  top: 30%;
+  right: 25%;
+}

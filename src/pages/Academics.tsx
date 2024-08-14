@@ -34,7 +34,7 @@ function Academics() {
           <div className="academics__certifications-display-left">
             <img src={certification1} alt="" />
           </div>
-          <div className="academic__certifications-display-right">
+          <div className="academics__certifications-display-right">
             <h3>Front-end Development</h3>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, ea. Excepturi esse similique quas ducimus porro cumque ex corporis nostrum. Quos voluptates aut animi, minima optio eos debitis cupiditate possimus.</p>
           </div>
@@ -56,16 +56,16 @@ function Academics() {
             {"<"}
           </div>
           <div className="academics__certifications-selector-controls-markers">
-            <div className="academic__certifications-selector-controls-marker"></div>
-            <div className="academic__certifications-selector-controls-marker"></div>
-            <div className="academic__certifications-selector-controls-marker"></div>
-            <div className="academic__certifications-selector-controls-marker"></div>
-            <div className="academic__certifications-selector-controls-marker"></div>
-            <div className="academic__certifications-selector-controls-marker"></div>
-            <div className="academic__certifications-selector-controls-marker"></div>
+            <div className="academics__certifications-selector-controls-marker"></div>
+            <div className="academics__certifications-selector-controls-marker"></div>
+            <div className="academics__certifications-selector-controls-marker"></div>
+            <div className="academics__certifications-selector-controls-marker"></div>
+            <div className="academics__certifications-selector-controls-marker"></div>
+            <div className="academics__certifications-selector-controls-marker"></div>
+            <div className="academics__certifications-selector-controls-marker"></div>
           </div>
           <div
-            className="academics__hcertifications-selector-controls-arrow"
+            className="academics__certifications-selector-controls-arrow"
           >
             {">"}
           </div>

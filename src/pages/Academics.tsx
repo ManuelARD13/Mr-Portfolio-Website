@@ -1,12 +1,12 @@
 import Nav from "../components/Nav";
-import certification1 from "../assets/diploma-asincronismo-js.jpg";
-import { BiLogoTypescript } from "react-icons/bi";
+// import certification1 from "../assets/diploma-asincronismo-js.jpg";
+// import { BiLogoTypescript } from "react-icons/bi";
 
 function Academics() {
   return (
     <>
       <Nav />
-      <section className="academics__header">
+      {/* <section className="academics__header">
         <div className="academics__header-left">
           <img src={certification1} alt="" className="academics__featured-certification--1" />
           <img src={certification1} alt="" className="academics__featured-certification--2" />
@@ -74,8 +74,7 @@ function Academics() {
 
         </div>
         </div>
-      </section>
-
+      </section> */}
     </>
   );
 }

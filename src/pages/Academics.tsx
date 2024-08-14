@@ -1,24 +1,22 @@
-import Nav from "../components/Nav";
 import certification1 from "../assets/diploma-asincronismo-js.jpg";
 import { BiLogoTypescript } from "react-icons/bi";
 
 function Academics() {
   return (
     <>
-      <Nav />
       <section className="academics__header">
         <div className="academics__header-left">
-          <img src={certification1} alt="" className="academics__featured-certification--1" />
-          <img src={certification1} alt="" className="academics__featured-certification--2" />
-          <img src={certification1} alt="" className="academic__featured-certification--3" />
+          <img src={certification1} alt="" className="academics__header-featured-certification img-1 box-shadow" />
+          <img src={certification1} alt="" className="academics__header-featured-certification img-2 box-shadow" />
+          <img src={certification1} alt="" className="academics__header-featured-certification img-3 box-shadow" />
         </div>
-        <div className="academic__header-right">
+        <div className="academics__header-right">
           <div className="academics__header-title">
-            <h1>Lorem ipsum dolor, sit amet</h1>
+            <h1>Async with Javascript</h1>
             <BiLogoTypescript />
           </div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur doloremque vel, natus eum obcaecati ad illo labore quod cum, sed porro laborum deleniti. Eligendi sequi assumenda inventore adipisci pariatur deleniti! Blanditiis obcaecati quidem quaerat beatae praesentium repellendus, corporis molestias iste.</p>
-          <button className="academics__header-buttonn">Source</button>
+          <div className="academics__header-description"><p>Apropia los conceptos fundamentales de asincronismo con JavaScript, aplica sus diferentes estructuras y desarrolla soluciones asíncronas. ¡Amplía tus conocimientos de programación creando una landing page!</p></div>
+          <button className="academics__header-button">Source</button>
           <div
             className="academics__header-slide-arrow"
           >

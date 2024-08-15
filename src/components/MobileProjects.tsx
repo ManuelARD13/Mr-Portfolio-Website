@@ -51,9 +51,9 @@ const mobileProjects: MobileProject[] = [
         voluptates voluptatum, aperiam earum voluptatem consequuntur doloribus.
       </p>
     ),
-    githubLink: "https://github.com",
-    liveLink: "https://github.com",
-    pageLink: "https://github.com",
+    githubLink: "https://github.com/ManuelARD13/Mr-Portfolio-Website-draft",
+    liveLink: "https://manuelrojas.tech",
+    pageLink: "https://github.com/ManuelARD13/Mr-Portfolio-Website-draft",
     mainFeatures: [
       "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
       "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
@@ -84,9 +84,9 @@ const mobileProjects: MobileProject[] = [
         voluptates voluptatum, aperiam earum voluptatem consequuntur doloribus.
       </p>
     ),
-    githubLink: "https://github.com",
-    liveLink: "https://github.com",
-    pageLink: "https://github.com",
+    githubLink: "https://github.com/ManuelARD13/pathfinders-adventures-demo",
+    liveLink: "https://pathfinders-adventures-demo-6s4r.vercel.app/",
+    pageLink: "https://github.com/ManuelARD13/pathfinders-adventures-demo",
     mainFeatures: [
       "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
       "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
@@ -117,9 +117,9 @@ const mobileProjects: MobileProject[] = [
         voluptates voluptatum, aperiam earum voluptatem consequuntur doloribus.
       </p>
     ),
-    githubLink: "https://github.com",
-    liveLink: "https://github.com",
-    pageLink: "https://github.com",
+    githubLink: "https://github.com/ManuelARD13/hiragana-shuffle-app",
+    liveLink: "https://manuelard13.github.io/hiragana-shuffle-app/",
+    pageLink: "https://github.com/ManuelARD13/hiragana-shuffle-app",
     mainFeatures: [
       "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
       "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",

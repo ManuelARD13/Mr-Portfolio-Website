@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, ScrollRestoration } from "react-router-dom";
 import Home from "./pages/Home";
 import Academics from "./pages/Academics";
 import NotFound from "./pages/NotFound";
@@ -12,6 +12,7 @@ const router = createBrowserRouter([
     element: (
       <Main>
         <Home />
+        <ScrollRestoration />
       </Main>
     ),
   },
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
     element: (
       <Main>
         <Academics />
+        <ScrollRestoration />
       </Main>
     ),
   },

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+
 type menuTag = {
   title: string;
   link: string;
@@ -14,17 +15,17 @@ const menuTags: menuTag[] = [
   },
   {
     title: "About",
-    link: "#about",
+    link: "/#about",
     type: "anchor",
   },
   {
     title: "Projects",
-    link: "#projects",
+    link: "/#projects",
     type: "anchor",
   },
   {
     title: "Contact",
-    link: "#contact",
+    link: "/#contact",
     type: "anchor",
   },
   {

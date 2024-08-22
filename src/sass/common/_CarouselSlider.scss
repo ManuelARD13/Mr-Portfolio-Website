@@ -1,0 +1,88 @@
+@use "../abstracts/variables" as *;
+.slider-carousel {
+  &__container {
+    padding-block: 5em;
+  }
+  &__display {
+    display: flex;
+    gap: 1em;
+    padding: 2em 5em;
+    &-left {
+      width: 50%;
+      display: grid;
+      justify-items: end;
+      img {
+        max-width: 80%;
+      }
+    }
+    &-right {
+      width: 50%;
+      padding: 2em;
+    }
+    &-title {
+      font-weight: 900;
+      font-size: 1.75rem;
+    }
+    &-description {
+      font-size: 1rem;
+      margin-block: 1.5em 1em;
+      max-width: 50ch;
+    }
+    &-details {
+      &-list {
+        margin-left: 1.25em;
+      }
+      &-item {
+        list-style: disc;
+        font-size: 0.9rem;    
+      }
+    }
+  }
+  &__selector {
+    position: relative;
+    display: flex;
+    gap: 1em;
+    width: 60em;
+    margin: 0 auto;
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    &-slide {
+      min-width: 10em;
+      img {
+        height: 8em;
+      }
+    }
+    &-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 30%;
+      margin: 0 auto;
+      &-arrow {
+        font-size: 0.75rem;
+        transform: scaleY(1.5);
+        user-select: none;
+        cursor: pointer;
+      }
+      &-markers {
+        display: flex;
+        gap: 0.5em;
+      }
+      &-marker {
+        cursor: pointer;
+        width: 0.75rem;
+        height: 0.15rem;
+        border-radius: 1em;
+        background: rgba($hight-contrast-color, 0.5);
+      }
+    }
+      
+  }
+}
+
+.active {
+  background: $hight-contrast-color;
+  height: 0.2em ;
+}

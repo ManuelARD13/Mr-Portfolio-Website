@@ -135,32 +135,6 @@ function Projects() {
   const [projectIndex, setprojectIndex] = useState<number>(0);
   const [isMouseOver, setIsMouseOver] = useState<boolean>(false);
 
-  useEffect(() => {
-    updateTheme(projects[projectIndex].mainColor);
-    document.querySelector(".projects")?.addEventListener("mouseover", () => {
-      setIsMouseOver(true);
-    });
-    document.querySelector(".projects")?.addEventListener("mouseleave", () => {
-      setIsMouseOver(false);
-    });
-  }, [projectIndex]);
-
-  useEffect(() => {
-    if (!isMouseOver) {
-      const changeSlide = (projectIndex: number) => {
-        if (projectIndex < projects.length - 1) {
-          setprojectIndex(projectIndex + 1);
-        } else {
-          setprojectIndex(0);
-        }
-      };
-      const interval = setInterval(() => {
-        changeSlide(projectIndex);
-      }, 2500);
-      return () => clearInterval(interval);
-    }
-  }, [projectIndex, isMouseOver]);
-
   const updateTheme = (themeColor: string): void => {
     const labelTheme: HTMLElement | null = document?.getElementsByClassName(
       "projects__header-label"
@@ -189,11 +163,35 @@ function Projects() {
     boxShadowTheme?.style.setProperty("--accent-color", `${themeColor}`);
   };
 
+  useEffect(() => {
+    updateTheme(projects[projectIndex].mainColor);
+  }, [projectIndex]);
+
+  useEffect(() => {
+    if (!isMouseOver) {
+      const changeSlide = (projectIndex: number) => {
+        if (projectIndex < projects.length - 1) {
+          setprojectIndex(projectIndex + 1);
+        } else {
+          setprojectIndex(0);
+        }
+      };
+      const interval = setInterval(() => {
+        changeSlide(projectIndex);
+      }, 2500);
+      return () => clearInterval(interval);
+    }
+  }, [projectIndex, isMouseOver]);
+
+
+
   return (
     <section className="section-projects" id="projects">
       <div
         className="projects"
         style={{ backgroundImage: `url(${projects[projectIndex].image})` }}
+        onMouseOver={() => setIsMouseOver(true)}
+        onMouseLeave={() => setIsMouseOver(false)}
       >
         <div className="projects__slider-controls" style={{ color: projects[projectIndex].mainColor }}>
           <div

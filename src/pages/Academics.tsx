@@ -9,6 +9,7 @@ import {
 import GroupedSlider from "../common/GroupedSlider/GroupedSlider";
 import { useEffect, useState } from "react";
 import CarouselSlider from "../common/CarouselSlider/CarouselSlider";
+import ProjectsAccordion from "../components/ProjectsAccordion";
 
 type Certification = {
   title: string;
@@ -107,6 +108,7 @@ function Academics() {
   return (
     <>
       <section className="academics__header">
+        <div className="academics__header-mobile-title"><h1>Featured Certifications</h1></div>
         <GroupedSlider
           images={featuredCertifications.map((cert) => {
             return { src: cert.img, alt: cert.title };
@@ -139,6 +141,8 @@ function Academics() {
         </p>
         <button>Explore Live Projects</button>
       </section>
+      <ProjectsAccordion />
+     
       <CarouselSlider
         slides={certifications}
         className="academics__certifications"

@@ -7,10 +7,8 @@ import {
   BiLogoJavascript,
   BiLogoGithub,
 } from "react-icons/bi";
-/* React */
-import { useEffect, useState } from "react";
 /* Components */
-import GroupedSlider from "../common/GroupedSlider/GroupedSlider";
+import GroupedSlider from "../common/GroupSlider/GroupSlider";
 import CarouselSlider from "../common/CarouselSlider/CarouselSlider";
 /* Mobile Components */
 import ProjectsAccordion from "../components/ProjectsAccordion";
@@ -38,8 +36,6 @@ interface Certification {
   link: string;
   techIcon: JSX.Element;
 }
-
-interface FeaturedCertification extends Omit<Certification, "detailsList"> {}
 
 const certifications: Certification[] = [
   {
@@ -345,53 +341,22 @@ const certifications: Certification[] = [
 ];
 
 function Academics() {
-  const [currentSlides, setCurrentSlides] = useState<FeaturedCertification[]>(
-    filterPropertiesOfObjsInArray(certifications, "title", "img", "link", "techIcon", "description").slice(0, 3)
-  );
-
-  const reorderSlides: <T>(slides: T[]) => T[] = (slides) => {
-    if(slides.length > 2){const newSlides = [...slides];
-    const firstItem = newSlides.shift();
-    newSlides.push(firstItem!);
-    return newSlides;
-    } else {
-      return slides
-    }
-  };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlides((slides) => reorderSlides(slides));
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [currentSlides]);
-
   return (
     <>
-      <section className="academics__header">
-        <div className="academics__header-mobile-title"><h1>Featured Certifications</h1></div>
-        <GroupedSlider
-          images={currentSlides.map((cert) => {
-            return { src: cert.img, alt: cert.title };
-          }).slice(0, 3)}
-          containerClassName="academics__header-left"
-        />
-        <div className="academics__header-right">
-          <div className="academics__header-title">
-            <h1>{currentSlides[0].title}</h1>
-            {currentSlides[0].techIcon}
-          </div>
-          <div className="academics__header-description">
-            <p>{currentSlides[0].description}</p>
-          </div>
-          <a href={currentSlides[0].link} target="_blank">
-            <button className="academics__header-button">
-              Go to Course Content
-            </button>
-          </a>
-          <div className="academics__header-slide-arrow">{">"}</div>
-        </div>
-      </section>
+    
+      <GroupedSlider
+        slides={filterPropertiesOfObjsInArray(
+          certifications,
+          "title",
+          "img",
+          "link",
+          "techIcon",
+          "description"
+        ).slice(0, 3)}
+        className="academics__header"
+        withDescription
+      />
+
       <section className="academics__projects box-shadow">
         <h2>Lorem ipsum dolor sit amet</h2>
         <p>
@@ -402,14 +367,15 @@ function Academics() {
         </p>
         <button>Explore Live Projects</button>
       </section>
+
       <ProjectsAccordion />
-     
+
       <CarouselSlider
         slides={filterPropertiesOfObjsInArray(
           certifications,
           "title",
           "description",
-          "img", 
+          "img",
           "detailsList"
         )}
         className="academics__certifications"

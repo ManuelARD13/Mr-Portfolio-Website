@@ -1,15 +1,7 @@
+/* React */
 import { useEffect, useState } from "react";
-
-interface Certification {
-  title: string;
-  img: string;
-  description: string;
-  detailsList: string[];
-  link: string;
-  techIcon: JSX.Element;
-}
-
-interface FeaturedCertification extends Omit<Certification, "detailsList"> {}
+/* Types */
+import { FeaturedCertification } from "../../types";
 
 function GroupSlider({
   slides,

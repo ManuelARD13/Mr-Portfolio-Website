@@ -12,30 +12,10 @@ import GroupedSlider from "../common/GroupSlider/GroupSlider";
 import CarouselSlider from "../common/CarouselSlider/CarouselSlider";
 /* Mobile Components */
 import ProjectsAccordion from "../components/ProjectsAccordion";
-
-
-const filterPropertiesOfObjsInArray = <T, K extends keyof T>(
-  objsArray: T[],
-  ...keys: K[]
-): Pick<T, K>[] => {
-  const filteredObjsArray = objsArray.reduce((acc: Pick<T, K>[], item) => {
-    const newObj = {} as Pick<T, K>;
-    keys.forEach((key) => (newObj[key] = item[key]));
-    acc.push(newObj);
-    return acc;
-  }, [] as Pick<T, K>[]);
-
-  return filteredObjsArray;
-};
-
-interface Certification {
-  title: string;
-  img: string;
-  description: string;
-  detailsList: string[];
-  link: string;
-  techIcon: JSX.Element;
-}
+/* Types */
+import { Certification } from "../types";
+/* Type Casting Functions */
+import { filterPropertiesOfObjsInArray } from "../types/functions";
 
 const certifications: Certification[] = [
   {
@@ -343,7 +323,6 @@ const certifications: Certification[] = [
 function Academics() {
   return (
     <>
-    
       <GroupedSlider
         slides={filterPropertiesOfObjsInArray(
           certifications,

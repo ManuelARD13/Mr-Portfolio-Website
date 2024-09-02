@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import certification1 from "../../assets/diploma-asincronismo-js.jpg";
-import certification2 from "../../assets/tipos-avanzados-y-funciones-TS.jpg";
-import certification3 from "../../assets/git-y-github.jpg";
+// import certification1 from "../../assets/diploma-asincronismo-js.jpg";
+// import certification2 from "../../assets/tipos-avanzados-y-funciones-TS.jpg";
+// import certification3 from "../../assets/git-y-github.jpg";
 
 type Slide = {
   img: string;
@@ -10,209 +10,210 @@ type Slide = {
   detailsList: string[];
 };
 
-const slides: Slide[] = [
-  {
-    title: "Async with Javascript",
-    img: certification1,
-    description:
-      "Apropia los conceptos fundamentales de asincronismo con JavaScript, aplica sus diferentes estructuras y desarrolla soluciones asíncronas. ¡Amplía tus conocimientos de programación creando una landing page!",
-    detailsList: [
-      "Asincronismo en JavaScript",
-      "Promesas",
-      "Async Await",
-      "Event Loop",
-      "Promise.all",
-    ],
-  },
-  {
-    title: "Advanced Types and Functions",
-    img: certification2,
-    description:
-      "Aprende los conceptos de tipos avanzados y funciones de TypeScript y crea aplicaciones de escritorio y web de forma sencilla.",
-    detailsList: [
-      "Tipos avanzados",
-      "Funciones",
-      "Generics",
-      "Interfaces",
-      "Clases",
-    ],
-  },
-  {
-    title: "Professional Git & Github",
-    img: certification3,
-    description:
-      "Aprende a trabajar con Git y Github, un sistema de control de versiones de software para el desarrollo de código.",
-    detailsList: ["Git", "Github", "Git Flow"],
-  },
-  {
-    title: "Async with Javascript",
-    img: certification1,
-    description:
-      "Apropia los conceptos fundamentales de asincronismo con JavaScript, aplica sus diferentes estructuras y desarrolla soluciones asíncronas. ¡Amplía tus conocimientos de programación creando una landing page!",
-    detailsList: [
-      "Asincronismo en JavaScript",
-      "Promesas",
-      "Async Await",
-      "Event Loop",
-      "Promise.all",
-    ],
-  },
-  {
-    title: "Advanced Types and Functions",
-    img: certification2,
-    description:
-      "Aprende los conceptos de tipos avanzados y funciones de TypeScript y crea aplicaciones de escritorio y web de forma sencilla.",
-    detailsList: [
-      "Tipos avanzados",
-      "Funciones",
-      "Generics",
-      "Interfaces",
-      "Clases",
-    ],
-  },
-  {
-    title: "Professional Git & Github",
-    img: certification3,
-    description:
-      "Aprende a trabajar con Git y Github, un sistema de control de versiones de software para el desarrollo de código.",
-    detailsList: ["Git", "Github", "Git Flow"],
-  },
-  {
-    title: "Async with Javascript",
-    img: certification1,
-    description:
-      "Apropia los conceptos fundamentales de asincronismo con JavaScript, aplica sus diferentes estructuras y desarrolla soluciones asíncronas. ¡Amplía tus conocimientos de programación creando una landing page!",
-    detailsList: [
-      "Asincronismo en JavaScript",
-      "Promesas",
-      "Async Await",
-      "Event Loop",
-      "Promise.all",
-    ],
-  },
-  {
-    title: "Advanced Types and Functions",
-    img: certification2,
-    description:
-      "Aprende los conceptos de tipos avanzados y funciones de TypeScript y crea aplicaciones de escritorio y web de forma sencilla.",
-    detailsList: [
-      "Tipos avanzados",
-      "Funciones",
-      "Generics",
-      "Interfaces",
-      "Clases",
-    ],
-  },
-  {
-    title: "Professional Git & Github",
-    img: certification3,
-    description:
-      "Aprende a trabajar con Git y Github, un sistema de control de versiones de software para el desarrollo de código.",
-    detailsList: ["Git", "Github", "Git Flow"],
-  },
-  {
-    title: "Async with Javascript",
-    img: certification1,
-    description:
-      "Apropia los conceptos fundamentales de asincronismo con JavaScript, aplica sus diferentes estructuras y desarrolla soluciones asíncronas. ¡Amplía tus conocimientos de programación creando una landing page!",
-    detailsList: [
-      "Asincronismo en JavaScript",
-      "Promesas",
-      "Async Await",
-      "Event Loop",
-      "Promise.all",
-    ],
-  },
-  {
-    title: "Advanced Types and Functions",
-    img: certification2,
-    description:
-      "Aprende los conceptos de tipos avanzados y funciones de TypeScript y crea aplicaciones de escritorio y web de forma sencilla.",
-    detailsList: [
-      "Tipos avanzados",
-      "Funciones",
-      "Generics",
-      "Interfaces",
-      "Clases",
-    ],
-  },
-  {
-    title: "Professional Git & Github",
-    img: certification3,
-    description:
-      "Aprende a trabajar con Git y Github, un sistema de control de versiones de software para el desarrollo de código.",
-    detailsList: ["Git", "Github", "Git Flow"],
-  },
-  {
-    title: "Async with Javascript",
-    img: certification1,
-    description:
-      "Apropia los conceptos fundamentales de asincronismo con JavaScript, aplica sus diferentes estructuras y desarrolla soluciones asíncronas. ¡Amplía tus conocimientos de programación creando una landing page!",
-    detailsList: [
-      "Asincronismo en JavaScript",
-      "Promesas",
-      "Async Await",
-      "Event Loop",
-      "Promise.all",
-    ],
-  },
-  {
-    title: "Advanced Types and Functions",
-    img: certification2,
-    description:
-      "Aprende los conceptos de tipos avanzados y funciones de TypeScript y crea aplicaciones de escritorio y web de forma sencilla.",
-    detailsList: [
-      "Tipos avanzados",
-      "Funciones",
-      "Generics",
-      "Interfaces",
-      "Clases",
-    ],
-  },
-  {
-    title: "Professional Git & Github",
-    img: certification3,
-    description:
-      "Aprende a trabajar con Git y Github, un sistema de control de versiones de software para el desarrollo de código.",
-    detailsList: ["Git", "Github", "Git Flow"],
-  },
-  {
-    title: "Async with Javascript",
-    img: certification1,
-    description:
-      "Apropia los conceptos fundamentales de asincronismo con JavaScript, aplica sus diferentes estructuras y desarrolla soluciones asíncronas. ¡Amplía tus conocimientos de programación creando una landing page!",
-    detailsList: [
-      "Asincronismo en JavaScript",
-      "Promesas",
-      "Async Await",
-      "Event Loop",
-      "Promise.all",
-    ],
-  },
-  {
-    title: "Advanced Types and Functions",
-    img: certification2,
-    description:
-      "Aprende los conceptos de tipos avanzados y funciones de TypeScript y crea aplicaciones de escritorio y web de forma sencilla.",
-    detailsList: [
-      "Tipos avanzados",
-      "Funciones",
-      "Generics",
-      "Interfaces",
-      "Clases",
-    ],
-  },
-  {
-    title: "Professional Git & Github",
-    img: certification3,
-    description:
-      "Aprende a trabajar con Git y Github, un sistema de control de versiones de software para el desarrollo de código.",
-    detailsList: ["Git", "Github", "Git Flow"],
-  },
-];
+// const slides: Slide[] = [
+//   {
+//     title: "Async with Javascript",
+//     img: certification1,
+//     description:
+//       "Apropia los conceptos fundamentales de asincronismo con JavaScript, aplica sus diferentes estructuras y desarrolla soluciones asíncronas. ¡Amplía tus conocimientos de programación creando una landing page!",
+//     detailsList: [
+//       "Asincronismo en JavaScript",
+//       "Promesas",
+//       "Async Await",
+//       "Event Loop",
+//       "Promise.all",
+//     ],
+//   },
+//   {
+//     title: "Advanced Types and Functions",
+//     img: certification2,
+//     description:
+//       "Aprende los conceptos de tipos avanzados y funciones de TypeScript y crea aplicaciones de escritorio y web de forma sencilla.",
+//     detailsList: [
+//       "Tipos avanzados",
+//       "Funciones",
+//       "Generics",
+//       "Interfaces",
+//       "Clases",
+//     ],
+//   },
+//   {
+//     title: "Professional Git & Github",
+//     img: certification3,
+//     description:
+//       "Aprende a trabajar con Git y Github, un sistema de control de versiones de software para el desarrollo de código.",
+//     detailsList: ["Git", "Github", "Git Flow"],
+//   },
+//   {
+//     title: "Async with Javascript",
+//     img: certification1,
+//     description:
+//       "Apropia los conceptos fundamentales de asincronismo con JavaScript, aplica sus diferentes estructuras y desarrolla soluciones asíncronas. ¡Amplía tus conocimientos de programación creando una landing page!",
+//     detailsList: [
+//       "Asincronismo en JavaScript",
+//       "Promesas",
+//       "Async Await",
+//       "Event Loop",
+//       "Promise.all",
+//     ],
+//   },
+//   {
+//     title: "Advanced Types and Functions",
+//     img: certification2,
+//     description:
+//       "Aprende los conceptos de tipos avanzados y funciones de TypeScript y crea aplicaciones de escritorio y web de forma sencilla.",
+//     detailsList: [
+//       "Tipos avanzados",
+//       "Funciones",
+//       "Generics",
+//       "Interfaces",
+//       "Clases",
+//     ],
+//   },
+//   {
+//     title: "Professional Git & Github",
+//     img: certification3,
+//     description:
+//       "Aprende a trabajar con Git y Github, un sistema de control de versiones de software para el desarrollo de código.",
+//     detailsList: ["Git", "Github", "Git Flow"],
+//   },
+//   {
+//     title: "Async with Javascript",
+//     img: certification1,
+//     description:
+//       "Apropia los conceptos fundamentales de asincronismo con JavaScript, aplica sus diferentes estructuras y desarrolla soluciones asíncronas. ¡Amplía tus conocimientos de programación creando una landing page!",
+//     detailsList: [
+//       "Asincronismo en JavaScript",
+//       "Promesas",
+//       "Async Await",
+//       "Event Loop",
+//       "Promise.all",
+//     ],
+//   },
+//   {
+//     title: "Advanced Types and Functions",
+//     img: certification2,
+//     description:
+//       "Aprende los conceptos de tipos avanzados y funciones de TypeScript y crea aplicaciones de escritorio y web de forma sencilla.",
+//     detailsList: [
+//       "Tipos avanzados",
+//       "Funciones",
+//       "Generics",
+//       "Interfaces",
+//       "Clases",
+//     ],
+//   },
+//   {
+//     title: "Professional Git & Github",
+//     img: certification3,
+//     description:
+//       "Aprende a trabajar con Git y Github, un sistema de control de versiones de software para el desarrollo de código.",
+//     detailsList: ["Git", "Github", "Git Flow"],
+//   },
+//   {
+//     title: "Async with Javascript",
+//     img: certification1,
+//     description:
+//       "Apropia los conceptos fundamentales de asincronismo con JavaScript, aplica sus diferentes estructuras y desarrolla soluciones asíncronas. ¡Amplía tus conocimientos de programación creando una landing page!",
+//     detailsList: [
+//       "Asincronismo en JavaScript",
+//       "Promesas",
+//       "Async Await",
+//       "Event Loop",
+//       "Promise.all",
+//     ],
+//   },
+//   {
+//     title: "Advanced Types and Functions",
+//     img: certification2,
+//     description:
+//       "Aprende los conceptos de tipos avanzados y funciones de TypeScript y crea aplicaciones de escritorio y web de forma sencilla.",
+//     detailsList: [
+//       "Tipos avanzados",
+//       "Funciones",
+//       "Generics",
+//       "Interfaces",
+//       "Clases",
+//     ],
+//   },
+//   {
+//     title: "Professional Git & Github",
+//     img: certification3,
+//     description:
+//       "Aprende a trabajar con Git y Github, un sistema de control de versiones de software para el desarrollo de código.",
+//     detailsList: ["Git", "Github", "Git Flow"],
+//   },
+//   {
+//     title: "Async with Javascript",
+//     img: certification1,
+//     description:
+//       "Apropia los conceptos fundamentales de asincronismo con JavaScript, aplica sus diferentes estructuras y desarrolla soluciones asíncronas. ¡Amplía tus conocimientos de programación creando una landing page!",
+//     detailsList: [
+//       "Asincronismo en JavaScript",
+//       "Promesas",
+//       "Async Await",
+//       "Event Loop",
+//       "Promise.all",
+//     ],
+//   },
+//   {
+//     title: "Advanced Types and Functions",
+//     img: certification2,
+//     description:
+//       "Aprende los conceptos de tipos avanzados y funciones de TypeScript y crea aplicaciones de escritorio y web de forma sencilla.",
+//     detailsList: [
+//       "Tipos avanzados",
+//       "Funciones",
+//       "Generics",
+//       "Interfaces",
+//       "Clases",
+//     ],
+//   },
+//   {
+//     title: "Professional Git & Github",
+//     img: certification3,
+//     description:
+//       "Aprende a trabajar con Git y Github, un sistema de control de versiones de software para el desarrollo de código.",
+//     detailsList: ["Git", "Github", "Git Flow"],
+//   },
+//   {
+//     title: "Async with Javascript",
+//     img: certification1,
+//     description:
+//       "Apropia los conceptos fundamentales de asincronismo con JavaScript, aplica sus diferentes estructuras y desarrolla soluciones asíncronas. ¡Amplía tus conocimientos de programación creando una landing page!",
+//     detailsList: [
+//       "Asincronismo en JavaScript",
+//       "Promesas",
+//       "Async Await",
+//       "Event Loop",
+//       "Promise.all",
+//     ],
+//   },
+//   {
+//     title: "Advanced Types and Functions",
+//     img: certification2,
+//     description:
+//       "Aprende los conceptos de tipos avanzados y funciones de TypeScript y crea aplicaciones de escritorio y web de forma sencilla.",
+//     detailsList: [
+//       "Tipos avanzados",
+//       "Funciones",
+//       "Generics",
+//       "Interfaces",
+//       "Clases",
+//     ],
+//   },
+//   {
+//     title: "Professional Git & Github",
+//     img: certification3,
+//     description:
+//       "Aprende a trabajar con Git y Github, un sistema de control de versiones de software para el desarrollo de código.",
+//     detailsList: ["Git", "Github", "Git Flow"],
+//   },
+// ];
 
 function CarouselSlider({
-  className,
+  slides,
+  className
 }: {
   slides: Slide[];
   className?: string;
@@ -224,8 +225,7 @@ function CarouselSlider({
     indexMax: 6,
   });
   const [isMouseOver, setIsMouseOver] = useState<boolean>(false);
-
-
+  
   const handleSelectSlide = (event: React.MouseEvent<HTMLElement>) => {
     const target = event.target as HTMLElement;
     const elementId = target.id;
@@ -251,33 +251,34 @@ function CarouselSlider({
   };
 
   useEffect(() => {
-    if(!isMouseOver){const changeSlide = () => {
-      if (indexBounderies.indexMax < slides.length) {
-        setIndexBounderies({
-          ...indexBounderies,
-          indexMin: indexBounderies.indexMin + 1,
-          indexMax: indexBounderies.indexMax + 1,
-        });
-      } else {
-        setIndexBounderies({
-          ...indexBounderies,
-          indexMin: 0,
-          indexMax: 6,
-        });
-      }
-    };
-    const interval = setInterval(() => {
-      changeSlide();
-    }, 2500);
-    return () => clearInterval(interval);
-  }
-  }, [indexBounderies, isMouseOver]);
+    if (!isMouseOver) {
+      const changeSlide = () => {
+        if (indexBounderies.indexMax < slides.length) {
+          setIndexBounderies({
+            ...indexBounderies,
+            indexMin: indexBounderies.indexMin + 1,
+            indexMax: indexBounderies.indexMax + 1,
+          });
+        } else {
+          setIndexBounderies({
+            ...indexBounderies,
+            indexMin: 0,
+            indexMax: 6,
+          });
+        }
+      };
+      const interval = setInterval(() => {
+        changeSlide();
+      }, 2500);
+      return () => clearInterval(interval);
+    }
+  }, [indexBounderies, isMouseOver, slides.length]);
 
   useEffect(() => {
     setSlicedSlides(
       slides.slice(indexBounderies.indexMin, indexBounderies.indexMax)
     );
-  }, [indexBounderies]);
+  }, [indexBounderies, slides]);
 
   return (
     <div className={`slider-carousel__container ${className}`}>
@@ -304,7 +305,11 @@ function CarouselSlider({
           </ul>
         </div>
       </div>
-      <div className="slider-carousel__selector" onMouseOver={() => setIsMouseOver(true)} onMouseLeave={() => setIsMouseOver(false)}>
+      <div
+        className="slider-carousel__selector"
+        onMouseOver={() => setIsMouseOver(true)}
+        onMouseLeave={() => setIsMouseOver(false)}
+      >
         {slicedSlides.map((slide, index) => (
           <div key={index} className={`slider-carousel__selector-slide`}>
             <img

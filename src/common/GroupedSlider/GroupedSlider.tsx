@@ -14,11 +14,10 @@ function GroupedSlider({
 }) {
   const [currentSlides, setCurrentSlides] = useState<SliderImage[]>(images);
 
-  const reorderSlides = (slides: SliderImage[]) => {
+  const reorderSlides: <T>(slides: T[]) => T[] = (slides) => {
     const newSlides = [...slides];
     const firstItem = newSlides.shift();
-    if (!firstItem) return [{ src: "", alt: "" }];
-    newSlides.push(firstItem);
+    newSlides.push(firstItem!);
     return newSlides;
   };
 

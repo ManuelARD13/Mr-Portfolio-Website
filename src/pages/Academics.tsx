@@ -1,3 +1,4 @@
+/* Certifications List assets (Move to a Global Context) */
 import certification1 from "../assets/diploma-asincronismo-js.jpg";
 import certification2 from "../assets/tipos-avanzados-y-funciones-TS.jpg";
 import certification3 from "../assets/git-y-github.jpg";
@@ -6,47 +7,41 @@ import {
   BiLogoJavascript,
   BiLogoGithub,
 } from "react-icons/bi";
-import GroupedSlider from "../common/GroupedSlider/GroupedSlider";
+/* React */
 import { useEffect, useState } from "react";
+/* Components */
+import GroupedSlider from "../common/GroupedSlider/GroupedSlider";
 import CarouselSlider from "../common/CarouselSlider/CarouselSlider";
+/* Mobile Components */
 import ProjectsAccordion from "../components/ProjectsAccordion";
 
-type Certification = {
+
+const filterPropertiesOfObjsInArray = <T, K extends keyof T>(
+  objsArray: T[],
+  ...keys: K[]
+): Pick<T, K>[] => {
+  const filteredObjsArray = objsArray.reduce((acc: Pick<T, K>[], item) => {
+    const newObj = {} as Pick<T, K>;
+    keys.forEach((key) => (newObj[key] = item[key]));
+    acc.push(newObj);
+    return acc;
+  }, [] as Pick<T, K>[]);
+
+  return filteredObjsArray;
+};
+
+interface Certification {
   title: string;
   img: string;
   description: string;
+  detailsList: string[];
   link: string;
   techIcon: JSX.Element;
-};
+}
 
-const featuredCertifications: Certification[] = [
-  {
-    title: "Async with Javascript",
-    img: certification1,
-    description:
-      "Apropia los conceptos fundamentales de asincronismo con JavaScript, aplica sus diferentes estructuras y desarrolla soluciones asíncronas. ¡Amplía tus conocimientos de programación creando una landing page!",
-    link: "https://platzi.com/cursos/asincronismo-js/",
-    techIcon: <BiLogoJavascript />,
-  },
-  {
-    title: "Advanced Types and Functions",
-    img: certification2,
-    description:
-      "Aprende los conceptos de tipos avanzados y funciones de TypeScript y crea aplicaciones de escritorio y web de forma sencilla.",
-    link: "https://platzi.com/cursos/typescript-tipos-avanzados/",
-    techIcon: <BiLogoTypescript />,
-  },
-  {
-    title: "Professional Git & Github",
-    img: certification3,
-    description:
-      "Aprende a trabajar con Git y Github, un sistema de control de versiones de software para el desarrollo de código.",
-    link: "https://platzi.com/cursos/git-github/",
-    techIcon: <BiLogoGithub />,
-  },
-];
+interface FeaturedCertification extends Omit<Certification, "detailsList"> {}
 
-const certifications = [
+const certifications: Certification[] = [
   {
     title: "Async with Javascript",
     img: certification1,
@@ -59,43 +54,309 @@ const certifications = [
       "Event Loop",
       "Promise.all",
     ],
+    link: "https://platzi.com/cursos/asincronismo-js/",
+    techIcon: <BiLogoJavascript />,
   },
   {
-    title: "Advanced Types and Functions",
+    title: "Async with Javascript",
     img: certification2,
     description:
-      "Aprende los conceptos de tipos avanzados y funciones de TypeScript y crea aplicaciones de escritorio y web de forma sencilla.",
+      "Apropia los conceptos fundamentales de asincronismo con JavaScript, aplica sus diferentes estructuras y desarrolla soluciones asíncronas. ¡Amplía tus conocimientos de programación creando una landing page!",
     detailsList: [
-      "Tipos avanzados",
-      "Funciones",
-      "Generics",
-      "Interfaces",
-      "Clases",
+      "Asincronismo en JavaScript",
+      "Promesas",
+      "Async Await",
+      "Event Loop",
+      "Promise.all",
     ],
+    link: "https://platzi.com/cursos/asincronismo-js/",
+    techIcon: <BiLogoTypescript />,
   },
   {
-    title: "Professional Git & Github",
+    title: "Async with Javascript",
     img: certification3,
     description:
-      "Aprende a trabajar con Git y Github, un sistema de control de versiones de software para el desarrollo de código.",
-    detailsList: ["Git", "Github", "Git Flow"],
+      "Apropia los conceptos fundamentales de asincronismo con JavaScript, aplica sus diferentes estructuras y desarrolla soluciones asíncronas. ¡Amplía tus conocimientos de programación creando una landing page!",
+    detailsList: [
+      "Asincronismo en JavaScript",
+      "Promesas",
+      "Async Await",
+      "Event Loop",
+      "Promise.all",
+    ],
+    link: "https://platzi.com/cursos/asincronismo-js/",
+    techIcon: <BiLogoGithub />,
+  },
+  {
+    title: "Async with Javascript",
+    img: certification1,
+    description:
+      "Apropia los conceptos fundamentales de asincronismo con JavaScript, aplica sus diferentes estructuras y desarrolla soluciones asíncronas. ¡Amplía tus conocimientos de programación creando una landing page!",
+    detailsList: [
+      "Asincronismo en JavaScript",
+      "Promesas",
+      "Async Await",
+      "Event Loop",
+      "Promise.all",
+    ],
+    link: "https://platzi.com/cursos/asincronismo-js/",
+    techIcon: <BiLogoJavascript />,
+  },
+  {
+    title: "Async with Javascript",
+    img: certification1,
+    description:
+      "Apropia los conceptos fundamentales de asincronismo con JavaScript, aplica sus diferentes estructuras y desarrolla soluciones asíncronas. ¡Amplía tus conocimientos de programación creando una landing page!",
+    detailsList: [
+      "Asincronismo en JavaScript",
+      "Promesas",
+      "Async Await",
+      "Event Loop",
+      "Promise.all",
+    ],
+    link: "https://platzi.com/cursos/asincronismo-js/",
+    techIcon: <BiLogoJavascript />,
+  },
+  {
+    title: "Async with Javascript",
+    img: certification2,
+    description:
+      "Apropia los conceptos fundamentales de asincronismo con JavaScript, aplica sus diferentes estructuras y desarrolla soluciones asíncronas. ¡Amplía tus conocimientos de programación creando una landing page!",
+    detailsList: [
+      "Asincronismo en JavaScript",
+      "Promesas",
+      "Async Await",
+      "Event Loop",
+      "Promise.all",
+    ],
+    link: "https://platzi.com/cursos/asincronismo-js/",
+    techIcon: <BiLogoTypescript />,
+  },
+  {
+    title: "Async with Javascript",
+    img: certification3,
+    description:
+      "Apropia los conceptos fundamentales de asincronismo con JavaScript, aplica sus diferentes estructuras y desarrolla soluciones asíncronas. ¡Amplía tus conocimientos de programación creando una landing page!",
+    detailsList: [
+      "Asincronismo en JavaScript",
+      "Promesas",
+      "Async Await",
+      "Event Loop",
+      "Promise.all",
+    ],
+    link: "https://platzi.com/cursos/asincronismo-js/",
+    techIcon: <BiLogoGithub />,
+  },
+  {
+    title: "Async with Javascript",
+    img: certification1,
+    description:
+      "Apropia los conceptos fundamentales de asincronismo con JavaScript, aplica sus diferentes estructuras y desarrolla soluciones asíncronas. ¡Amplía tus conocimientos de programación creando una landing page!",
+    detailsList: [
+      "Asincronismo en JavaScript",
+      "Promesas",
+      "Async Await",
+      "Event Loop",
+      "Promise.all",
+    ],
+    link: "https://platzi.com/cursos/asincronismo-js/",
+    techIcon: <BiLogoJavascript />,
+  },
+  {
+    title: "Async with Javascript",
+    img: certification1,
+    description:
+      "Apropia los conceptos fundamentales de asincronismo con JavaScript, aplica sus diferentes estructuras y desarrolla soluciones asíncronas. ¡Amplía tus conocimientos de programación creando una landing page!",
+    detailsList: [
+      "Asincronismo en JavaScript",
+      "Promesas",
+      "Async Await",
+      "Event Loop",
+      "Promise.all",
+    ],
+    link: "https://platzi.com/cursos/asincronismo-js/",
+    techIcon: <BiLogoJavascript />,
+  },
+  {
+    title: "Async with Javascript",
+    img: certification2,
+    description:
+      "Apropia los conceptos fundamentales de asincronismo con JavaScript, aplica sus diferentes estructuras y desarrolla soluciones asíncronas. ¡Amplía tus conocimientos de programación creando una landing page!",
+    detailsList: [
+      "Asincronismo en JavaScript",
+      "Promesas",
+      "Async Await",
+      "Event Loop",
+      "Promise.all",
+    ],
+    link: "https://platzi.com/cursos/asincronismo-js/",
+    techIcon: <BiLogoTypescript />,
+  },
+  {
+    title: "Async with Javascript",
+    img: certification3,
+    description:
+      "Apropia los conceptos fundamentales de asincronismo con JavaScript, aplica sus diferentes estructuras y desarrolla soluciones asíncronas. ¡Amplía tus conocimientos de programación creando una landing page!",
+    detailsList: [
+      "Asincronismo en JavaScript",
+      "Promesas",
+      "Async Await",
+      "Event Loop",
+      "Promise.all",
+    ],
+    link: "https://platzi.com/cursos/asincronismo-js/",
+    techIcon: <BiLogoGithub />,
+  },
+  {
+    title: "Async with Javascript",
+    img: certification1,
+    description:
+      "Apropia los conceptos fundamentales de asincronismo con JavaScript, aplica sus diferentes estructuras y desarrolla soluciones asíncronas. ¡Amplía tus conocimientos de programación creando una landing page!",
+    detailsList: [
+      "Asincronismo en JavaScript",
+      "Promesas",
+      "Async Await",
+      "Event Loop",
+      "Promise.all",
+    ],
+    link: "https://platzi.com/cursos/asincronismo-js/",
+    techIcon: <BiLogoJavascript />,
+  },
+  {
+    title: "Async with Javascript",
+    img: certification1,
+    description:
+      "Apropia los conceptos fundamentales de asincronismo con JavaScript, aplica sus diferentes estructuras y desarrolla soluciones asíncronas. ¡Amplía tus conocimientos de programación creando una landing page!",
+    detailsList: [
+      "Asincronismo en JavaScript",
+      "Promesas",
+      "Async Await",
+      "Event Loop",
+      "Promise.all",
+    ],
+    link: "https://platzi.com/cursos/asincronismo-js/",
+    techIcon: <BiLogoJavascript />,
+  },
+  {
+    title: "Async with Javascript",
+    img: certification2,
+    description:
+      "Apropia los conceptos fundamentales de asincronismo con JavaScript, aplica sus diferentes estructuras y desarrolla soluciones asíncronas. ¡Amplía tus conocimientos de programación creando una landing page!",
+    detailsList: [
+      "Asincronismo en JavaScript",
+      "Promesas",
+      "Async Await",
+      "Event Loop",
+      "Promise.all",
+    ],
+    link: "https://platzi.com/cursos/asincronismo-js/",
+    techIcon: <BiLogoTypescript />,
+  },
+  {
+    title: "Async with Javascript",
+    img: certification3,
+    description:
+      "Apropia los conceptos fundamentales de asincronismo con JavaScript, aplica sus diferentes estructuras y desarrolla soluciones asíncronas. ¡Amplía tus conocimientos de programación creando una landing page!",
+    detailsList: [
+      "Asincronismo en JavaScript",
+      "Promesas",
+      "Async Await",
+      "Event Loop",
+      "Promise.all",
+    ],
+    link: "https://platzi.com/cursos/asincronismo-js/",
+    techIcon: <BiLogoGithub />,
+  },
+  {
+    title: "Async with Javascript",
+    img: certification1,
+    description:
+      "Apropia los conceptos fundamentales de asincronismo con JavaScript, aplica sus diferentes estructuras y desarrolla soluciones asíncronas. ¡Amplía tus conocimientos de programación creando una landing page!",
+    detailsList: [
+      "Asincronismo en JavaScript",
+      "Promesas",
+      "Async Await",
+      "Event Loop",
+      "Promise.all",
+    ],
+    link: "https://platzi.com/cursos/asincronismo-js/",
+    techIcon: <BiLogoJavascript />,
+  },
+  {
+    title: "Async with Javascript",
+    img: certification1,
+    description:
+      "Apropia los conceptos fundamentales de asincronismo con JavaScript, aplica sus diferentes estructuras y desarrolla soluciones asíncronas. ¡Amplía tus conocimientos de programación creando una landing page!",
+    detailsList: [
+      "Asincronismo en JavaScript",
+      "Promesas",
+      "Async Await",
+      "Event Loop",
+      "Promise.all",
+    ],
+    link: "https://platzi.com/cursos/asincronismo-js/",
+    techIcon: <BiLogoJavascript />,
+  },
+  {
+    title: "Async with Javascript",
+    img: certification2,
+    description:
+      "Apropia los conceptos fundamentales de asincronismo con JavaScript, aplica sus diferentes estructuras y desarrolla soluciones asíncronas. ¡Amplía tus conocimientos de programación creando una landing page!",
+    detailsList: [
+      "Asincronismo en JavaScript",
+      "Promesas",
+      "Async Await",
+      "Event Loop",
+      "Promise.all",
+    ],
+    link: "https://platzi.com/cursos/asincronismo-js/",
+    techIcon: <BiLogoTypescript />,
+  },
+  {
+    title: "Async with Javascript",
+    img: certification3,
+    description:
+      "Apropia los conceptos fundamentales de asincronismo con JavaScript, aplica sus diferentes estructuras y desarrolla soluciones asíncronas. ¡Amplía tus conocimientos de programación creando una landing page!",
+    detailsList: [
+      "Asincronismo en JavaScript",
+      "Promesas",
+      "Async Await",
+      "Event Loop",
+      "Promise.all",
+    ],
+    link: "https://platzi.com/cursos/asincronismo-js/",
+    techIcon: <BiLogoGithub />,
+  },
+  {
+    title: "Async with Javascript",
+    img: certification1,
+    description:
+      "Apropia los conceptos fundamentales de asincronismo con JavaScript, aplica sus diferentes estructuras y desarrolla soluciones asíncronas. ¡Amplía tus conocimientos de programación creando una landing page!",
+    detailsList: [
+      "Asincronismo en JavaScript",
+      "Promesas",
+      "Async Await",
+      "Event Loop",
+      "Promise.all",
+    ],
+    link: "https://platzi.com/cursos/asincronismo-js/",
+    techIcon: <BiLogoJavascript />,
   },
 ];
 
 function Academics() {
-  const [currentSlides, setCurrentSlides] = useState<Certification[]>(
-    featuredCertifications
+  const [currentSlides, setCurrentSlides] = useState<FeaturedCertification[]>(
+    filterPropertiesOfObjsInArray(certifications, "title", "img", "link", "techIcon", "description").slice(0, 3)
   );
 
-  const reorderSlides = (slides: Certification[]) => {
-    const newSlides = [...slides];
+  const reorderSlides: <T>(slides: T[]) => T[] = (slides) => {
+    if(slides.length > 2){const newSlides = [...slides];
     const firstItem = newSlides.shift();
-    if (!firstItem)
-      return [
-        { title: "", img: "", description: "", link: "", techIcon: <></> },
-      ];
-    newSlides.push(firstItem);
+    newSlides.push(firstItem!);
     return newSlides;
+    } else {
+      return slides
+    }
   };
 
   useEffect(() => {
@@ -110,9 +371,9 @@ function Academics() {
       <section className="academics__header">
         <div className="academics__header-mobile-title"><h1>Featured Certifications</h1></div>
         <GroupedSlider
-          images={featuredCertifications.map((cert) => {
+          images={currentSlides.map((cert) => {
             return { src: cert.img, alt: cert.title };
-          })}
+          }).slice(0, 3)}
           containerClassName="academics__header-left"
         />
         <div className="academics__header-right">
@@ -144,7 +405,13 @@ function Academics() {
       <ProjectsAccordion />
      
       <CarouselSlider
-        slides={certifications}
+        slides={filterPropertiesOfObjsInArray(
+          certifications,
+          "title",
+          "description",
+          "img", 
+          "detailsList"
+        )}
         className="academics__certifications"
       />
     </>

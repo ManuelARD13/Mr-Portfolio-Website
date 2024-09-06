@@ -1,138 +1,12 @@
-import {
-  BiLogoReact,
-  BiLogoSass,
-  BiLogoTypescript,
-  BiLogoGithub,
-} from "react-icons/bi";
-import CustomIcon from "../common/CustomIcon";
-import { TbBrandFramerMotion } from "react-icons/tb";
+/* Components */
+import CustomIcon from "@common/CustomIcon";
+/*Icons*/
+import { BiLogoGithub } from "react-icons/bi";
 import { CgFileDocument } from "react-icons/cg";
+/* Types */
+import { Project } from "../types";
 
-import MRPWImg from "../assets/MRPWImg.jpg";
-import MRPWLogo from "../assets/Mr-logo-removebg-preview.png";
-import PFQCImg from "../assets/PFQCImg.jpg";
-import PFQCLogo from "../assets/pathfinderLogo.png";
-import HSImg from "../assets/HSImg.jpg";
-import HSLogo from "../assets/hiragana-shuffle-logo-removebg-preview.png";
-
-type MobileProject = {
-  title: string;
-  subtext: string;
-  technologies: JSX.Element[];
-  description: JSX.Element;
-  githubLink: string;
-  liveLink: string;
-  pageLink: string;
-  mainFeatures: string[];
-  image: string;
-  logo: string;
-  mainColor: string;
-  secondaryColor?: string;
-};
-
-const mobileProjects: MobileProject[] = [
-  {
-    title: "Web Dev Portfolio Website",
-    subtext:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima optio facilis at necessitatibus quasi praesentium aliquam quod nam,earum exercitationem aperiam nulla dolores dolor tempora.",
-    technologies: [
-      <BiLogoReact />,
-      <BiLogoTypescript />,
-      <BiLogoSass />,
-      <TbBrandFramerMotion />,
-    ],
-    description: (
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
-        voluptates voluptatum, aperiam earum voluptatem consequuntur
-        <br />
-        <br />
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
-        voluptates voluptatum, aperiam earum voluptatem consequuntur doloribus.
-      </p>
-    ),
-    githubLink: "https://github.com",
-    liveLink: "https://github.com",
-    pageLink: "https://github.com",
-    mainFeatures: [
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-    ],
-    image: MRPWImg,
-    logo: MRPWLogo,
-    mainColor: "hsl(178, 90%, 50%)",
-  },
-  {
-    title: "Videogame Interface DEMO",
-    subtext:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima optio facilis at necessitatibus quasi praesentium aliquam quod nam,earum exercitationem aperiam nulla dolores dolor tempora.",
-    technologies: [
-      <BiLogoReact />,
-      <BiLogoTypescript />,
-      <BiLogoSass />,
-      <TbBrandFramerMotion />,
-    ],
-    description: (
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
-        voluptates voluptatum, aperiam earum voluptatem consequuntur
-        <br />
-        <br />
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
-        voluptates voluptatum, aperiam earum voluptatem consequuntur doloribus.
-      </p>
-    ),
-    githubLink: "https://github.com",
-    liveLink: "https://github.com",
-    pageLink: "https://github.com",
-    mainFeatures: [
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-    ],
-    image: PFQCImg,
-    logo: PFQCLogo,
-    mainColor: "#CCAE27",
-  },
-  {
-    title: "Japanese Learning App",
-    subtext:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima optio facilis at necessitatibus quasi praesentium aliquam quod nam,earum exercitationem aperiam nulla dolores dolor tempora.",
-    technologies: [
-      <BiLogoReact />,
-      <BiLogoTypescript />,
-      <BiLogoSass />,
-      <TbBrandFramerMotion />,
-    ],
-    description: (
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
-        voluptates voluptatum, aperiam earum voluptatem consequuntur
-        <br />
-        <br />
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
-        voluptates voluptatum, aperiam earum voluptatem consequuntur doloribus.
-      </p>
-    ),
-    githubLink: "https://github.com",
-    liveLink: "https://github.com",
-    pageLink: "https://github.com",
-    mainFeatures: [
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-    ],
-    image: HSImg,
-    logo: HSLogo,
-    mainColor: "#FF5572",
-  },
-];
-
-function MobileProjects() {
+function MobileProjects({ mobileProjects }: { mobileProjects: Project[] }) {
   //TODO: style description scrollbar
   return (
     <section className="mobile-projects" id="projects">
@@ -141,17 +15,20 @@ function MobileProjects() {
           <div
             key={index}
             className="mobile-projects__card rounded-corners box-shadow glass-card"
-            style={{ borderColor: project.mainColor, backgroundImage: `url(${project.image})` }}
+            style={{
+              borderColor: project.mainColor,
+              backgroundImage: `url(${project.image})`,
+            }}
           >
             <div className="mobile-projects__card-img">
-              <img src={project.logo} alt={project.title} />
+              <img src={project.logo} alt={project.mobileTitle} />
             </div>
             <div className="mobile-projects__card-text">
               <h3
                 className="mobile-projects__card-text-title"
                 style={{ borderColor: project.mainColor }}
               >
-                {project.title}
+                {project.mobileTitle}
               </h3>
               <div className="mobile-projects__card-text-description">
                 {project.description}

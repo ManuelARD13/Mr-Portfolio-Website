@@ -1,5 +1,5 @@
-import englishIcon from "../../assets/english-icon.png";
-import spanishIcon from "../../assets/spanish-icon.png";
+import englishIcon from "@assets/english-icon.png";
+import spanishIcon from "@assets/spanish-icon.png";
 
 //TODO: create a switch for spanish and english logic
 

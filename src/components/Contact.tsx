@@ -1,5 +1,5 @@
-import CustomIcon from "../common/CustomIcon";
-import TSIcon from "../common/CustomIcon";
+import CustomIcon from "@common/CustomIcon";
+import TSIcon from "@common/CustomIcon";
 import { FaMapLocationDot } from "react-icons/fa6";
 import {
   BiLogoGmail,

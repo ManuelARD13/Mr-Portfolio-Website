@@ -1,11 +1,7 @@
 /* React */
 import React, { useEffect, useState } from "react";
-/* Images */
-import PathfinderDemoImg from "../assets/PFQCImg.jpg";
-import HiraganaShuffleImg from "../assets/HSImg.jpg";
-/* Icons */
-import { BiLogoReact, BiLogoTypescript, BiLogoSass } from "react-icons/bi";
-import { TbBrandFramerMotion } from "react-icons/tb";
+/* Types */
+import { Project } from "../types";
 
 /*TODO: Finish Slider component:
     - adjust colored links in the slides
@@ -14,124 +10,7 @@ import { TbBrandFramerMotion } from "react-icons/tb";
     - add final arrow icons
     - add slide transition animations
 */
-
-type Project = {
-  title: string;
-  subtext: string;
-  technologies: JSX.Element[];
-  description: JSX.Element;
-  githubLink: string;
-  liveLink: string;
-  pageLink: string;
-  mainFeatures: string[];
-  image: string;
-  mainColor: string;
-  secondaryColor?: string;
-};
-
-const projects: Project[] = [
-  {
-    title:
-      "Front-end Portfolio Website, o consectetur adipisicing elit. Itaque, harum.",
-    subtext:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima optio facilis at necessitatibus quasi praesentium aliquam quod nam,earum exercitationem aperiam nulla dolores dolor tempora.",
-    technologies: [
-      <BiLogoReact />,
-      <BiLogoTypescript />,
-      <BiLogoSass />,
-      <TbBrandFramerMotion />,
-    ],
-    description: (
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nobis
-        saepe unde mollitia aperiam repudiandae nemo ex impedit sapiente aliquid
-        accusamus ut necessitatibus harum rerum blanditiis sint delectus,
-        possimus placeat molestias. Voluptatum reprehenderit doloremque
-        voluptatem alias. Saepe, pariatur minima voluptatibus eaque quae culpa
-        fugiat officia et odio vitae dolore magni.
-      </p>
-    ),
-    githubLink: "https://github.com/ManuelARD13/Mr-Portfolio-Website-draft",
-    liveLink: "https://manuelrojas.tech",
-    pageLink: "https://github.com/ManuelARD13/Mr-Portfolio-Website-draft",
-    mainFeatures: [
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-    ],
-    image: "",
-    mainColor: "hsl(178, 90%, 50%)",
-  },
-  {
-    title:
-      "Videogame UI DEMO, sit amet lo consectetur adipisicing elit. Itaque, harum.",
-    subtext:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima optio facilis at necessitatibus quasi praesentium aliquam quod nam,earum exercitationem aperiam nulla dolores dolor tempora.",
-    technologies: [
-      <BiLogoReact />,
-      <BiLogoTypescript />,
-      <BiLogoSass />,
-      <TbBrandFramerMotion />,
-    ],
-    description: (
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nobis
-        saepe unde mollitia aperiam repudiandae nemo ex impedit sapiente aliquid
-        accusamus ut necessitatibus harum rerum blanditiis sint delectus,
-        possimus placeat molestias. Voluptatum reprehenderit doloremque
-        voluptatem alias. Saepe, pariatur minima voluptatibus eaque quae culpa
-        fugiat officia et odio vitae dolore magni.
-      </p>
-    ),
-    githubLink: "https://github.com/ManuelARD13/pathfinders-adventures-demo",
-    liveLink: "https://pathfinders-adventures-demo-6s4r.vercel.app/",
-    pageLink: "https://github.com/ManuelARD13/pathfinders-adventures-demo",
-    mainFeatures: [
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-    ],
-    image: PathfinderDemoImg,
-    mainColor: "#CCAE27",
-  },
-  {
-    title:
-      "Japanese learning app, met lo consectetur adipisicing elit. Itaque, harum.",
-    subtext:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima optio facilis at necessitatibus quasi praesentium aliquam quod nam,earum exercitationem aperiam nulla dolores dolor tempora.",
-    technologies: [
-      <BiLogoReact />,
-      <BiLogoTypescript />,
-      <BiLogoSass />,
-      <TbBrandFramerMotion />,
-    ],
-    description: (
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nobis
-        saepe unde mollitia aperiam repudiandae nemo ex impedit sapiente aliquid
-        accusamus ut necessitatibus harum rerum blanditiis sint delectus,
-        possimus placeat molestias. Voluptatum reprehenderit doloremque
-        voluptatem alias. Saepe, pariatur minima voluptatibus eaque quae culpa
-        fugiat officia et odio vitae dolore magni.
-      </p>
-    ),
-    githubLink: "https://github.com/ManuelARD13/hiragana-shuffle-app",
-    liveLink: "https://manuelard13.github.io/hiragana-shuffle-app/",
-    pageLink: "https://github.com/ManuelARD13/hiragana-shuffle-app",
-    mainFeatures: [
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-    ],
-    image: HiraganaShuffleImg,
-    mainColor: "#FF5572",
-  },
-];
-
-function Projects() {
+function Projects({projects}: {projects: Project[]}) {
   const [projectIndex, setprojectIndex] = useState<number>(0);
   const [isMouseOver, setIsMouseOver] = useState<boolean>(false);
 
@@ -165,7 +44,7 @@ function Projects() {
 
   useEffect(() => {
     updateTheme(projects[projectIndex].mainColor);
-  }, [projectIndex]);
+  }, [projectIndex, projects]);
 
   useEffect(() => {
     if (!isMouseOver) {
@@ -181,7 +60,7 @@ function Projects() {
       }, 2500);
       return () => clearInterval(interval);
     }
-  }, [projectIndex, isMouseOver]);
+  }, [projectIndex, isMouseOver, projects]);
 
 
 

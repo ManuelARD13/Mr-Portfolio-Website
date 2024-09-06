@@ -1,19 +1,19 @@
 // Components
-import CustomIcon from "../CustomIcon";
+import CustomIcon from "@common/CustomIcon";
 // Icons
 import { BiLogoReact, BiLogoSass, BiLogoTypescript } from "react-icons/bi";
 import { TbBrandFramerMotion } from "react-icons/tb";
 // Images
-import projectoLogo from "../../assets/hiragana-shuffle-logo-removebg-preview.png";
+import projectoLogo from "@assets/hiragana-shuffle-logo-removebg-preview.png";
 //Types
 
-type ProjectCard = {
+interface ProjectCard {
   title: string;
   description: string;
   logo: string;
   technologies: JSX.Element[];
   liveLink: string;
-};
+}
 
 const projectTechs: JSX.Element[] = [
   <BiLogoReact />,

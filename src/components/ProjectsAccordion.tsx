@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import Accordion from "../common/Accordion/Accordion";
-import certification1 from "../assets/diploma-asincronismo-js.jpg";
+import Accordion from "@common/Accordion/Accordion";
+import certification1 from "@assets/certifications/diploma-asincronismo-js.jpg";
 
 const projects = [
   {

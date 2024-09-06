@@ -1,25 +1,17 @@
 /*Components*/
-import Hero from "../components/Hero";
-import About from "../components/About";
-import Projects from "../components/Projects";
-import MobileProjects from "../components/MobileProjects";
-import Contact from "../components/Contact";
-
-import BacktoTopBtn from "../common/BackToTopBtn/BacktoTopBtn";
+import Hero from "@components/Hero";
+import About from "@components/About";
+import Projects from "@components/Projects";
+import MobileProjects from "@components/MobileProjects";
+import Contact from "@components/Contact";
+import BacktoTopBtn from "@common/BackToTopBtn/BacktoTopBtn";
+/* Context */
+import { useAppContext } from "@context/AppContext";
+/* Type Casting Functions */
+import { filterPropertiesOfObjsInArray } from "../types/functions";
 
 function Home() {
-
-  const detectDevice = (): string => {
-    const regex = new RegExp(
-      "Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini",
-      "i"
-    );
-    if (regex.test(navigator.userAgent)) {
-      return "mobile";
-    } else {
-      return "desktop";
-    }
-  };
+  const { projects, certifications } = useAppContext();
 
   return (
     <>
@@ -29,10 +21,11 @@ function Home() {
       {/* Main Estructure */}
 
       {/*Section #1*/}
-      <Hero />
+      <Hero cards={filterPropertiesOfObjsInArray(certifications, "title", "description", "link", "logo","techIcon", "date", "institution")} />
       <About />
       {/*Section #2*/}
-      {detectDevice() === "desktop" ? <Projects /> : <MobileProjects />}
+      <Projects projects={projects} />
+      <MobileProjects mobileProjects={projects} />
       {/*Section #3*/}
       <Contact />
     </>

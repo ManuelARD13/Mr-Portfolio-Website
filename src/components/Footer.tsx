@@ -1,5 +1,5 @@
-import Menu from "../common/Menu/Menu";
-import CustomIcon from "../common/CustomIcon";
+import Menu from "@common/Menu/Menu";
+import CustomIcon from "@common/CustomIcon";
 import {
   BiLogoGmail,
   BiLogoTelegram,

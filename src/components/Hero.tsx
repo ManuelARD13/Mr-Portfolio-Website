@@ -1,9 +1,10 @@
+/*React*/
 import { useEffect, useState } from "react";
-
-import CustomIcon from "../common/CustomIcon";
-import DescriptionCard from "../common/DescriptionCard/DescriptionCard";
-import ProjectCard from "../common/ProjectCard/ProjectCard";
-
+/*Components*/
+import CustomIcon from "@common/CustomIcon";
+import DescriptionCard from "@common/DescriptionCard/DescriptionCard";
+import ProjectCard from "@common/ProjectCard/ProjectCard";
+/* Icons */
 import { RiHomeGearFill } from "react-icons/ri";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import {
@@ -18,68 +19,55 @@ import {
   BiLogoTelegram,
   BiLogoGmail,
 } from "react-icons/bi";
+/*Types*/
+interface HeroFeatures {
+  title: string;
+  icon: JSX.Element;
+}
 
-type IndexBounderies = {
+interface HeroCard {
+  title: string;
+  description: string;
+  link: string;
+  logo: string;
+  techIcon: JSX.Element;
+  date: string;
+  institution: string;
+}
+
+interface IndexBounderies {
   indexMin: number;
   indexMax: number;
-};
-
-/* Courses List. Keep it in a 2 to 20 items range. */
-const cards = [
-  { title: "React.js" },
-  { title: "TypeScript" },
-  { title: "Front-end Development" },
-  { title: "Sass" },
-  { title: "React.js" },
-  { title: "TypeScript" },
-  { title: "Front-end Development" },
-  { title: "Sass" },
-  { title: "React.js" },
-  { title: "TypeScript" },
-  { title: "Front-end Development" },
-  { title: "Sass" },
-  { title: "React.js" },
-  { title: "TypeScript" },
-  { title: "Front-end Development" },
-  { title: "Sass" },
-  { title: "React.js" }
-];
-
-const features = [
+}
+/*Data*/
+const features: HeroFeatures[] = [
   {
     icon: <BiLogoReact />,
     title: "React.js Development",
-    link: "Lorem Ipsum",
   },
   {
     icon: <BiLogoTypescript />,
     title: "TypeScript Developer",
-    link: "Lorem Ipsum",
   },
   {
     icon: <BiLogoJavascript />,
     title: "JavaScript Fundamentals",
-    link: "Lorem Ipsum",
   },
   {
     icon: <BiLogoSass />,
     title: "Sass proficiency",
-    link: "Lorem Ipsum",
   },
   {
     icon: <BiLogoHtml5 />,
     title: "HTML & CSS Fundamentals",
-    link: "Lorem Ipsum",
   },
   {
     icon: <BiLogoGit />,
     title: "Git Basics Knowledge",
-    link: "Lorem Ipsum",
   },
   {
     icon: <RiHomeGearFill />,
     title: "Home Office Experience",
-    link: "Lorem Ipsum",
   },
 ];
 
@@ -99,10 +87,10 @@ const socialMediaIcons: { icon: JSX.Element; link: string }[] = [
   {
     icon: <BiLogoTelegram />,
     link: "https://t.me/ManuelARD13",
-  }
+  },
 ];
 
-function Hero() {
+function Hero({ cards }: { cards: HeroCard[] }) {
   /* TODO: add scroll behavior to features aside list */
 
   const [indexBounderies, setIndexBounderies] = useState<IndexBounderies>({
@@ -113,11 +101,13 @@ function Hero() {
 
   useEffect(() => {
     const changeSlide = () => {
-      if (indexBounderies.indexMax < cards.length) {
+      if (
+        indexBounderies.indexMax < cards.length
+      ) {
         setIndexBounderies({
           ...indexBounderies,
-          indexMin: indexBounderies.indexMin + 1,
-          indexMax: indexBounderies.indexMax + 1,
+          indexMin: indexBounderies.indexMin + 2,
+          indexMax: indexBounderies.indexMax + 2,
         });
       } else {
         setIndexBounderies({
@@ -131,13 +121,13 @@ function Hero() {
       changeSlide();
     }, 2500);
     return () => clearInterval(interval);
-  }, [indexBounderies]);
+  }, [indexBounderies, cards.length]);
 
   useEffect(() => {
     setSlicedCards(
       cards.slice(indexBounderies.indexMin, indexBounderies.indexMax)
     );
-  }, [indexBounderies]);
+  }, [indexBounderies, cards]);
 
   return (
     <section className="hero">
@@ -163,9 +153,8 @@ function Hero() {
               </li>
             ))}
           </ul>
-          <div className="hero__features-bottom">
-            <a href="/academic">Explore More</a>
-          </div>
+          <a href="/academics" className="hero__features-bottom">
+            Explore More</a>
         </aside>
         <div className="hero__img rounded-corners box-shadow">
           <div className="hero__img-social-media">
@@ -192,21 +181,24 @@ function Hero() {
           <ProjectCard />
         </div>
         <div className="hero__cards-container-right">
-          {slicedCards.map((_card, index) => (
+          {slicedCards.map((card, index) => (
             <DescriptionCard
-              key={Math.random() + `${index}`}
+              key={card.description + `${index}`}
               className="hero__card rounded-corners box-shadow"
-              cardInfo={slicedCards[index]}
+              cardInfo={card}
             />
           ))}
           <div className="hero-cards__slider-markers">
-            {cards.map((_card, index) => {
+            {cards.slice(0, 20).map((_card, index) => {
               return (
                 <div
                   key={index}
                   className={`hero-cards__slider-marker box-shadow}
                        ${
-                         index === indexBounderies.indexMax - 1 ? "active" : ""
+                         index < indexBounderies.indexMax &&
+                         index >= indexBounderies.indexMin
+                           ? "active"
+                           : ""
                        }`}
                 ></div>
               );

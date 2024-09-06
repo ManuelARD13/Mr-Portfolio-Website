@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 
 
-type menuTag = {
+interface menuTag {
   title: string;
   link: string;
   type: string;
-};
+}
 
 const menuTags: menuTag[] = [
   {

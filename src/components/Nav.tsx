@@ -1,6 +1,6 @@
-import LenguageSwitch from "../common/LenguageSwitch/LenguageSwitch";
-import Menu from "../common/Menu/Menu";
-import ThemeSwitch from "../common/ThemeSwitch/ThemeSwitch";
+import LenguageSwitch from "@common/LenguageSwitch/LenguageSwitch";
+import Menu from "@common/Menu/Menu";
+import ThemeSwitch from "@common/ThemeSwitch/ThemeSwitch";
 
 function Nav() {
   return (

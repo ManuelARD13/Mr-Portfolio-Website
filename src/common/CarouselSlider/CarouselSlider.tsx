@@ -1,7 +1,12 @@
 /* React */
 import React, { useEffect, useState } from "react";
 /* Types */
-import { Slide } from "../../types";
+interface Slide {
+  img: string;
+  title: string;
+  description: string;
+  detailsList: string[];
+}
 
 function CarouselSlider({
   slides,

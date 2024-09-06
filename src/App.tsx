@@ -1,8 +1,9 @@
 import { createBrowserRouter, RouterProvider, ScrollRestoration } from "react-router-dom";
-import Home from "./pages/Home";
-import Academics from "./pages/Academics";
-import NotFound from "./pages/NotFound";
-import Main from "./layout/Main";
+import Home from "@pages/Home";
+import Academics from "@pages/Academics";
+import NotFound from "@pages/NotFound";
+import Main from "@layout/Main";
+import { AppProvider } from "@context/AppContext";
 
 //TODO: Review loaders
 
@@ -37,9 +38,9 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <>
+    <AppProvider>
       <RouterProvider router={router} />
-    </>
+    </AppProvider>
   );
 }
 

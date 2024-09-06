@@ -1,15 +1,25 @@
-import { SiPlatzi } from "react-icons/si";
-import reactCourseLogo from "../../assets/reactjs-removebg-preview.png";
+interface CardProps {
+  cardInfo: {
+    title: string;
+    description: string;
+    link: string;
+    logo: string;
+    techIcon: JSX.Element;
+    date: string;
+    institution: string;
+  };
+  className?: string;
+}
 
-function DescriptionCard({className, cardInfo} : {className?: string, cardInfo: {title: string}}) {
+function DescriptionCard({className, cardInfo} : CardProps) {
   return (
     <div className={`description-card ${className}`}>
       <div className="description-card__icons-container">
         <div className="description-card__icon-1">
-          <SiPlatzi />
+          {cardInfo.techIcon}
         </div>
         <div className="description-card__icon-2">
-          <img src={reactCourseLogo} alt="" />
+          <img src={cardInfo.logo} alt="" />
         </div>
       </div>
       <div className="description-card__label">
@@ -18,14 +28,14 @@ function DescriptionCard({className, cardInfo} : {className?: string, cardInfo: 
       <div className="description-card__text">
         <h3 className="description-card__text-title">{cardInfo.title}</h3>
         <p className="description-card__text-description">
-        Components, Props, States, and Effects. Implementing React Context, Local Storage, and more.
+          {cardInfo.description.slice(0, 75) + "..."}
         </p>
         <a href="/" className="description-card__text-link">
-          july 2023. Platzi.com
+          {`${cardInfo.date}. ${cardInfo.institution}`}
         </a>
       </div>
       <div className="description-card__button">
-        <a href={`/academics/${cardInfo.title}`}><button>View Details</button></a>
+        <a href={cardInfo.link}><button>View Details</button></a>
       </div>
     </div>
   );

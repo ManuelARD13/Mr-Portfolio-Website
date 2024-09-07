@@ -68,7 +68,7 @@ function Projects({projects}: {projects: Project[]}) {
     <section className="section-projects" id="projects">
       <div
         className="projects"
-        style={{ backgroundImage: `url(${projects[projectIndex].image})` }}
+        style={{ backgroundImage: `url(${projects[projectIndex].image})`, borderColor: projects[projectIndex].mainColor }}
         onMouseOver={() => setIsMouseOver(true)}
         onMouseLeave={() => setIsMouseOver(false)}
       >

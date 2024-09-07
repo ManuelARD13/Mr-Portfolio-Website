@@ -15,6 +15,8 @@
   height: 55em;
   width: min(120em, 1600px);
   padding: 1.5em;
+  border: 0.1em solid $accent-text;
+  border-radius: 0 3rem;
   background-color: rgba(0, 0, 0, 0.1);
   background-size: cover;
   background-position: center;
@@ -150,7 +152,6 @@
 
 .glass-card {
   background: rgba(0, 0, 0, 0.25);
-  // box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.37);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 1rem;
@@ -162,12 +163,3 @@
     display: grid;
   }
 }
-
-// @media screen and (min-width: 1050px) and (max-width: 1440px) {
-//   .projects {
-//     width: 90%;
-//     &__header {
-//       margin-block: 3em;
-//     }
-//   }
-// }

@@ -1,0 +1,23 @@
+@use "../abstracts/variables" as *;
+
+.project {
+  &__header {
+    margin: 0 auto;
+    padding: 3em;
+    text-align: center;
+    h1 {
+      font-size: 1.75rem;
+      border-bottom: 2px solid $accent-text;
+      width: max-content;
+      margin: 0 auto;
+      padding-bottom: 0.5em;
+    }
+    p {
+      font-size: 0.8135rem;
+      margin-block: 1.5em;
+    }
+    &-selector {
+      display: flex;
+    }
+  }
+}

@@ -10,7 +10,7 @@ import { Project } from "../types";
     - add final arrow icons
     - add slide transition animations
 */
-function Projects({projects}: {projects: Project[]}) {
+function ProjectSlider({ projects }: { projects: Project[] }) {
   const [projectIndex, setprojectIndex] = useState<number>(0);
   const [isMouseOver, setIsMouseOver] = useState<boolean>(false);
 
@@ -62,8 +62,6 @@ function Projects({projects}: {projects: Project[]}) {
     }
   }, [projectIndex, isMouseOver, projects]);
 
-
-
   return (
     <section className="section-projects" id="projects">
       <div
@@ -72,7 +70,10 @@ function Projects({projects}: {projects: Project[]}) {
         onMouseOver={() => setIsMouseOver(true)}
         onMouseLeave={() => setIsMouseOver(false)}
       >
-        <div className="projects__slider-controls" style={{ color: projects[projectIndex].mainColor }}>
+        <div
+          className="projects__slider-controls"
+          style={{ color: projects[projectIndex].mainColor }}
+        >
           <div
             className="projects__slider-controls-arrow-right"
             onClick={() =>
@@ -109,7 +110,7 @@ function Projects({projects}: {projects: Project[]}) {
           <div className="projects__header-links">
             <ul className="links__list">
               <li className="links__list-item">
-                <a href={projects[projectIndex].pageLink} target="_blank">
+                <a href={`/projects/${projects[projectIndex].mobileTitle}`}>
                   Read More
                 </a>
               </li>
@@ -155,7 +156,7 @@ function Projects({projects}: {projects: Project[]}) {
             ))}
           </ul>
           <div className="projects__aside-link">
-            <a href={projects[projectIndex].pageLink} target="_blank">
+            <a href={`/projects/${projects[projectIndex].mobileTitle}`}>
               Read More
             </a>
           </div>
@@ -165,4 +166,4 @@ function Projects({projects}: {projects: Project[]}) {
   );
 }
 
-export default Projects;
+export default ProjectSlider;

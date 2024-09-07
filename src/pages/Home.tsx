@@ -1,7 +1,7 @@
 /*Components*/
 import Hero from "@components/Hero";
 import About from "@components/About";
-import Projects from "@components/Projects";
+import ProjectSlider from "@components/ProjectSlider";
 import MobileProjects from "@components/MobileProjects";
 import Contact from "@components/Contact";
 import BacktoTopBtn from "@common/BackToTopBtn/BacktoTopBtn";
@@ -15,17 +15,32 @@ function Home() {
 
   return (
     <>
-      <BacktoTopBtn anchorId="#top"/>
+      <BacktoTopBtn anchorId="#top" />
       {/* <VideoBackground /> */}
 
       {/* Main Estructure */}
 
       {/*Section #1*/}
-      <Hero cards={filterPropertiesOfObjsInArray(certifications, "title", "description", "link", "logo","techIcon", "date", "institution")} />
+      <Hero
+        cards={filterPropertiesOfObjsInArray(
+          certifications,
+          "title",
+          "description",
+          "link",
+          "logo",
+          "techIcon",
+          "date",
+          "institution"
+        )}
+      />
       <About />
       {/*Section #2*/}
-      <Projects projects={projects} />
-      <MobileProjects mobileProjects={projects} />
+      <ProjectSlider projects={projects} />
+      {window.innerWidth < 850 && (
+        <section id="projects">
+          <MobileProjects mobileProjects={projects} />
+        </section>
+      )}
       {/*Section #3*/}
       <Contact />
     </>

@@ -1,11 +1,23 @@
 import MobileProjects from "@components/MobileProjects";
 import { useAppContext } from "@context/AppContext";
-import { BiLogoTypescript } from "react-icons/bi";
-
 import video from "@assets/background-waves.webm";
+import { useParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 
 function Projects() {
   const { projects } = useAppContext();
+  const { projectTitle } = useParams();
+
+  const [currentProject, setCurrentProject] = useState(projects[0]);
+
+  useEffect(() => {
+    if (projectTitle) {
+      setCurrentProject(
+        projects.filter((project) => project.mobileTitle === projectTitle)[0]
+      );
+    }
+  }, [projectTitle, projects]);
+
   return (
     <>
       <section className="project__header">
@@ -23,26 +35,16 @@ function Projects() {
       </section>
       <section className="project">
         <div className="project__title">
-          <h2>Lorem, ipsum dolor.</h2>
-          <BiLogoTypescript />
-          <BiLogoTypescript />
-          <BiLogoTypescript />
-          <BiLogoTypescript />
+          <h2>{currentProject.mobileTitle}</h2>
+          {currentProject.technologies.map((tech, index) => (
+            <React.Fragment key={index}>{tech}</React.Fragment>
+          ))}
         </div>
-        <div className="project__resume">
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut magnam
-            nobis, ea non nulla iste blanditiis vero nemo assumenda labore.
-            Voluptate sint similique nam autem accusantium distinctio quam
-            repudiandae maiores earum dolore blanditiis repellendus, cupiditate,
-            molestias eum veniam dolores. Laborum, quas libero? Modi incidunt
-            voluptatem quaerat consectetur non culpa laudantium.
-          </p>
-        </div>
+        <div className="project__resume">{currentProject.description}</div>
       </section>
       <section className="project__main-content">
         <div className="project__main-content-row">
-          <img src={projects[0].image} alt="" />
+          <img src={currentProject.image} alt={currentProject.mobileTitle} />
           <div>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -56,7 +58,7 @@ function Projects() {
           </div>
         </div>
         <div className="project__main-content-row">
-          <img src={projects[0].image} alt="" />
+          <img src={currentProject.image} alt={currentProject.mobileTitle} />
           <div>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.

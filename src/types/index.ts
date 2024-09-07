@@ -22,8 +22,16 @@ export interface Project {
   liveLink: string;
   pageLink: string;
   mainFeatures: string[];
-  image: string;
+  image: string; // images
   logo: string;
   mainColor: string;
   secondaryColor?: string;
+  /*
+  longDescription1: JSX.Element;
+  longDescription2: JSX.Element;
+  images: string[]
+  secondaryFeatures: string[];
+  video: string;
+  videoDescription: JSX.Element;
+  */
 }

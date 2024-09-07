@@ -4,7 +4,7 @@ import { BiLogoTypescript } from "react-icons/bi";
 
 import video from "@assets/background-waves.webm";
 
-function Project() {
+function Projects() {
   const { projects } = useAppContext();
   return (
     <>
@@ -129,4 +129,4 @@ function Project() {
   );
 }
 
-export default Project;
+export default Projects;

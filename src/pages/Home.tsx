@@ -1,7 +1,7 @@
 /*Components*/
 import Hero from "@components/Hero";
 import About from "@components/About";
-import Projects from "@components/Projects";
+import ProjectSlider from "@components/ProjectSlider";
 import MobileProjects from "@components/MobileProjects";
 import Contact from "@components/Contact";
 import BacktoTopBtn from "@common/BackToTopBtn/BacktoTopBtn";
@@ -24,7 +24,7 @@ function Home() {
       <Hero cards={filterPropertiesOfObjsInArray(certifications, "title", "description", "link", "logo","techIcon", "date", "institution")} />
       <About />
       {/*Section #2*/}
-      <Projects projects={projects} />
+      <ProjectSlider projects={projects} />
       {window.innerWidth < 850 && <MobileProjects mobileProjects={projects} />}
       {/*Section #3*/}
       <Contact />

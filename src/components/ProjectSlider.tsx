@@ -10,7 +10,7 @@ import { Project } from "../types";
     - add final arrow icons
     - add slide transition animations
 */
-function Projects({projects}: {projects: Project[]}) {
+function ProjectSlider({projects}: {projects: Project[]}) {
   const [projectIndex, setprojectIndex] = useState<number>(0);
   const [isMouseOver, setIsMouseOver] = useState<boolean>(false);
 
@@ -165,4 +165,4 @@ function Projects({projects}: {projects: Project[]}) {
   );
 }
 
-export default Projects;
+export default ProjectSlider;

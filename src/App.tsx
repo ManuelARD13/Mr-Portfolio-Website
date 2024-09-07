@@ -4,7 +4,7 @@ import Academics from "@pages/Academics";
 import NotFound from "@pages/NotFound";
 import Main from "@layout/Main";
 import { AppProvider } from "@context/AppContext";
-import Project from "@pages/Project";
+import Projects from "@pages/Projects";
 
 //TODO: Review loaders
 
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
     path: "/projects",
     element: (
       <Main>
-        <Project />
+        <Projects />
         <ScrollRestoration />
       </Main>
     )

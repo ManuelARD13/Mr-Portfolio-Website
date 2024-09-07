@@ -25,7 +25,7 @@ function Home() {
       <About />
       {/*Section #2*/}
       <Projects projects={projects} />
-      <MobileProjects mobileProjects={projects} />
+      {window.innerWidth < 850 && <MobileProjects mobileProjects={projects} />}
       {/*Section #3*/}
       <Contact />
     </>

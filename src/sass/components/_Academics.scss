@@ -1,216 +1,137 @@
 @use "../abstracts/variables" as *;
-.academics__header {
-  display: flex;
-  flex-direction: column;
-  gap: 2em;
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 5em 1em 3em 1em;
-  overflow-x: hidden;
-  &-right {
-    position: relative;
-    min-height: 15em;
-    padding-inline: 2em 2em;
-    p {
-      max-width: 50ch;
-    }
-  }
 
-  &-mobile-title {
-    align-self: center;
-    padding-bottom: 1em;
-    border-bottom: 3px solid $accent-text;
-  }
-
-  &-title {
+.academics {
+  &__header {
     display: flex;
-    justify-content: space-between;
-    h1 {
-      width: 70%;
-      font-size: 1.5rem;
-    }
-    svg {
-      width: 20%;
-      height: 3rem;
-    }
+    flex-direction: column;
+    gap: 1.5em;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 5em 1em 3em 1em;
+    overflow-x: hidden;
   }
 
-
-
-  &-description {
-    margin-block: 1em;
-    max-width: 50ch;
-    font-size: 0.8135rem;
-  }
-
-  &-button {
-    position: absolute;
-    bottom: 7.5%;
-    font-size: 0.9rem;
-  }
-
-  &-slide-arrow {
-    display: none;
-    position: absolute;
-    right: 0;
-    bottom: 50%;
-    font-size: 3rem;
-    cursor: pointer;
-  }
-}
-
-.academics__projects {
-  display: grid;
-  place-items: center;
-  height: 25em;
-  padding: 4em 2em;
-  text-align: center;
-  &::before {
-    content: "";
-    position: absolute;
-    width: 100%;
+  &__projects {
+    display: grid;
+    place-items: center;
     height: 25em;
-    filter: grayscale(100%);
-    background: url("../assets/43976.jpg");
-    background-size: cover;
-    background-color: rgba(0, 0, 0, 0.85);
-    background-blend-mode: overlay;
-    z-index: -1;
-    background-repeat: no-repeat;
-  }
-  p {
-    font-size: 0.8135rem;
-    max-width: 80ch;
-    margin-block: 1.5em 2em;
-  }
-}
-
-.academics__projects--mobile {
-  padding-block: 3em;
-}
-
-.academics__certifications {
-  display: none;
-  padding-block: 0 3em;
-  &-display {
-    display: flex;
-    gap: 1em;
-    padding: 2em 5em;
-    &-left {
-      width: 50%;
-      display: grid;
-      place-items: center;
-      img {
-        max-width: 80%;
-      }
-    }
-    &-right {
-      width: 50%;
-      padding: 2em;
-    }
-  }
-  &-selector {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    &-options {
-      position: relative;
-      z-index: 1;
-      margin: 0 auto;
-      display: flex;
-      gap: 0.5em;
-      max-width: 85%;
-      overflow-x: auto;
-      &::-webkit-scrollbar {
-        display: none;
-      }
-      img {
-        height: 9em;
-      }
-    }
-    &-controls {
+    padding: 4em 2em;
+    text-align: center;
+    &::before {
+      content: "";
       position: absolute;
-      z-index: 0;
+      width: 100%;
+      height: 25em;
+      filter: grayscale(100%);
+      background: url("../assets/dev-team.jpg");
+      background-size: cover;
+      background-color: rgba(0, 0, 0, 0.85);
+      background-blend-mode: overlay;
+      z-index: -1;
+      background-repeat: no-repeat;
+    }
+    p {
+      font-size: 0.8135rem;
+      max-width: 80ch;
+      margin-block: 1.5em 2em;
+    }
+  }
+
+  &__projects--mobile {
+    padding-block: 3em;
+  }
+
+  &__certifications {
+    display: none;
+    padding-block: 0 3em;
+    &-display {
       display: flex;
-      justify-content: space-between;
-      width: 95%;
-      height: 2.25em;
-      top: 1em;
-      padding-inline: 0.5em;
-      padding-top: 0.15em;
-      font-size: 2.5rem;
-      background: $container-dark-200;
-      transform: scaleY(2);
-      &-arrow {
-        user-select: none;
-        cursor: pointer;
+      gap: 1em;
+      padding: 2em 5em;
+      &-left {
+        width: 50%;
+        display: grid;
+        place-items: center;
+        img {
+          max-width: 80%;
+        }
       }
-      &-markers {
-        position: absolute;
-        bottom: 5%;
-        left: 50%;
-        transform: translateX(-50%);
+      &-right {
+        width: 50%;
+        padding: 2em;
+      }
+    }
+    &-selector {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      &-options {
+        position: relative;
+        z-index: 1;
+        margin: 0 auto;
         display: flex;
-        gap: 0.25em;
+        gap: 0.5em;
+        max-width: 85%;
+        overflow-x: auto;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        img {
+          height: 9em;
+        }
       }
-      &-marker {
-        cursor: pointer;
-        width: 1rem;
-        height: 0.15rem;
-        background: rgba($hight-contrast-color, 1);
+      &-controls {
+        position: absolute;
+        z-index: 0;
+        display: flex;
+        justify-content: space-between;
+        width: 95%;
+        height: 2.25em;
+        top: 1em;
+        padding-inline: 0.5em;
+        padding-top: 0.15em;
+        font-size: 2.5rem;
+        background: $container-dark-200;
+        transform: scaleY(2);
+        &-arrow {
+          user-select: none;
+          cursor: pointer;
+        }
+        &-markers {
+          position: absolute;
+          bottom: 5%;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          gap: 0.25em;
+        }
+        &-marker {
+          cursor: pointer;
+          width: 1rem;
+          height: 0.15rem;
+          background: rgba($hight-contrast-color, 1);
+        }
       }
     }
   }
 }
 
 @media screen and (min-width: 1025px) {
-  .academics__header {
-    flex-direction: row;
-    gap: 0;
-    width: 70em;
-    padding: 7em 2em 5em 2em;
-    &-left {
-      width: 50%;
+  .academics {
+    &__header {
+      flex-direction: row;
+      gap: 0;
+      width: 70em;
+      padding: 7em 2em 5em 2em;
     }
-    &-right {
-      position: relative;
-      width: 50%;
-      min-height: 25em;
-      padding-inline: 2em 5em;
+    &__projects {
+      padding: 5em 1em;
       p {
-        max-width: 50ch;
+        margin-block: 0;
       }
     }
-    &-mobile-title {
-      display: none;
-    }
-    &-title {
-      h1 {
-        width: 75%;
-        font-size: 2.25rem;
-      }
-      svg {
-        width: 25%;
-        height: 5rem;
-      }
-    }
-
-    &-description {
-      margin-block: 2em;
-      font-size: 1rem;
-    }
-
-    &-slide-arrow {
+    &__certifications {
       display: block;
     }
-  }
-  .academics__projects {
-    padding: 5em 1em;
-    p {
-      margin-block: 0;
-    }
-  }
-  .academics__certifications {
-    display: block;
   }
 }

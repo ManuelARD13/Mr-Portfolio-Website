@@ -325,7 +325,7 @@ export const certifications: Certification[] = [
     img: ViteAndTailwindImg,
     logo: certLogo,
     description:
-      "Construyendo una Tienda Online con React.js, la herramienta de mayor demanda para frontend developers. Integrando Vite.js para el entorno de desarrollo, TailwindCSS para el manejo de estilos y React Router DOM para las rutas y navegación. Transforma prototipos de Figma en aplicaciones web profesionales y desplegadas a producción",
+      "Construyendo una Tienda Online con React.js, integrando Vite.js para el entorno de desarrollo, TailwindCSS para el manejo de estilos y React Router DOM para las rutas y navegación. Transformamos prototipos de Figma en aplicaciones web profesionales y desplegadas a producción",
     detailsList: [
       "Vite and Tailwind Installation",
       "React Router DOM",

@@ -29,9 +29,7 @@ function Projects() {
             corporis?
           </p>
         </div>
-        <div className="project__header-selector">
-          <MobileProjects mobileProjects={projects} />
-        </div>
+          <MobileProjects mobileProjects={projects} className="project__header-selector" />
       </section>
       <section className="project">
         <div className="project__title">

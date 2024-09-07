@@ -8,12 +8,14 @@ import { Project } from "../types";
 
 function MobileProjects({
   mobileProjects,
+  className
 }: {
   mobileProjects: Project[];
+  className?: string
 }) {
   //TODO: style description scrollbar
   return (
-    <div className="mobile-projects">
+    <div className={`mobile-projects ${className}`}>
       {mobileProjects.map((project, index) => (
         <div
           key={index}

@@ -113,7 +113,7 @@ function Projects() {
       </section>
       <section className="project__showcase">
         <div className="project__showcase-video">
-          <video src={video} controls />
+          <video src={video} controls poster={currentProject.image} />
         </div>
         <div className="project__showcase-text">
           <h4>Lorem ipsum dolor sit.</h4>

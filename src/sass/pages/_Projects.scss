@@ -1,7 +1,14 @@
 @use "../abstracts/variables" as *;
 
 .project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 6em 1em;
+  padding-inline: 2em;
+  text-align: center;
   &__header {
+    display: none;
     margin: 0 auto;
     padding: 3em;
     text-align: center;
@@ -18,6 +25,215 @@
     }
     &-selector {
       display: flex;
+      justify-content: space-around;
+      width: 90%;
+      margin: 0 auto;
+      padding: 0;
+      & > div {
+        width: 27.5%;
+        font-size: 1rem;
+        margin: 0;
+      }
+    }
+  }
+  &__title {
+    align-items: center;
+    font-size: 1rem;
+    border-bottom: 3px solid $accent-text;
+    svg {
+      margin-block: 0.25em;
+      font-size: 2rem;
+    }
+    svg + svg {
+      margin-left: 0.1em;
+    }
+  }
+  &__resume {
+    max-width: 75ch;
+    margin-block: 2em 2em;
+    text-wrap: balance;
+  }
+
+  &__main-content {
+    padding-block: 1em;
+    &-row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2em;
+      width: 100%;
+      margin: 0 auto;
+      margin-bottom: 5em;
+      & > img {
+        width: 85%;
+        height: 20em;
+        aspect-ratio: 1 / 1;
+      }
+      div {
+        width: 85%;
+        display: grid;
+        place-items: center;
+        p {
+          max-width: 40ch;
+        }
+      }
+    }
+  }
+
+  &__bullet-points {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 10% 90%;
+    background-color: rgba(0,0,0, 0.5);
+    padding: 3.5em 3em 5em 3em;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      filter: grayscale(100%);
+      background: url("../assets/HSImg.jpg");
+      background-size: cover;
+      background-color: rgba(0, 0, 0, 0.85);
+      background-blend-mode: overlay;
+      z-index: -1;
+      background-repeat: no-repeat;
+    }
+    &-title {
+      position: relative;
+      z-index: 1;
+      grid-column: 1 / -1;
+      grid-row: 1 / span 1;
+      margin-block: 2em;
+      font-size: 1.5rem;
+      text-align: center;
+      text-wrap: wrap;
+    }
+    &-list {
+      position: relative;
+      z-index: 1;
+      &-item {
+        list-style: inside;
+        margin-bottom: 1em;
+        text-wrap: pretty;
+      } 
+    }
+  }
+
+  &__showcase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    padding: 5em 0.75em;
+    &-video {
+      width: 100%;
+      border: 1px solid $accent-text;
+      video {
+        width: 100%;
+      }
+    }
+    &-text {
+      width: 100%;
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1em;
+      h4 {
+        font-size: 1.35rem;
+        margin: 0 auto;
+        margin-bottom: 0.75em;
+        padding-bottom: 0.5em;
+        border-bottom: 3px solid $accent-text;
+        width: max-content;
+      }
+      p {
+        max-width: 40ch;
+        width: 90%;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1050px) {
+  .project {
+    padding-block: 2em;
+    padding-inline: 0;
+    text-align: left;
+    &__header {
+      display: block;
+    }
+    &__title {
+      display: flex;
+      font-size: 1.75rem;
+      padding-bottom: 0.5em;
+      line-height: 0;
+      h2 {
+        font-size: 1.75rem;
+        margin-right: 0.5em;
+      }
+      svg {
+        margin: 0;
+        font-size: 2.5rem;
+      }
+    }
+    &__main-content {
+      padding-block: 3em;
+      align-items: start;
+      &-row {
+        flex-direction: row;
+        width: 90%;
+        margin-bottom: 7.5em;
+        & > img {
+          width: 40%;
+        }
+        div {
+          width: 40%;
+        }
+      }
+      &-row + &-row {
+        flex-direction: row-reverse;
+      }
+    }
+    &__bullet-points {
+      display: grid;
+      padding: 5em 5em 3.5em 5em;
+      &-title {
+        text-align: left;
+        text-wrap: balance;
+      }
+      &-list {
+        &-item {
+          text-wrap: balance;
+        }
+      }
+    }
+
+    &__showcase {
+      flex-direction: row;
+      padding: 5em;
+      &-video {
+        width: 40%;
+      }
+      &-text {
+        width: 40%;
+        margin-top: 0;
+        h4 {
+          margin-inline: 0;
+        }
+        p {
+          text-align: left;
+          width: 100%;
+          margin: 0;
+        }
+      }
     }
   }
 }

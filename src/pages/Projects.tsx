@@ -1,8 +1,8 @@
-import MobileProjects from "@components/MobileProjects";
 import { useAppContext } from "@context/AppContext";
 import video from "@assets/background-waves.webm";
 import { useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
+import ProjectCard from "@common/ProjectCard/ProjectCard";
 
 function Projects() {
   const { projects } = useAppContext();
@@ -29,7 +29,13 @@ function Projects() {
             corporis?
           </p>
         </div>
-          <MobileProjects mobileProjects={projects} className="project__header-selector" />
+        <div className="project__header-selector">
+          {projects.map((project, index) => (
+            <React.Fragment key={index}>
+              <ProjectCard project={project} />
+            </React.Fragment>
+          ))}
+        </div>
       </section>
       <section className="project">
         <div className="project__title">

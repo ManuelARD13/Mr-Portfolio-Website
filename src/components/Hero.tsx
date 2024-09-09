@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 /*Components*/
 import CustomIcon from "@common/CustomIcon";
 import DescriptionCard from "@common/DescriptionCard/DescriptionCard";
-import ProjectCard from "@common/ProjectCard/ProjectCard";
+import ProjectCard from "@common/FeaturedProjectCard/FeaturedProjectCard";
 /* Icons */
 import { RiHomeGearFill } from "react-icons/ri";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";

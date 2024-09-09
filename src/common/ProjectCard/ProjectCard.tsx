@@ -1,77 +1,70 @@
-// Components
 import CustomIcon from "@common/CustomIcon";
-// Icons
-import { BiLogoReact, BiLogoSass, BiLogoTypescript } from "react-icons/bi";
-import { TbBrandFramerMotion } from "react-icons/tb";
-// Images
-import projectoLogo from "@assets/hiragana-shuffle-logo-removebg-preview.png";
-//Types
+import { Project } from "../../types";
+// import { CgFileDocument } from "react-icons/cg";
+// import { BiLogoGithub } from "react-icons/bi";
 
-interface ProjectCard {
-  title: string;
-  description: string;
-  logo: string;
-  technologies: JSX.Element[];
-  liveLink: string;
-}
-
-const projectTechs: JSX.Element[] = [
-  <BiLogoReact />,
-  <BiLogoTypescript />,
-  <BiLogoSass />,
-  <TbBrandFramerMotion />,
-];
-
-const featuredProjectInfo: ProjectCard = {
-  title: "Japanese Learning App",
-  description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, doloremque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, doloremque? Lorem ipsum dolor sit amet",
-  logo: projectoLogo,
-  technologies: projectTechs,
-  liveLink: "https://manuelard13.github.io/hiragana-shuffle-app/",
-};
-
-function ProjectCard() {
+function ProjectCard({ project, className }: { project: Project; className?: string }) {
   return (
-    <div className="project-card" onClick={() => (location.href = "#projects")}>
-      <div className="project-card__icons-container">
-        <div className="project-card__icon-text">
-          <h3>Featured Project</h3>
-        </div>
-        <div className="project-card__icons">
-          {featuredProjectInfo.technologies.map((tech, index) => (
-            <CustomIcon key={index} color="#FAFAFA">
-              {tech}
-            </CustomIcon>
-          ))}
+    <div
+      className={`project-card ${className}`}
+      style={{
+        borderColor: project.mainColor,
+        backgroundImage: `url(${project.image})`,
+      }}
+      onClick={() => (location.href = `/projects/${project.mobileTitle}`)}
+    >
+      <div className="project-card__img">
+        <img src={project.logo} alt={project.mobileTitle} />
+      </div>
+      <div className="project-card__text">
+        <h3
+          className="project-card__text-title"
+          style={{ borderColor: project.mainColor }}
+        >
+          {project.mobileTitle}
+        </h3>
+        <div className="project-card__text-description">
+          {project.description}
         </div>
       </div>
-      <div className="project-card__label">
-        <p>Mobile Web App made with React/Typescript</p>
-      </div>
-      <div className="project-card__content">
-        <div className="project-card__text">
-          <h3 className="project-card__text-title">
-            {featuredProjectInfo.title}
-          </h3>
-          <p className="project-card__text-description">
-            {featuredProjectInfo.description}
-          </p>
-          <a
-            href={featuredProjectInfo.liveLink}
-            target="_blank"
-            className="project-card__text-link"
-          >
-            Watch it live!
-          </a>
-        </div>
-        <div className="project-card__logo">
-          <img
-            src={featuredProjectInfo.logo}
-            alt="hiragana shuffle"
-            className="project-card__logo-img"
-          />
-        </div>
+      {/* <div className="project-card__links">
+            <button
+              className="project-card__links-btn"
+              onClick={() =>
+                window.open(
+                  `${project.liveLink}`,
+                  "_blank"
+                )
+              }
+            >
+              Watch it live
+            </button>
+            <a
+              href="https://github.com/ManuelARD13/hiragana-shuffle-app"
+              className="project-card__links-link"
+            >
+              <CustomIcon color={project.mainColor}>
+                <BiLogoGithub />
+              </CustomIcon>
+            </a>
+            <a
+              href={`/projects/${project.mobileTitle}`}
+              className="project-card__links-link"
+            >
+              <CustomIcon color={project.mainColor}>
+                <CgFileDocument />
+              </CustomIcon>
+            </a>
+          </div> */}
+      <div
+        className="project-card__icons"
+        style={{ backgroundColor: project.mainColor }}
+      >
+        {project.technologies.map((tech, index) => (
+          <CustomIcon key={index} color="#FAFAFA">
+            {tech}
+          </CustomIcon>
+        ))}
       </div>
     </div>
   );

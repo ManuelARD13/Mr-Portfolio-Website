@@ -33,12 +33,12 @@ const featuredProjectInfo: ProjectCard = {
 
 function FeaturedProjectCard() {
   return (
-    <div className="project-card" onClick={() => (location.href = "#projects")}>
-      <div className="project-card__icons-container">
-        <div className="project-card__icon-text">
+    <div className="featured-project-card" onClick={() => (location.href = "#projects")}>
+      <div className="featured-project-card__icons-container">
+        <div className="featured-project-card__icon-text">
           <h3>Featured Project</h3>
         </div>
-        <div className="project-card__icons">
+        <div className="featured-project-card__icons">
           {featuredProjectInfo.technologies.map((tech, index) => (
             <CustomIcon key={index} color="#FAFAFA">
               {tech}
@@ -46,30 +46,30 @@ function FeaturedProjectCard() {
           ))}
         </div>
       </div>
-      <div className="project-card__label">
+      <div className="featured-project-card__label">
         <p>Mobile Web App made with React/Typescript</p>
       </div>
-      <div className="project-card__content">
-        <div className="project-card__text">
-          <h3 className="project-card__text-title">
+      <div className="featured-project-card__content">
+        <div className="featured-project-card__text">
+          <h3 className="featured-project-card__text-title">
             {featuredProjectInfo.title}
           </h3>
-          <p className="project-card__text-description">
+          <p className="featured-project-card__text-description">
             {featuredProjectInfo.description}
           </p>
           <a
             href={featuredProjectInfo.liveLink}
             target="_blank"
-            className="project-card__text-link"
+            className="featured-project-card__text-link"
           >
             Watch it live!
           </a>
         </div>
-        <div className="project-card__logo">
+        <div className="featured-project-card__logo">
           <img
             src={featuredProjectInfo.logo}
             alt="hiragana shuffle"
-            className="project-card__logo-img"
+            className="featured-project-card__logo-img"
           />
         </div>
       </div>

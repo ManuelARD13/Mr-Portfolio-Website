@@ -8,44 +8,50 @@ function Projects() {
   const { projects } = useAppContext();
   const { projectTitle } = useParams();
 
-
   const [currentProject, setCurrentProject] = useState(projects[0]);
 
   useEffect(() => {
     if (projectTitle) {
-
       const selectedProject = projects.filter(
         (project) => project.mobileTitle === projectTitle
-      )[0]
+      )[0];
 
-      setCurrentProject(
-        selectedProject
-      );
+      setCurrentProject(selectedProject);
 
       const page = document.getElementsByTagName("body")[0];
       page.classList.add("project-page");
-      document.documentElement.style.setProperty("--bgImg", `url('../../../${selectedProject.image}')`);
-      document.documentElement.style.setProperty("--themeColor", selectedProject.mainColor);
-      
+      document.documentElement.style.setProperty(
+        "--bgImg",
+        `url('../../../${selectedProject.image}')`
+      );
+      document.documentElement.style.setProperty(
+        "--themeColor",
+        selectedProject.mainColor
+      );
     }
   }, [projectTitle, projects, currentProject.image]);
 
   return (
     <>
-      <section className="project">
-        <div className="project__title">
+      <section className="projects">
+        <div className="projects__title">
           <h1>{currentProject.mobileTitle}</h1>
           {currentProject.technologies.map((tech, index) => (
             <React.Fragment key={index}>{tech}</React.Fragment>
           ))}
         </div>
-        <div className="project__resume">{currentProject.description}</div>
-        <div><img src={currentProject.logo} alt="" /></div>
+        <div className="projects__resume">{currentProject.description}</div>
+        <div>
+          <img src={currentProject.logo} alt="" />
+        </div>
       </section>
-      <section className="project__main-content">
-        <div className="project__main-content-row">
+      <section className="projects__main-content">
+        <div className="projects__main-content-row">
           <img src={currentProject.image} alt={currentProject.mobileTitle} />
           <div>
+            <h3 className="projects__main-content-row-title">
+              Lorem ipsum dolor
+            </h3>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               Laboriosam nostrum ipsa at asperiores rem a ea dignissimos quis
@@ -55,11 +61,20 @@ function Projects() {
               explicabo consequuntur quasi debitis! Voluptatem, doloribus
               commodi!
             </p>
+            <button
+              className="projects__main-content-button"
+              onClick={() => window.open(currentProject.liveLink, "_blank")}
+            >
+              Watch it working!
+            </button>
           </div>
         </div>
-        <div className="project__main-content-row">
+        <div className="projects__main-content-row">
           <img src={currentProject.image} alt={currentProject.mobileTitle} />
           <div>
+            <h3 className="projects__main-content-row-title">
+              Lorem ipsum dolor
+            </h3>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               Laboriosam nostrum ipsa at asperiores rem a ea dignissimos quis
@@ -69,55 +84,61 @@ function Projects() {
               explicabo consequuntur quasi debitis! Voluptatem, doloribus
               commodi!
             </p>
+            <button
+              className="projects__main-content-button"
+              onClick={() => window.open(currentProject.githubLink, "_blank")}
+            >
+              Watch repository
+            </button>
           </div>
         </div>
       </section>
-      <section className="project__bullet-points">
-        <h3 className="project__bullet-points-title">
+      <section className="projects__bullet-points">
+        <h3 className="projects__bullet-points-title">
           Lorem ipsum dolor sit amet.
         </h3>
-        <ul className="project__bullet-points-list">
-          <li className="project__bullet-points-list-item">
+        <ul className="projects__bullet-points-list">
+          <li className="projects__bullet-points-list-item">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus,
             ullam?
           </li>
-          <li className="project__bullet-points-list-item">
+          <li className="projects__bullet-points-list-item">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus,
             ullam?
           </li>
-          <li className="project__bullet-points-list-item">
+          <li className="projects__bullet-points-list-item">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus,
             ullam?
           </li>
-          <li className="project__bullet-points-list-item">
+          <li className="projects__bullet-points-list-item">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus,
             ullam?
           </li>
         </ul>
-        <ul className="project__bullet-points-list">
-          <li className="project__bullet-points-list-item">
+        <ul className="projects__bullet-points-list">
+          <li className="projects__bullet-points-list-item">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus,
             ullam?
           </li>
-          <li className="project__bullet-points-list-item">
+          <li className="projects__bullet-points-list-item">
+            Lorem ipsum, dolor ssit amet consectetur adipisicing elit. Natus,
+            ullam?
+          </li>
+          <li className="projects__bullet-points-list-item">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus,
             ullam?
           </li>
-          <li className="project__bullet-points-list-item">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus,
-            ullam?
-          </li>
-          <li className="project__bullet-points-list-item">
+          <li className="projects__bullet-points-list-item">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus,
             ullam?
           </li>
         </ul>
       </section>
-      <section className="project__showcase">
-        <div className="project__showcase-video">
-          <video src={video} controls />
+      <section className="projects__showcase">
+        <div className="projects__showcase-video">
+          <video src={video} controls poster={currentProject.image} />
         </div>
-        <div className="project__showcase-text">
+        <div className="projects__showcase-text">
           <h4>Lorem ipsum dolor sit.</h4>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -125,16 +146,25 @@ function Projects() {
             aspernatur numquam, alias odio consectetur saepe in harum cum ea
             aliquid voluptatum?
           </p>
+          <button
+            className="projects__showcase-btn"
+            onClick={() => (location.href = currentProject.liveLink)}
+          >
+            Watch it live!
+          </button>
         </div>
       </section>
-      <section className="project__header">
-        <div className="project__header-title">
+      <section className="projects__header">
+        <div className="projects__header-title">
           <h4>Lorem ipsum dolor sit amet.</h4>
         </div>
-        <div className="project__header-selector">
+        <div className="projects__header-selector">
           {projects.map((project, index) => (
             <React.Fragment key={index}>
-              <ProjectCard project={project} className="rounded-corners box-shadow glass-card" />
+              <ProjectCard
+                project={project}
+                className="rounded-corners box-shadow glass-card"
+              />
             </React.Fragment>
           ))}
         </div>

@@ -4,7 +4,7 @@ import CustomIcon from "@common/CustomIcon";
 import { BiLogoGithub } from "react-icons/bi";
 import { CgFileDocument } from "react-icons/cg";
 /* Types */
-import { Project } from "../types";
+import { Project } from "@models/index";
 
 function MobileProjects({
   mobileProjects,

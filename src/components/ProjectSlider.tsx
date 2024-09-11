@@ -1,7 +1,7 @@
 /* React */
 import React, { useEffect, useState } from "react";
 /* Types */
-import { Project } from "../types";
+import { Project } from "@models/index";
 
 /*TODO: Finish Slider component:
     - adjust colored links in the slides

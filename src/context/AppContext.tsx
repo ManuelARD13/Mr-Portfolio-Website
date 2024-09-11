@@ -1,6 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 /* React */
-import { Certification, Project } from "../types";
+import { Certification, Project } from "@models/index";
 import React, { useContext } from "react";
 /* Data */
 import { certifications, projects } from "@data/mainData";

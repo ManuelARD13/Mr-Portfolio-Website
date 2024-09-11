@@ -1,4 +1,4 @@
-import { Certification, Project } from "../types";
+import { Certification, Project } from "@models/index";
 /* Certifications Assets */
 import AsyncJSImg from "@assets/certifications/diploma-asincronismo-js.jpg";
 import GitandGithubImg from "@assets/certifications/diploma-git-y-github.jpg";

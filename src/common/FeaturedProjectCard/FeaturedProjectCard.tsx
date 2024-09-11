@@ -4,7 +4,7 @@ import CustomIcon from "@common/CustomIcon";
 import { BiLogoReact, BiLogoSass, BiLogoTypescript } from "react-icons/bi";
 import { TbBrandFramerMotion } from "react-icons/tb";
 // Images
-import projectoLogo from "@assets/hiragana-shuffle-logo-removebg-preview.png";
+import projectoLogo from "@assets/hiragana-shuffle-logo.png";
 //Types
 
 interface ProjectCard {
@@ -62,7 +62,7 @@ function FeaturedProjectCard() {
             target="_blank"
             className="featured-project-card__text-link"
           >
-            Watch it live!
+            View More!
           </a>
         </div>
         <div className="featured-project-card__logo">

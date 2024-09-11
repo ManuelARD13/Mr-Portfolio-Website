@@ -18,11 +18,11 @@ import AdvancedTypesImg from "@assets/certifications/diploma-typescript-tipos-av
 import ProFrontendImg from "@assets/certifications/diploma-frontend-developer-practico.jpg";
 import certLogo from "@assets/reactjs-removebg-preview.png";
 /* Projects Assets */
-import pathfinderDemoImg from "@assets/PFQCImg.jpg";
-import hiraganaShuffleImg from "@assets/HSImg.jpg";
-import MRLOGO from "@assets/Mr-logo-removebg-preview.png";
-import HSLOGO from "@assets/hiragana-shuffle-logo-removebg-preview.png";
-import PFCQLOGO from "@assets/pathfinderLogo.png";
+import pathfinderDemoImg from "@assets/pathfinder-Img.jpg";
+import hiraganaShuffleImg from "@assets/hiragana-shuffle-Img.jpg";
+import MRLOGO from "@assets/Mr-logo.png";
+import HSLOGO from "@assets/hiragana-shuffle-logo.png";
+import PFCQLOGO from "@assets/pathfinder-logo.png";
 /* Icons */
 import {
   BiLogoTypescript,

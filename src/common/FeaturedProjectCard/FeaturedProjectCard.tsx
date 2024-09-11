@@ -33,7 +33,7 @@ const featuredProjectInfo: ProjectCard = {
 
 function FeaturedProjectCard() {
   return (
-    <div className="featured-project-card" onClick={() => (location.href = "#projects")}>
+    <div className="featured-project-card" onClick={() => (location.href = `/projects/${featuredProjectInfo.title}`)}>
       <div className="featured-project-card__icons-container">
         <div className="featured-project-card__icon-text">
           <h3>Featured Project</h3>
@@ -58,7 +58,7 @@ function FeaturedProjectCard() {
             {featuredProjectInfo.description}
           </p>
           <a
-            href={featuredProjectInfo.liveLink}
+            href={`/projects/${featuredProjectInfo.title}`}
             target="_blank"
             className="featured-project-card__text-link"
           >

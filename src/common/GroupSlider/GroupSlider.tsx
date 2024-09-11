@@ -1,7 +1,7 @@
 /* React */
 import { useEffect, useState } from "react";
 /* Types */
-import { FeaturedCertification } from "../../types";
+import { FeaturedCertification } from "@models/index";
 
 function GroupSlider({
   slides,

@@ -33,7 +33,7 @@
       "@layout/*": ["src/layout/*"],
       "@pages/*": ["src/pages/*"],
       "@sass/*": ["src/sass/*"],
-      "@types/*": ["src/types/*"]
+      "@models/*": ["src/models/*"]
     }
   },
   "include": ["src"]

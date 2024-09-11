@@ -1,5 +1,5 @@
 import CustomIcon from "@common/CustomIcon";
-import { Project } from "../../types";
+import { Project } from "@models/index";
 // import { CgFileDocument } from "react-icons/cg";
 // import { BiLogoGithub } from "react-icons/bi";
 

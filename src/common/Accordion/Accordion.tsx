@@ -4,7 +4,7 @@ function Accordion({
   items,
   className
 }: {
-  items: { title: string; content: JSX.Element }[]
+  items: { title: string; img: string; content: JSX.Element }[]
   className?: string;
 }) {
   const handleToggle = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,7 +33,7 @@ function Accordion({
           <div className="accordion__label">
             <h2>{item.title}</h2>
             <div className="accordion__label-icon" >
-              <input type="checkbox" name="arrow" id={`label-${index}`} className="accordion__input" onChange={handleToggle} />
+              <input type="radio" name="arrow" id={`label-${index}`} className="accordion__input" onChange={handleToggle} />
               <label htmlFor={`label-${index}`}><TfiArrowCircleDown /></label>
             </div>
           </div>

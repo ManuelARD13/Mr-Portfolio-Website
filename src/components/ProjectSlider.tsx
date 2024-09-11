@@ -1,7 +1,7 @@
 /* React */
 import React, { useEffect, useState } from "react";
 /* Types */
-import { Project } from "../types";
+import { Project } from "@models/index";
 
 /*TODO: Finish Slider component:
     - adjust colored links in the slides
@@ -63,19 +63,19 @@ function ProjectSlider({ projects }: { projects: Project[] }) {
   }, [projectIndex, isMouseOver, projects]);
 
   return (
-    <section className="section-projects" id="projects">
+    <section className="project-slider" id="projects">
       <div
-        className="projects"
+        className="project-slider__container"
         style={{ backgroundImage: `url(${projects[projectIndex].image})`, borderColor: projects[projectIndex].mainColor }}
         onMouseOver={() => setIsMouseOver(true)}
         onMouseLeave={() => setIsMouseOver(false)}
       >
         <div
-          className="projects__slider-controls"
+          className="project-slider__slider-controls"
           style={{ color: projects[projectIndex].mainColor }}
         >
           <div
-            className="projects__slider-controls-arrow-right"
+            className="project-slider__slider-controls-arrow-right"
             onClick={() =>
               setprojectIndex(
                 projectIndex !== 0 ? projectIndex - 1 : projects.length - 1
@@ -85,7 +85,7 @@ function ProjectSlider({ projects }: { projects: Project[] }) {
             {"<"}
           </div>
           <div
-            className="projects__slider-controls-arrow-right"
+            className="project-slider__slider-controls-arrow-right"
             onClick={() =>
               setprojectIndex(
                 projectIndex !== projects.length - 1 ? projectIndex + 1 : 0
@@ -95,19 +95,19 @@ function ProjectSlider({ projects }: { projects: Project[] }) {
             {">"}
           </div>
         </div>
-        <div className="projects__header rounded-corners glass-card box-shadow">
-          <div className="projects__header-label box-shadow">
+        <div className="project-slider__header rounded-corners glass-card box-shadow">
+          <div className="project-slider__header-label box-shadow">
             {projects[projectIndex].technologies.map((technology, index) => (
               <React.Fragment key={index}>{technology}</React.Fragment>
             ))}
           </div>
-          <h2 className="projects__header-title">
+          <h2 className="project-slider__header-title">
             {projects[projectIndex].title}
           </h2>
-          <p className="projects__header-subtext">
+          <p className="project-slider__header-subtext">
             {projects[projectIndex].subtext}
           </p>
-          <div className="projects__header-links">
+          <div className="project-slider__header-links">
             <ul className="links__list">
               <li className="links__list-item">
                 <a href={`/projects/${projects[projectIndex].mobileTitle}`}>
@@ -126,7 +126,7 @@ function ProjectSlider({ projects }: { projects: Project[] }) {
               </li>
             </ul>
           </div>
-          <div className="projects__slider-markers">
+          <div className="project-slider__slider-markers">
             {projects.map((_project, index) => {
               return (
                 <div
@@ -139,23 +139,23 @@ function ProjectSlider({ projects }: { projects: Project[] }) {
             })}
           </div>
         </div>
-        <div className="projects__description">
+        <div className="project-slider__description">
           {projects[projectIndex].description}
         </div>
-        <aside className="projects__aside rounded-corners">
+        <aside className="project-slider__aside rounded-corners">
           <h3>LoremIpsum Lor Ipsum Lorem</h3>
           <p className="divider"></p>
-          <ul className="projects__aside-details">
+          <ul className="project-slider__aside-details">
             {projects[projectIndex].mainFeatures.map((feature) => (
               <li
                 key={feature + Math.random()}
-                className="projects__aside-item"
+                className="project-slider__aside-item"
               >
                 {feature}
               </li>
             ))}
           </ul>
-          <div className="projects__aside-link">
+          <div className="project-slider__aside-link">
             <a href={`/projects/${projects[projectIndex].mobileTitle}`}>
               Read More
             </a>

@@ -2,11 +2,11 @@
 import GroupedSlider from "@common/GroupSlider/GroupSlider";
 import CarouselSlider from "@common/CarouselSlider/CarouselSlider";
 /* Mobile Components */
-import ProjectsAccordion from "@components/ProjectsAccordion";
+import ProjectsAccordion from "@components/CertificationsAccordion";
 /* Context */
 import { useAppContext } from "@context/AppContext";
 /* Type Casting Functions */
-import { filterPropertiesOfObjsInArray } from "../types/functions";
+import { filterPropertiesOfObjsInArray } from "@models/functions";
 
 
 
@@ -35,7 +35,7 @@ function Academics() {
           reprehenderit dolorem sint et, est dolores enim dolore deserunt sequi.
           Officiis ipsum quis ut esse fugit, laboriosam delectus?
         </p>
-        <button>Explore Live Projects</button>
+        <button onClick={() => (location.href = "/projects")}>Explore Live Projects</button>
       </section>
 
       <ProjectsAccordion />

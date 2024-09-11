@@ -8,7 +8,7 @@ import BacktoTopBtn from "@common/BackToTopBtn/BacktoTopBtn";
 /* Context */
 import { useAppContext } from "@context/AppContext";
 /* Type Casting Functions */
-import { filterPropertiesOfObjsInArray } from "../types/functions";
+import { filterPropertiesOfObjsInArray } from "@models/functions";
 
 function Home() {
   const { projects, certifications } = useAppContext();

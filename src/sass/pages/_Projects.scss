@@ -1,17 +1,23 @@
 @use "../abstracts/variables" as *;
 
+:root {
+  --bgImg: url('../../assets/HSImg.jpg');
+  --themeColor: hsl(178, 90%, 50%);
+}
+
 .project {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-block: 6em 1em;
+  padding-block: 6em 4em;
   padding-inline: 2em;
   text-align: center;
   &__header {
     display: none;
     margin: 0 auto;
-    padding: 3em;
+    padding: 5em;
     text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
     h1 {
       font-size: 1.75rem;
       border-bottom: 2px solid $accent-text;
@@ -28,21 +34,19 @@
       justify-content: space-around;
       width: 90%;
       margin: 0 auto;
-      padding: 0;
       & > div {
-        width: 27.5%;
+        width: 17.5em;
         font-size: 1rem;
-        margin: 0;
       }
     }
   }
   &__title {
     align-items: center;
-    font-size: 1rem;
-    border-bottom: 3px solid $accent-text;
+    font-size: 1.25rem;
+    border-bottom: 3px solid var(--themeColor);
     svg {
       margin-block: 0.25em;
-      font-size: 2rem;
+      font-size: 2.75rem;
     }
     svg + svg {
       margin-left: 0.1em;
@@ -50,7 +54,8 @@
   }
   &__resume {
     max-width: 75ch;
-    margin-block: 2em 2em;
+    text-indent: 1.5em;
+    margin-block: 2em 4em;
     text-wrap: balance;
   }
 
@@ -88,7 +93,7 @@
     place-items: center;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 10% 90%;
-    background-color: rgba(0,0,0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 3.5em 3em 5em 3em;
     &::before {
       content: "";
@@ -97,7 +102,7 @@
       width: 100%;
       height: 100%;
       filter: grayscale(100%);
-      background: url("../assets/HSImg.jpg");
+      background: var(--bgImg);
       background-size: cover;
       background-color: rgba(0, 0, 0, 0.85);
       background-blend-mode: overlay;
@@ -121,7 +126,7 @@
         list-style: inside;
         margin-bottom: 1em;
         text-wrap: pretty;
-      } 
+      }
     }
   }
 
@@ -134,9 +139,10 @@
     padding: 5em 0.75em;
     &-video {
       width: 100%;
-      border: 1px solid $accent-text;
       video {
         width: 100%;
+        box-shadow: 20px 20px 8px rgba(0, 0, 0, 0.75);
+        border: 1px solid var(--themeColor);
       }
     }
     &-text {
@@ -150,7 +156,7 @@
         margin: 0 auto;
         margin-bottom: 0.75em;
         padding-bottom: 0.5em;
-        border-bottom: 3px solid $accent-text;
+        border-bottom: 3px solid var(--themeColor);
         width: max-content;
       }
       p {
@@ -164,25 +170,29 @@
 
 @media screen and (min-width: 1050px) {
   .project {
-    padding-block: 2em;
+    padding-block: 10em 12em;
     padding-inline: 0;
     text-align: left;
-    &__header {
-      display: block;
-    }
+    // &__header {
+    //   display: block;
+    // }
     &__title {
       display: flex;
       font-size: 1.75rem;
-      padding-bottom: 0.5em;
+      padding-bottom: 0.25em;
       line-height: 0;
       h2 {
-        font-size: 1.75rem;
-        margin-right: 0.5em;
+        font-size: 2.25rem;
+        margin-right: 1em;
       }
       svg {
         margin: 0;
-        font-size: 2.5rem;
+        font-size: 3rem;
       }
+    }
+    &__resume {
+      font-size: 1.25rem;
+      margin-block: 2em 11em;
     }
     &__main-content {
       padding-block: 3em;
@@ -190,7 +200,7 @@
       &-row {
         flex-direction: row;
         width: 90%;
-        margin-bottom: 7.5em;
+        margin-bottom: 15em;
         & > img {
           width: 40%;
         }
@@ -218,13 +228,16 @@
 
     &__showcase {
       flex-direction: row;
-      padding: 5em;
+      gap: 5em;
+      padding: 10em;
+      align-items: flex-start;
       &-video {
         width: 40%;
       }
       &-text {
         width: 40%;
         margin-top: 0;
+        padding-top: 1em;
         h4 {
           margin-inline: 0;
         }
@@ -236,4 +249,23 @@
       }
     }
   }
+}
+
+
+.project-page {
+  position: relative;
+    &::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--bgImg);
+      background-position: center;
+      background-size: cover;
+      background-color: rgba(0, 0, 0, 0.8);
+      background-blend-mode: overlay;
+      z-index: -1;
+      background-repeat: no-repeat;
+    }
 }

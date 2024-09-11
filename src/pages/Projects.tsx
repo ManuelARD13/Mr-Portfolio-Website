@@ -8,43 +8,39 @@ function Projects() {
   const { projects } = useAppContext();
   const { projectTitle } = useParams();
 
+
   const [currentProject, setCurrentProject] = useState(projects[0]);
 
   useEffect(() => {
     if (projectTitle) {
+
+      const selectedProject = projects.filter(
+        (project) => project.mobileTitle === projectTitle
+      )[0]
+
       setCurrentProject(
-        projects.filter((project) => project.mobileTitle === projectTitle)[0]
+        selectedProject
       );
+
+      const page = document.getElementsByTagName("body")[0];
+      page.classList.add("project-page");
+      document.documentElement.style.setProperty("--bgImg", `url('../../../${selectedProject.image}')`);
+      document.documentElement.style.setProperty("--themeColor", selectedProject.mainColor);
+      
     }
-  }, [projectTitle, projects]);
+  }, [projectTitle, projects, currentProject.image]);
 
   return (
     <>
-      <section className="project__header">
-        <div className="project__header-title">
-          <h1>Lorem ipsum dolor sit amet.</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi totam
-            quis culpa numquam accusamus molestias at fugiat quas obcaecati
-            corporis?
-          </p>
-        </div>
-        <div className="project__header-selector">
-          {projects.map((project, index) => (
-            <React.Fragment key={index}>
-              <ProjectCard project={project} />
-            </React.Fragment>
-          ))}
-        </div>
-      </section>
       <section className="project">
         <div className="project__title">
-          <h2>{currentProject.mobileTitle}</h2>
+          <h1>{currentProject.mobileTitle}</h1>
           {currentProject.technologies.map((tech, index) => (
             <React.Fragment key={index}>{tech}</React.Fragment>
           ))}
         </div>
         <div className="project__resume">{currentProject.description}</div>
+        <div><img src={currentProject.logo} alt="" /></div>
       </section>
       <section className="project__main-content">
         <div className="project__main-content-row">
@@ -129,6 +125,18 @@ function Projects() {
             aspernatur numquam, alias odio consectetur saepe in harum cum ea
             aliquid voluptatum?
           </p>
+        </div>
+      </section>
+      <section className="project__header">
+        <div className="project__header-title">
+          <h4>Lorem ipsum dolor sit amet.</h4>
+        </div>
+        <div className="project__header-selector">
+          {projects.map((project, index) => (
+            <React.Fragment key={index}>
+              <ProjectCard project={project} className="rounded-corners box-shadow glass-card" />
+            </React.Fragment>
+          ))}
         </div>
       </section>
     </>

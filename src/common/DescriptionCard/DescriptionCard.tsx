@@ -35,7 +35,7 @@ function DescriptionCard({className, cardInfo} : CardProps) {
         </a>
       </div>
       <div className="description-card__button">
-        <a href={cardInfo.link}><button>View Details</button></a>
+        <a href={`academics/#certifications`}><button>View Details</button></a>
       </div>
     </div>
   );

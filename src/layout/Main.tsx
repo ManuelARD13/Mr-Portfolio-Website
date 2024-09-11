@@ -5,13 +5,13 @@ import MobileNav from "@components/MobileNav";
 import Footer from "@components/Footer";
 
 
-function Main({ children }: { children: React.ReactNode }) {
+function Main({ children, videoBackground }: { children: React.ReactNode, videoBackground?: boolean }) {
 
   return (
     <>
       <Nav />
       <MobileNav />
-      <VideoBackground />
+      { videoBackground && <VideoBackground />}
       {children}
       <Footer />
     </>

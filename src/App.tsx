@@ -12,16 +12,16 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <Main>
+      <Main videoBackground>
         <Home />
         <ScrollRestoration />
       </Main>
     ),
   },
   {
-    path: "/academics",
+    path: "/academics/:certification?",
     element: (
-      <Main>
+      <Main videoBackground >
         <Academics />
         <ScrollRestoration />
       </Main>
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
   {
     path: "*",
     element: (
-      <Main>
+      <Main videoBackground>
         <NotFound />
       </Main>
     ),

@@ -40,16 +40,18 @@ function Academics() {
 
       <ProjectsAccordion />
 
-      <CarouselSlider
-        slides={filterPropertiesOfObjsInArray(
-          certifications,
-          "title",
-          "description",
-          "img",
-          "detailsList"
-        )}
-        className="academics__certifications"
-      />
+      <div id="certifications">
+        <CarouselSlider
+          slides={filterPropertiesOfObjsInArray(
+            certifications,
+            "title",
+            "description",
+            "img",
+            "detailsList"
+          )}
+          className="academics__certifications"
+        />
+      </div>
     </>
   );
 }

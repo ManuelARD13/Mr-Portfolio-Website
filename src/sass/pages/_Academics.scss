@@ -119,10 +119,10 @@
 @media screen and (min-width: 1025px) {
   .academics {
     &__header {
-      flex-direction: row;
-      gap: 0;
+      display: grid;
       width: 70em;
-      padding: 7em 2em 5em 2em;
+      padding: 4em 2em 7.5em 2em;
+      overflow-x: visible;
     }
     &__projects {
       padding: 5em 1em;

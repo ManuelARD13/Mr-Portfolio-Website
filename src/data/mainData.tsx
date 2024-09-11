@@ -38,7 +38,7 @@ export const projects: Project[] = [
   {
     title:
       "Japanese learning app, met lo consectetur adipisicing elit. Itaque, harum.",
-    mobileTitle: "Japanese learning app",
+    mobileTitle: "Japanese Learning App",
     subtext:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima optio facilis at necessitatibus quasi praesentium aliquam quod nam,earum exercitationem aperiam nulla dolores dolor tempora.",
     technologies: [

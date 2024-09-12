@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 /* Types */
 import { Project } from "@models/index";
+import { Link } from "react-router-dom";
 
 /*TODO: Finish Slider component:
     - adjust colored links in the slides
@@ -110,9 +111,9 @@ function ProjectSlider({ projects }: { projects: Project[] }) {
           <div className="project-slider__header-links">
             <ul className="links__list">
               <li className="links__list-item">
-                <a href={`/projects/${projects[projectIndex].mobileTitle}`}>
+                <Link to={`/projects/${projects[projectIndex].mobileTitle}`}>
                   Read More
-                </a>
+                </Link>
               </li>
               <li className="links__list-item">
                 <a href={projects[projectIndex].liveLink} target="_blank">

@@ -7,6 +7,7 @@ import ProjectsAccordion from "@components/CertificationsAccordion";
 import { useAppContext } from "@context/AppContext";
 /* Type Casting Functions */
 import { filterPropertiesOfObjsInArray } from "@models/functions";
+import { Link } from "react-router-dom";
 
 
 
@@ -35,7 +36,7 @@ function Academics() {
           reprehenderit dolorem sint et, est dolores enim dolore deserunt sequi.
           Officiis ipsum quis ut esse fugit, laboriosam delectus?
         </p>
-        <button onClick={() => (location.href = "/projects")}>Explore Live Projects</button>
+        <Link to="/projects"><button>Explore Live Projects</button></Link>
       </section>
 
       <ProjectsAccordion />

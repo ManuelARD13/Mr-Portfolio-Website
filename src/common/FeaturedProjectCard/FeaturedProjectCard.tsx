@@ -5,6 +5,7 @@ import { BiLogoReact, BiLogoSass, BiLogoTypescript } from "react-icons/bi";
 import { TbBrandFramerMotion } from "react-icons/tb";
 // Images
 import projectoLogo from "@assets/hiragana-shuffle-logo.png";
+import { Link } from "react-router-dom";
 //Types
 
 interface ProjectCard {
@@ -57,13 +58,10 @@ function FeaturedProjectCard() {
           <p className="featured-project-card__text-description">
             {featuredProjectInfo.description}
           </p>
-          <a
-            href={`/projects/${featuredProjectInfo.title}`}
-            target="_blank"
-            className="featured-project-card__text-link"
-          >
-            View More!
-          </a>
+          <Link to={`/projects/${featuredProjectInfo.title}`} target="_blank"
+              className="featured-project-card__text-link">
+              View More!
+          </Link>
         </div>
         <div className="featured-project-card__logo">
           <img

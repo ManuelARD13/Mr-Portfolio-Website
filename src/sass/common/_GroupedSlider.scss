@@ -1,27 +1,140 @@
+@use "../abstracts/variables" as *;
 .grouped-slider {
-  position: relative;
-  &__item {
-    width: 70%;
+  
+  &__img-slider {
     position: relative;
+    display: flex;
+    gap: 1.5em;
+    &-item {
+      position: relative;
+      width: 95%;
+      height: 17.5em;
+      margin-left: 0.5em;
+    }
+  }
+  &__mobile-title {
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 2;
+    align-self: center;
+    justify-self: center;
+    padding-bottom: 0.5em;
+    border-bottom: 3px solid $accent-text;
+  }
+  &__right {
+    grid-row: 2 / span 1;
+    grid-column: 2 / span 1;
+    position: relative;
+    min-height: 15em;
+    padding-inline: 1.25em 1.25em;
+    p {
+      max-width: 50ch;
+      overflow-y: scroll;
+      max-height: 8em;
+    }
+    &-title {
+      display: flex;
+      justify-content: space-between;
+      h1 {
+        width: 70%;
+        font-size: 1.5rem;
+      }
+      svg {
+        width: 20%;
+        height: 3rem;
+      }
+    }
+    &-description {
+      margin-block: 1em;
+      max-width: 50ch;
+      font-size: 0.8135rem;
+    }
+
+    &-button {
+      position: absolute;
+      bottom: 7.5%;
+      font-size: 0.9rem;
+    }
+
+    &-slide-arrow {
+      display: none;
+      position: absolute;
+      right: 0;
+      bottom: 50%;
+      font-size: 3rem;
+      cursor: pointer;
+    }
   }
 }
+@media screen and (min-width: 1025px) {
+  .grouped-slider {
+    display: grid;
+    grid-template-rows: 17.5% 87.5%;
+    grid-template-columns: repeat(2, 1fr);
+    &__img-slider {
+      display: block;
+      gap: 0;
+      &-item {
+        width: 70%;
+        margin: 0;
+      }
+    }
+    &__mobile-title {
+      align-self: flex-start;
+    }
+    &__left {
+      grid-column: 1 / span 1;
+      grid-row: 2 / span 1;
+    }
+    &__right {
+      position: relative;
+      min-height: 22.5em;
+      padding-inline: 2em 5em;
+      p {
+        max-width: 50ch;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+      &-title {
+        h1 {
+          width: 75%;
+          font-size: 2.25rem;
+        }
+        svg {
+          width: 25%;
+          height: 5rem;
+        }
+      }
+      &-description {
+        margin-block: 2em;
+        font-size: 1rem;
+      }
 
-.slide-1 {
-  z-index: 2;
-  top: -7.5%;
-  right: -25%;
-}
+      &-slide-arrow {
+        display: block;
+      }
+    }
+    &-mobile-title {
+      display: none;
+    }
+  }
+  .slide-1 {
+    z-index: 2;
+    top: -7.5%;
+    right: -25%;
+  }
 
-.slide-2 {
-  position: absolute;
-  z-index: 1;
-  top: 7.5%;
-  right: 15%;
-}
+  .slide-2 {
+    position: absolute;
+    z-index: 1;
+    top: 7.5%;
+    right: 15%;
+  }
 
-.slide-3 {
-  position: absolute;
-  z-index: 0;
-  top: 22.5%;
-  right: 25%;
+  .slide-3 {
+    position: absolute;
+    z-index: 0;
+    top: 22.5%;
+    right: 25%;
+  }
 }

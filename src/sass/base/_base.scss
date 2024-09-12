@@ -38,7 +38,7 @@ button {
   border: none;
   border-radius: 0.15rem;
   cursor: pointer;
-  box-shadow: 20px 20px 22px -4px rgba(0,0,0,0.5);
+  box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.5);
  }
 
 /* Utility Classes */
@@ -48,7 +48,7 @@ button {
 }
 
 .box-shadow {
-  box-shadow: 20px 20px 22px -4px rgba(0,0,0,0.75);
+  box-shadow: 20px 20px 8px rgba(0, 0, 0, 0.75);
 }
 
 @media screen and (min-width: 1370px) {

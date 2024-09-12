@@ -1,4 +1,3 @@
-@use "./abstracts/variables" as *;
 @use "./base/resets";
 @use "./base/base";
 
@@ -7,14 +6,20 @@
 @use "./components/Nav";
 @use "./components/MobileNav";
 @use "./components/About";
-@use "./components/Projects";
+@use "./components/ProjectSlider";
 @use "./components/MobileProjects";
 @use "./components/Contact";
 @use "./components/Footer";
-@use "./components/Academics";
+@use "./components/CertificationsAccordion";
 
 @use "./common/VideoBackground";
 @use "./common/BackToTopBtn";
+@use "./common/FeaturedProjectCard";
 @use "./common/ProjectCard";
 @use "./common/GroupedSlider";
 @use "./common/CarouselSlider";
+@use "./common/Accordion";
+
+@use "./pages/Academics";
+@use "./pages/Projects";
+@use "./pages/NotFound";

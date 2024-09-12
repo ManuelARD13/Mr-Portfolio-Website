@@ -31,19 +31,21 @@
   }
   &__label {
     width: 100%;
-    margin-block: 1.25em 0.75em;
+    margin-block: 0.75em 0.75em;
     display: flex;
     justify-content: space-between;
     color: $accent-text;
     border-bottom: 1px solid $accent-text;
   }
   &__text {
-    margin-block: 0 1em;
+    margin-block: 0 0.5em;
+    min-height: 10.75em;
     &-title {
       font-size: 0.8135rem;
+      line-height: 1.1em;
     }
     &-description {
-      margin-block: 0.75em;
+      margin-block: 0.75em 0.3em;
       font-size: 0.6rem;
     }
     &-link {

@@ -1,26 +1,28 @@
 @use "../abstracts/variables" as *;
 
-.section-projects {
+.project-slider {
   height: 100svh - 6svh;
   display: none;
   place-items: center;
   max-width: none;
-}
-.projects {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  height: 55em;
-  width: min(120em, 1600px);
-  padding: 1.5em;
-  background-color: rgba(0, 0, 0, 0.1);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-blend-mode: overlay;
-  font-size: 0.65rem;
+
+  &__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 55em;
+    width: min(120em, 1600px);
+    padding: 1.5em;
+    border: 0.1em solid $accent-text;
+    border-radius: 0 3rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    font-size: 0.65rem;
+  }
   &__header {
     position: relative;
     width: 47.5%;
@@ -51,7 +53,14 @@
     }
     &-links {
       margin-top: 2.5em;
-      color: var(--accent-color, $accent-text);
+      color: $hight-contrast-color;
+      a {
+        padding: 0.25em 0.75em;
+        border-radius: 0.5em;
+        box-shadow: 7.5px 7.5px 5px rgba(0, 0, 0, 0.25);
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+        background-color: var(--accent-color, $accent-text);
+      }
     }
   }
   &__slider-controls {
@@ -113,7 +122,6 @@
       margin-top: 2em;
     }
   }
-
   &__slider-markers {
     position: absolute;
     bottom: -4%;
@@ -150,7 +158,6 @@
 
 .glass-card {
   background: rgba(0, 0, 0, 0.25);
-  // box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.37);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 1rem;
@@ -158,16 +165,7 @@
 }
 
 @media screen and (min-width: 1050px) {
-  .section-projects {
+  .project-slider {
     display: grid;
   }
 }
-
-// @media screen and (min-width: 1050px) and (max-width: 1440px) {
-//   .projects {
-//     width: 90%;
-//     &__header {
-//       margin-block: 3em;
-//     }
-//   }
-// }

@@ -1,0 +1,88 @@
+@use "../abstracts/variables" as *;
+
+.accordion {
+  margin: 0 auto;
+  width: 90%;
+  border: 1px solid $accent-text;
+  border-radius: 0;
+  &__label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 1.25em;
+    padding-block: 1em;
+    border-bottom: 1px solid $accent-text;
+    font-size: 0.6135rem;
+    min-height: 3.25rem;
+    background: rgba(0, 0, 0, 0.75);
+    &-icon {
+      display: grid;
+      place-content: center;
+      width: 1em;
+      height: 1em;
+    }
+    svg {
+      font-size: 1.5rem;
+      transition: 0.35s ease-in-out;
+      width: 1em;
+      height: 1em;
+    }
+  }
+  &__input {
+    display: none;
+    & + label {
+      width: 1.5rem;
+      height: 1.5rem;
+      transition: 0.35s ease-in-out;
+    }
+    & + label > svg {
+      max-width: 100%;
+      display: block;
+      font-size: 1.5rem;
+    }
+    &:checked + label {
+      transition: 0.35s ease-in-out;
+      rotate: 180deg;
+    }
+  }
+  &__content {
+    display: none;
+    flex-direction: column;
+    gap: 1em;
+    font-size: 0.75rem;
+    padding: 2em;
+    border-bottom: 1px solid $accent-text;
+    background: rgba(0, 0, 0, 0.75);
+    img {
+      width: 100%;
+      margin: 0 auto;
+      border: 1px solid $accent-text;
+    }
+    p {
+      text-indent: 1.5em;
+      font-size: 0.8135rem;
+    }
+    li {
+      list-style: disc;
+      margin-left: 1.5em;
+    }
+  }
+}
+
+.active-item {
+  display: flex;
+  input[type="radio"]:checked + label {
+    transform: rotate(180deg);
+  }
+}
+
+.active-icon {
+  transform: rotate(180deg);
+  transition: 0.35s ease-in-out;
+}
+
+@media screen and (min-width: 1025px) {
+  .accordion {
+    display: none;
+  }
+}

@@ -2,7 +2,7 @@
 
 .accordion {
   margin: 0 auto;
-  width: 95%;
+  width: 90%;
   border: 1px solid $accent-text;
   border-radius: 0;
   &__label {
@@ -12,7 +12,9 @@
     padding-inline: 1.25em;
     padding-block: 1em;
     border-bottom: 1px solid $accent-text;
-    font-size: 0.75rem;
+    font-size: 0.6135rem;
+    min-height: 3.25rem;
+    background: rgba(0, 0, 0, 0.75);
     &-icon {
       display: grid;
       place-content: center;
@@ -49,9 +51,20 @@
     gap: 1em;
     font-size: 0.75rem;
     padding: 2em;
+    border-bottom: 1px solid $accent-text;
+    background: rgba(0, 0, 0, 0.75);
     img {
-      width: 95%;
+      width: 100%;
       margin: 0 auto;
+      border: 1px solid $accent-text;
+    }
+    p {
+      text-indent: 1.5em;
+      font-size: 0.8135rem;
+    }
+    li {
+      list-style: disc;
+      margin-left: 1.5em;
     }
   }
 }

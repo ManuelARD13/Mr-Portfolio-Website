@@ -1,38 +1,48 @@
 /*Components*/
-import Hero from "../components/Hero";
-import About from "../components/About";
-import Projects from "../components/Projects";
-import MobileProjects from "../components/MobileProjects";
-import Contact from "../components/Contact";
-
-import BacktoTopBtn from "../common/BackToTopBtn/BacktoTopBtn";
+import Hero from "@components/Hero";
+import About from "@components/About";
+import ProjectSlider from "@components/ProjectSlider";
+import MobileProjects from "@components/MobileProjects";
+import Contact from "@components/Contact";
+import BacktoTopBtn from "@common/BackToTopBtn/BacktoTopBtn";
+/* Context */
+import { useAppContext } from "@context/AppContext";
+/* Type Casting Functions */
+import { filterPropertiesOfObjsInArray } from "@models/functions";
 
 function Home() {
-
-  const detectDevice = (): string => {
-    const regex = new RegExp(
-      "Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini",
-      "i"
-    );
-    if (regex.test(navigator.userAgent)) {
-      return "mobile";
-    } else {
-      return "desktop";
-    }
-  };
+  const { projects, certifications } = useAppContext();
 
   return (
     <>
-      <BacktoTopBtn anchorId="#top"/>
+      <BacktoTopBtn anchorId="#top" />
       {/* <VideoBackground /> */}
 
       {/* Main Estructure */}
 
       {/*Section #1*/}
-      <Hero />
+      <Hero
+        cards={filterPropertiesOfObjsInArray(
+          certifications,
+          "title",
+          "description",
+          "link",
+          "logo",
+          "techIcon",
+          "date",
+          "institution"
+        )}
+      />
       <About />
       {/*Section #2*/}
-      {detectDevice() === "desktop" ? <Projects /> : <MobileProjects />}
+
+      {window.innerWidth < 850 ? (
+        <section id="projects">
+          <MobileProjects mobileProjects={projects} />
+        </section>
+      ) : (
+        <ProjectSlider projects={projects} />
+      )}
       {/*Section #3*/}
       <Contact />
     </>

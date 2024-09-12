@@ -16,20 +16,20 @@ function ProjectSlider({ projects }: { projects: Project[] }) {
 
   const updateTheme = (themeColor: string): void => {
     const labelTheme: HTMLElement | null = document?.getElementsByClassName(
-      "projects__header-label"
+      "project-slider__header-label"
     )[0] as HTMLElement;
     const dividerTheme: HTMLElement | null = document?.getElementsByClassName(
       "divider"
     )[0] as HTMLElement;
     const linkTheme: HTMLElement | null = document?.getElementsByClassName(
-      "projects__header-links"
+      "project-slider__header-links"
     )[0] as HTMLElement;
     const descriptionTheme: HTMLElement | null =
       document?.getElementsByClassName(
-        "projects__description"
+        "project-slider__description"
       )[0] as HTMLElement;
     const asideLinkTheme: HTMLElement | null = document?.getElementsByClassName(
-      "projects__aside-link"
+      "project-slider__aside-link"
     )[0] as HTMLElement;
     const boxShadowTheme: HTMLElement | null = document?.getElementsByClassName(
       "glass-card"

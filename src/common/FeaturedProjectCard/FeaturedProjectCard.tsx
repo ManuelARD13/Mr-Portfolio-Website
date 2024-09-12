@@ -34,43 +34,48 @@ const featuredProjectInfo: ProjectCard = {
 
 function FeaturedProjectCard() {
   return (
-    <div className="featured-project-card" onClick={() => (location.href = `/projects/${featuredProjectInfo.title}`)}>
-      <div className="featured-project-card__icons-container">
-        <div className="featured-project-card__icon-text">
-          <h3>Featured Project</h3>
+    <div className="featured-project-card">
+      <Link to={`/projects/${featuredProjectInfo.title}`}>
+        <div className="featured-project-card__icons-container">
+          <div className="featured-project-card__icon-text">
+            <h3>Featured Project</h3>
+          </div>
+          <div className="featured-project-card__icons">
+            {featuredProjectInfo.technologies.map((tech, index) => (
+              <CustomIcon key={index} color="#FAFAFA">
+                {tech}
+              </CustomIcon>
+            ))}
+          </div>
         </div>
-        <div className="featured-project-card__icons">
-          {featuredProjectInfo.technologies.map((tech, index) => (
-            <CustomIcon key={index} color="#FAFAFA">
-              {tech}
-            </CustomIcon>
-          ))}
+        <div className="featured-project-card__label">
+          <p>Mobile Web App made with React/Typescript</p>
         </div>
-      </div>
-      <div className="featured-project-card__label">
-        <p>Mobile Web App made with React/Typescript</p>
-      </div>
-      <div className="featured-project-card__content">
-        <div className="featured-project-card__text">
-          <h3 className="featured-project-card__text-title">
-            {featuredProjectInfo.title}
-          </h3>
-          <p className="featured-project-card__text-description">
-            {featuredProjectInfo.description}
-          </p>
-          <Link to={`/projects/${featuredProjectInfo.title}`} target="_blank"
-              className="featured-project-card__text-link">
+        <div className="featured-project-card__content">
+          <div className="featured-project-card__text">
+            <h3 className="featured-project-card__text-title">
+              {featuredProjectInfo.title}
+            </h3>
+            <p className="featured-project-card__text-description">
+              {featuredProjectInfo.description}
+            </p>
+            <Link
+              to={`/projects/${featuredProjectInfo.title}`}
+              target="_blank"
+              className="featured-project-card__text-link"
+            >
               View More!
-          </Link>
+            </Link>
+          </div>
+          <div className="featured-project-card__logo">
+            <img
+              src={featuredProjectInfo.logo}
+              alt="hiragana shuffle"
+              className="featured-project-card__logo-img"
+            />
+          </div>
         </div>
-        <div className="featured-project-card__logo">
-          <img
-            src={featuredProjectInfo.logo}
-            alt="hiragana shuffle"
-            className="featured-project-card__logo-img"
-          />
-        </div>
-      </div>
+      </Link>
     </div>
   );
 }

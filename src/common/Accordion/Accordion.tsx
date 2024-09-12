@@ -1,3 +1,4 @@
+/* Icons */
 import { TfiArrowCircleDown } from "react-icons/tfi";
 
 function Accordion({
@@ -7,23 +8,21 @@ function Accordion({
   items: { title: string; img: string; content: JSX.Element }[]
   className?: string;
 }) {
-  const handleToggle = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const item = e.target as HTMLInputElement;
-    const itemsLabels = document.querySelectorAll(".accordion__content");
+  const handleToggle = () => {
+    const itemsContents = document.querySelectorAll(".accordion__content");
+    const itemsInputs = document.querySelectorAll(".accordion__input") as NodeListOf<HTMLInputElement>;
 
-    if (item.checked) {
-      itemsLabels.forEach((label) => {
-        if(label.id === `${item.id}__content`) {
-          label.classList.toggle("active-item");
-        }
-      })
-    } else {
-      itemsLabels.forEach((label) => {
-        if(label.id === `${item.id}__content`) {
-          label.classList.remove("active-item");
-        }
-      })
-    } 
+    itemsInputs.forEach((input) => {
+      if (input.checked) {
+        itemsContents.forEach((item) => {
+          if (item.id === `${input.id}__content`) {
+            item.classList.add("active-item");
+          } else {
+            item.classList.remove("active-item");
+          }
+        });
+      }
+    })
   };
 
   return (

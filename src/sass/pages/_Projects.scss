@@ -63,6 +63,7 @@
           padding-bottom: 0.5em;
           border-bottom: 2px solid var(--themeColor);
           width: 95%;
+          font-size: 1.35rem;
         }
         p {
           max-width: 1920px;
@@ -135,6 +136,8 @@
       width: 100%;
       video {
         width: 100%;
+        max-height: 100%;
+        aspect-ratio: 16 / 9;
         box-shadow: 20px 20px 8px rgba(0, 0, 0, 0.75);
         border: 1px solid var(--themeColor);
       }
@@ -146,12 +149,12 @@
       justify-content: center;
       margin-top: 1em;
       h4 {
-        font-size: 1.35rem;
         margin: 0 auto;
         margin-bottom: 0.75em;
         padding-bottom: 0.5em;
         border-bottom: 3px solid var(--themeColor);
         width: max-content;
+        font-size: 1.35rem;
       }
       p {
         max-width: 1920px;
@@ -173,14 +176,13 @@
     background-color: rgba(0, 0, 0, 0.5);
     max-width: 1920px;
     h4 {
-      font-size: 1.5rem;
       border-bottom: 2px solid var(--themeColor);
       margin: 0 auto 2.5em auto;
       padding-bottom: 0.5em;
       width: 80%;
+      font-size: 1.35rem;
     }
     p {
-      font-size: 0.8135rem;
       margin-block: 1.5em;
     }
     &-selector {
@@ -188,11 +190,11 @@
       flex-direction: column;
       gap: 4em;
       justify-content: space-around;
+      align-items: center;
       width: 90%;
       margin: 0 auto;
       & > div {
         width: 17.5em;
-        font-size: 1rem;
       }
     }
   }
@@ -209,7 +211,6 @@
       padding-bottom: 0.25em;
       line-height: 0;
       h1 {
-        font-size: 2rem;
         margin-right: 1em;
       }
       svg {

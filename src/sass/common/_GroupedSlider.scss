@@ -4,12 +4,14 @@
   &__img-slider {
     position: relative;
     display: flex;
-    gap: 1.5em;
+    justify-content: space-between;
+    height: 30%;
+    gap: 5em;
+    margin-left: 0.5em;
     &-item {
       position: relative;
-      width: 95%;
-      height: 17.5em;
-      margin-left: 0.5em;
+      width: 100%;
+      height: auto; 
     }
   }
   &__mobile-title {
@@ -19,6 +21,9 @@
     justify-self: center;
     padding-bottom: 0.5em;
     border-bottom: 3px solid $accent-text;
+    h1 {
+      font-size: 1.75rem;
+    }
   }
   &__right {
     grid-row: 2 / span 1;
@@ -46,7 +51,7 @@
     &-description {
       margin-block: 1em;
       max-width: 50ch;
-      font-size: 0.8135rem;
+      font-size: 0.9rem;
     }
 
     &-button {
@@ -98,7 +103,6 @@
       &-title {
         h1 {
           width: 75%;
-          font-size: 2.25rem;
         }
         svg {
           width: 25%;

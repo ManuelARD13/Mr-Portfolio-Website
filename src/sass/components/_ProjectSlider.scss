@@ -1,9 +1,9 @@
 @use "../abstracts/variables" as *;
 
 .project-slider {
-  height: 100svh - 6svh;
+  padding-block: 1em 4em;
   display: none;
-  place-items: center;
+  justify-content: center;
   max-width: none;
 
   &__container {
@@ -12,20 +12,20 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    height: 55em;
-    width: min(120em, 1600px);
+    min-width: 92.5%;
     padding: 1.5em;
+    padding-top: 7.5em;
     border: 0.1em solid $accent-text;
     border-radius: 0 3rem;
     background-color: rgba(0, 0, 0, 0.1);
     background-size: cover;
     background-position: center;
     background-blend-mode: overlay;
-    font-size: 0.65rem;
+    font-size: 0.75rem;
   }
   &__header {
     position: relative;
-    width: 47.5%;
+    width: min(47.5%, 48em);
     padding: 2.75em 3em;
     margin-block: 0em 2.25em;
     display: flex;
@@ -43,9 +43,6 @@
       border-radius: 0.25em;
       color: whitesmoke;
       font-size: 1.75rem;
-    }
-    &-title {
-      font-size: 2rem;
     }
     &-subtext {
       max-width: 75ch;
@@ -84,7 +81,7 @@
     }
   }
   &__description {
-    width: 47.5%;
+    width: min(47.5%, 48em);
     min-height: 13.5em;
     font-size: 0.75rem;
     padding: 1em;
@@ -107,9 +104,10 @@
     padding: 2.5em 1.5em;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    > h3 {
-      font-size: 1rem;
-    }
+    font-size: 0.65rem;
+     > h3 {
+        font-size: 1rem;
+     }
     &-details {
       margin-block: 1.5em;
       display: flex;
@@ -143,7 +141,8 @@
 
 .links__list {
   display: flex;
-  gap: 3em;
+  justify-content: space-between;
+  padding-right: 3em;
 }
 
 .last-item {
@@ -166,6 +165,6 @@
 
 @media screen and (min-width: 1050px) {
   .project-slider {
-    display: grid;
+    display: flex;
   }
 }

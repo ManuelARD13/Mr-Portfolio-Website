@@ -64,7 +64,7 @@ function ProjectSlider({ projects }: { projects: Project[] }) {
   }, [projectIndex, isMouseOver, projects]);
 
   return (
-    <section className="project-slider" id="projects">
+    <section className="project-slider">
       <div
         className="project-slider__container"
         style={{ backgroundImage: `url(${projects[projectIndex].image})`, borderColor: projects[projectIndex].mainColor }}

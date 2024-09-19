@@ -61,9 +61,6 @@
         align-items: center;
         gap: 0.75em;
         margin-bottom: 1.5em;
-        > svg {
-          font-size: 1rem; 
-        }
       }
     }
     &-footer {
@@ -83,9 +80,9 @@
 
 @media screen and (min-width: 1050px) {
   .contact {
-    padding-block: 0; 
+    padding-block: 5em; 
     place-items: center; 
-    height: 90svh; 
+    min-height: 90svh; 
     &__card {
       flex-direction: row; 
       width: 47.5em; 

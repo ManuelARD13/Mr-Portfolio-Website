@@ -5,6 +5,7 @@ import { Project } from "@models/index";
 import { Link } from "react-router-dom";
 
 /*TODO: Finish Slider component:
+    - use css variables manipulation to set theme colors
     - adjust colored links in the slides
     - test add change slide while clicking the whole left or right side of the section
     - Complete each project data and test cards background contrast
@@ -64,7 +65,7 @@ function ProjectSlider({ projects }: { projects: Project[] }) {
   }, [projectIndex, isMouseOver, projects]);
 
   return (
-    <section className="project-slider" id="projects">
+    <section className="project-slider">
       <div
         className="project-slider__container"
         style={{ backgroundImage: `url(${projects[projectIndex].image})`, borderColor: projects[projectIndex].mainColor }}

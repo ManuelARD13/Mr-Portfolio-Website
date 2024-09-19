@@ -28,7 +28,6 @@
       padding-bottom: 0.5em;
       margin: 0 auto;
       border-bottom: 2px solid #ff5572;
-      // width: 85%;
       min-height: 3em;
     }
     &-description {
@@ -49,23 +48,6 @@
       }
     }
   }
-  // &-links {
-  //   display: flex;
-  //   justify-content: center;
-  //   &-link {
-  //     font-size: 1.25rem;
-  //     line-height: 0;
-  //   }
-  //   button {
-  //     font-size: 0.9rem;
-  //   }
-  //   > a + a {
-  //     margin-left: 0.5em;
-  //   }
-  //   > button + a {
-  //     margin-left: 1.5em;
-  //   }
-  // }
   &__icons {
     position: absolute;
     top: 1%;

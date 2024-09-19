@@ -2,8 +2,10 @@
 import React, { useEffect, useState } from "react";
 /* Types */
 import { Project } from "@models/index";
+import { Link } from "react-router-dom";
 
 /*TODO: Finish Slider component:
+    - use css variables manipulation to set theme colors
     - adjust colored links in the slides
     - test add change slide while clicking the whole left or right side of the section
     - Complete each project data and test cards background contrast
@@ -16,20 +18,20 @@ function ProjectSlider({ projects }: { projects: Project[] }) {
 
   const updateTheme = (themeColor: string): void => {
     const labelTheme: HTMLElement | null = document?.getElementsByClassName(
-      "projects__header-label"
+      "project-slider__header-label"
     )[0] as HTMLElement;
     const dividerTheme: HTMLElement | null = document?.getElementsByClassName(
       "divider"
     )[0] as HTMLElement;
     const linkTheme: HTMLElement | null = document?.getElementsByClassName(
-      "projects__header-links"
+      "project-slider__header-links"
     )[0] as HTMLElement;
     const descriptionTheme: HTMLElement | null =
       document?.getElementsByClassName(
-        "projects__description"
+        "project-slider__description"
       )[0] as HTMLElement;
     const asideLinkTheme: HTMLElement | null = document?.getElementsByClassName(
-      "projects__aside-link"
+      "project-slider__aside-link"
     )[0] as HTMLElement;
     const boxShadowTheme: HTMLElement | null = document?.getElementsByClassName(
       "glass-card"
@@ -63,7 +65,7 @@ function ProjectSlider({ projects }: { projects: Project[] }) {
   }, [projectIndex, isMouseOver, projects]);
 
   return (
-    <section className="project-slider" id="projects">
+    <section className="project-slider">
       <div
         className="project-slider__container"
         style={{ backgroundImage: `url(${projects[projectIndex].image})`, borderColor: projects[projectIndex].mainColor }}
@@ -110,9 +112,9 @@ function ProjectSlider({ projects }: { projects: Project[] }) {
           <div className="project-slider__header-links">
             <ul className="links__list">
               <li className="links__list-item">
-                <a href={`/projects/${projects[projectIndex].mobileTitle}`}>
+                <Link to={`/projects/${projects[projectIndex].mobileTitle}`}>
                   Read More
-                </a>
+                </Link>
               </li>
               <li className="links__list-item">
                 <a href={projects[projectIndex].liveLink} target="_blank">

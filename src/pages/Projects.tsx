@@ -11,6 +11,8 @@ function Projects() {
   const [currentProject, setCurrentProject] = useState(projects[0]);
 
   useEffect(() => {
+    const page = document.getElementsByTagName("body")[0];
+    page.classList.add("project-page");
     if (projectTitle) {
       const selectedProject = projects.filter(
         (project) => project.mobileTitle === projectTitle
@@ -18,8 +20,6 @@ function Projects() {
 
       setCurrentProject(selectedProject);
 
-      const page = document.getElementsByTagName("body")[0];
-      page.classList.add("project-page");
       document.documentElement.style.setProperty(
         "--bgImg",
         `url('../../../${selectedProject.image}')`
@@ -28,8 +28,17 @@ function Projects() {
         "--themeColor",
         selectedProject.mainColor
       );
+    } else {
+      document.documentElement.style.setProperty(
+        "--bgImg",
+        `url('../../../${currentProject.image}')`
+      );
+      document.documentElement.style.setProperty(
+        "--themeColor",
+        currentProject.mainColor
+      );
     }
-  }, [projectTitle, projects, currentProject.image]);
+  }, [projectTitle, projects, currentProject.image, currentProject]);
 
   return (
     <>
@@ -148,7 +157,7 @@ function Projects() {
           </p>
           <button
             className="projects__showcase-btn"
-            onClick={() => (location.href = currentProject.liveLink)}
+            onClick={() => window.open(currentProject.liveLink, "_blank")}
           >
             Watch it live!
           </button>

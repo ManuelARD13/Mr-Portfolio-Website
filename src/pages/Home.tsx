@@ -35,11 +35,13 @@ function Home() {
       />
       <About />
       {/*Section #2*/}
-      <ProjectSlider projects={projects} />
-      {window.innerWidth < 850 && (
+
+      {window.innerWidth < 850 ? (
         <section id="projects">
           <MobileProjects mobileProjects={projects} />
         </section>
+      ) : (
+        <ProjectSlider projects={projects} />
       )}
       {/*Section #3*/}
       <Contact />

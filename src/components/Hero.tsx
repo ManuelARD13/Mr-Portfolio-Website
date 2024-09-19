@@ -19,6 +19,7 @@ import {
   BiLogoTelegram,
   BiLogoGmail,
 } from "react-icons/bi";
+import { Link } from "react-router-dom";
 /*Types*/
 interface HeroFeatures {
   title: string;
@@ -153,8 +154,8 @@ function Hero({ cards }: { cards: HeroCard[] }) {
               </li>
             ))}
           </ul>
-          <a href="/academics" className="hero__features-bottom">
-            Explore More</a>
+          <Link to="/academics" className="hero__features-bottom">
+            Explore More</Link>
         </aside>
         <div className="hero__img rounded-corners box-shadow">
           <div className="hero__img-social-media">

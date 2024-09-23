@@ -27,9 +27,6 @@
       gap: 0.25em;
       max-width: 90%;
       line-height: 0.7em;
-      > svg {
-        font-size: 4rem;
-      }
     }
     &-name {
       font-size: 1.4rem;
@@ -65,14 +62,14 @@
     }
     &-footer {
       display: flex;
-      justify-content: center;
       align-items: center;
       gap: 1em;
       padding-top: 1em;
       border-top: 1px solid $accent-text;
       > svg {
         margin-left: 0.2em;
-        font-size: 1.7rem; 
+        font-size: 1.25rem;
+        max-width: 36px; 
       }
     }
   }

@@ -51,7 +51,7 @@ function GroupSlider({
       {withDescription ? (
         <div className="grouped-slider__right">
           <div className="grouped-slider__right-title">
-            <h1>{currentSlides[0].title}</h1>
+            <h2>{currentSlides[0].title}</h2>
             {currentSlides[0].techIcon}
           </div>
           <div className="grouped-slider__right-description">

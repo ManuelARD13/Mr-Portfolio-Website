@@ -5,12 +5,13 @@
   z-index: 2;
   &__img {
     position: relative;
-    background-image: url("../assets/profile-mobile.png");
+    background-image: url("../assets/profile-mobile-about.png");
 
     /* img fitting*/
-    background-size: 140%;
+    background-size: 38.5svh;
     background-repeat: no-repeat;
     background-position-y: 100%;
+    background-position-x: 125%;
     width: 100%;
     height: 100svh;
     padding: 6rem 2rem;
@@ -18,27 +19,26 @@
     &-social-media {
       position: absolute;
       bottom: 4%;
-      right: 5%;
+      right: 4%;
       display: flex;
       flex-direction: column;
       gap: 0.25em;
+      font-size: 1.5rem;
       a {
-        height: 2.25rem;
+        height: 3rem;
       }
     }
     &-title {
       font-weight: 900;
       width: 50%;
-      font-size: 2.75rem;
+      font-size: 2.5rem;
     }
     &-subtitle {
       margin-top: 0.5em;
       font-weight: lighter;
-      font-size: 0.9rem;
     }
     &-button {
       margin-top: 2em;
-      font-size: 0.9rem;
       letter-spacing: 0.05em;
       background: $accent-color;
       font-weight: 600;
@@ -59,7 +59,6 @@
       background-color: rgba($background-100, 0.5);
       letter-spacing: 0.1em;
       font-weight: lighter;
-      font-size: 0.8135rem;
       padding: 0.75em 1em;
       border: 1px solid rgba($hight-contrast-color, 0.5);
       border-radius: 0.25rem;
@@ -212,6 +211,7 @@
         }
       }
       &-social-media {
+        font-size: 1rem;
         a {
           height: 1.8135rem;
         }
@@ -226,6 +226,25 @@
     }
     &-cards__slider-markers {
       display: flex;
+    }
+  }
+}
+
+@media screen and (min-width: 460px) and (max-width: 1050px) {
+  .hero {
+    &__img {
+      background-size: 45svh;
+      background-position-x: 100%;
+    }
+  }
+}
+
+@media screen and (max-height: 415px) {
+  .hero {
+    &__img {
+      height: auto;
+      background-size: 60svh;
+      background-position-x: 100%;
     }
   }
 }

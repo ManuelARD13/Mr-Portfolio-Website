@@ -43,6 +43,7 @@ function MobileProjects({
           <div className="mobile-projects__card-links">
             <button
               className="mobile-projects__card-links-btn"
+                style={{ background: project.mainColor }}
               onClick={() =>
                 window.open(
                   "https://manuelard13.github.io/hiragana-shuffle-app/",

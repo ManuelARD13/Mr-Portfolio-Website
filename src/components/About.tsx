@@ -1,6 +1,6 @@
-import profilePic from "@assets/profile-mobile-about.png";
-import mobilePic from "@assets/profile-mobile.png";
-
+import profilePic from "@assets/about-image-mobile.png";
+import mobilePic from "@assets/about-image.png";
+import { aboutInfo } from "@data/mainData";
 function About() {
   return (
     <section id="about">
@@ -15,22 +15,7 @@ function About() {
           </div>
           <h3 className="about__title">Front-end Engineer</h3>
           <div className="about__description">
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Doloribus fuga fugiat dolorum officia amet fugit commodi, voluptas
-              nostrum? Libero cum error perferendis assumenda tempore obcaecati
-              pariatur eos quibusdam. Corrupti aliquam similique praesentium?
-              Excepturi possimus vel quos quia. Nihil, error! Dignissimos, harum
-              magni necessitatibus dicta rem, est molestiae ab recusandae odit
-              quod dolorem aut velit?
-            </p>
-            <br />
-            <br />
-            <p>
-              Dllo dolores neque impedit omnis in veritatis animi ad illum alias
-              consequuntur numquam sapiente! Dllo dolores neque impedit omnis in
-              veritatis animi ad illum alias consequuntur numquam sapiente!
-            </p>
+            {aboutInfo.aboutInfo}
           </div>
           <div className="about__btn">
             <a href="#projects">

@@ -34,7 +34,8 @@ function CertificationsAccordion() {
       "title",
       "img",
       "description",
-      "detailsList"
+      "detailsList",
+      "link"
     ).map(
       (certification) =>
         ({
@@ -43,12 +44,14 @@ function CertificationsAccordion() {
           content: (
             <>
               <img src={certification.img} alt={certification.title} />
+              <p className="divider"></p>
               <p>{certification.description}</p>
               <ul>
                 {certification.detailsList.map((detail) => (
                   <li key={detail}>{detail}</li>
                 ))}
               </ul>
+              <a href={certification.link} target="_blank"><button>Go to course content</button></a>
             </>
           ),
         } as CertificationItem)

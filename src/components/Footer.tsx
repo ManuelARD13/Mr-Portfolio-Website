@@ -66,11 +66,7 @@ function Footer() {
         <div className="footer__text-container">
           <p className="footer__text-logo">Mr.</p>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Voluptates, culpa, laboriosam qui eos possimus nobis esse nisi
-            aliquid magnam, impedit quisquam nostrum voluptatem quo officiis
-            error dicta facilis temporibus provident sit obcaecati itaque
-            dolores aspernatur?
+            Mr. Manuel Rojas is a Front-end engineer currently in Argentina pointing to reach the highest levels of software development, delivering impactful and innovative solutions to modern society. Working hard since 2021, there's a long way up full of big challenges, mayor milestones and a lot of fun projects ahead
           </p>
         </div>
         <div className="footer__menu-container">

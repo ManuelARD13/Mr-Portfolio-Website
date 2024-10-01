@@ -5,42 +5,40 @@
   z-index: 2;
   &__img {
     position: relative;
-    background-image: url("../assets/profile-mobile.png");
+    background-image: url("../assets/hero-image-grayscale.png");
 
     /* img fitting*/
-    background-size: 140%;
+    background-size: min(175%, 750px);
     background-repeat: no-repeat;
     background-position-y: 100%;
-
+    background-position-x: 45%;
     width: 100%;
     height: 100svh;
-    padding: 6rem 2rem;
+    padding: 8rem 2rem 6rem 2rem;
 
     &-social-media {
       position: absolute;
       bottom: 4%;
-      right: 5%;
+      right: 4%;
       display: flex;
       flex-direction: column;
       gap: 0.25em;
-      font-size: 1.25rem;
+      font-size: 1.5rem;
       a {
-        height: 2.25rem;
+        height: 3rem;
       }
     }
     &-title {
       font-weight: 900;
-      font-size: 2.75rem;
       width: 50%;
+      font-size: 2.5rem;
     }
     &-subtitle {
       margin-top: 0.5em;
       font-weight: lighter;
-      font-size: 0.9rem;
     }
     &-button {
       margin-top: 2em;
-      font-size: 0.9rem;
       letter-spacing: 0.05em;
       background: $accent-color;
       font-weight: 600;
@@ -61,14 +59,10 @@
       background-color: rgba($background-100, 0.5);
       letter-spacing: 0.1em;
       font-weight: lighter;
-      font-size: 0.8135rem;
       padding: 0.75em 1em;
       border: 1px solid rgba($hight-contrast-color, 0.5);
       border-radius: 0.25rem;
       cursor: pointer;
-      svg {
-        font-size: 1rem;
-      }
     }
   }
   &__features {
@@ -79,6 +73,7 @@
     padding: 1.75em 1.35em 1em 1.35em;
     grid-template-rows: 9% 11% repeat(10, 1fr);
     font-size: 0.575rem;
+    box-shadow: 10px 20px 8px rgba(0, 0, 0, 0.75);
     &-title {
       grid-row: 1 / span 1;
       font-size: 1.125rem;
@@ -155,22 +150,6 @@
     width: 22em;
     height: 98%;
   }
-  // &__down-btn {
-  //   display: none;
-  //   position: absolute;
-  //   bottom: 1%;
-  //   left: 50%;
-  //   height: 38px;
-  //   transform: translateX(-50%);
-  //   color: rgba($hight-contrast-color, 0.5);
-  //   font-size: 2.375rem;
-  //   transition: 0.2s ease;
-  //   &:hover {
-  //     color: $hight-contrast-color;
-  //     scale: 1.25;
-  //     transform: translateX(-40%);
-  //   }
-  // }
   &-cards__slider-markers {
     display: none;
     position: absolute;
@@ -193,7 +172,6 @@
 @media screen and (min-width: 1050px) {
   .hero {
     position: relative;
-    height: 100svh;
     display: grid;
     place-items: center;
     gap: 0.5rem;
@@ -206,15 +184,34 @@
       height: 22.25em;
     }
     &__img {
-      background-image: url("../assets/profile-pic.jpg");
-      background-size: cover;
-      background-position: center;
+      background-image: url("../assets/hero-image.png");
+      background-size: 65%;
+      background-position: right;
+      background-position-x: 85%;
+      background-position-y: 30%;
       width: 37.5em;
       height: 100%;
       padding: 4.5rem 3rem;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: hsl(0 1% 6%);
+        background: radial-gradient(
+          farthest-corner circle at 70% 43% in hsl,
+          hsl(0 1% 10%) 0%,
+          35%,
+          hsl(0 1% 4%) 100%
+        );
+        z-index: -1;
+        border-radius: 1em;
+      }
       &-social-media {
         bottom: 4%;
-        right: 3%;;
+        right: 3%;
       }
       &-title {
         width: 100%;
@@ -239,7 +236,6 @@
           height: 1.8135rem;
         }
       }
-
     }
     &__features {
       display: grid;
@@ -253,10 +249,22 @@
   }
 }
 
-@media screen and (min-width: 1370px) {
+@media screen and (min-width: 701px) and (max-width: 1050px) {
   .hero {
-    &__header {
-      height: 100%;
+    &__img {
+      height: min(100svh, 800px);
+      background-size: min(80svh, 650px);
+      background-position-x: 100%;
+    }
+  }
+}
+
+@media screen and (max-height: 415px) {
+  .hero {
+    &__img {
+      height: auto;
+      background-size: 60svh;
+      background-position-x: 100%;
     }
   }
 }

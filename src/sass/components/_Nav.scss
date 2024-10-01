@@ -1,8 +1,8 @@
 @use "../abstracts/variables" as *;
 
 .main-nav {
-  max-width: 1440px;
-  height: 3em;
+  max-width: 1950px;
+  height: 7.5vh;
   margin: 0 auto;
   padding-inline: 3em;
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
@@ -13,14 +13,14 @@
   font-size: 0.8125rem;
   font-weight: 300;
   &__logo {
-    max-width: 12%;
+    width: 22%;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.25em;
     cursor: pointer;
     user-select: none;
     &-img-container {
-      margin: 0 auto;
       border-radius: 0.75em;
       padding-inline: 0.2em 0.25em;
       text-align: center;
@@ -40,7 +40,7 @@
     display: flex;
     justify-content: center;
     gap: 3rem;
-    width: 76%;
+    width: 100%;
     text-transform: uppercase;
     &-item {
       transition: 0.2s ease;
@@ -56,11 +56,12 @@
     }
   }
   &__languages-toggler {
-    max-width: 6%;
+    width: 7%;
     margin: 0 auto;
+    margin-right: 1em;
     padding-inline: 0.2em;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     gap: 0.5em;
     background: $accent-color;
     border-radius: 20px;
@@ -71,7 +72,7 @@
     }
   }
   &__theme-toggler {
-    max-width: 6%;
+    width: 7%;
     display: flex;
     gap: 0.5em;
     .theme-icon-1 {
@@ -106,19 +107,31 @@
   }
 }
 
-@media screen and (min-width: 1370px) {
-  .main-nav {
-    max-width: 1600px;
-    height: 3.5em;
-    font-size: 0.7rem;
-    &__logo{
-      &-img-container {
-        font-size: 1.75rem;
-      }
-      &-subtext {
-        font-size: 0.7rem;
-      }
-    }
-  }
-}
+// @media screen and (min-width: 1050px) and (max-width: 1250px) {
+//   .main-nav {
+//     font-size: 0.675rem;
+//     &__logo {
+//       font-size: 0.6135rem;
+//       &-img-container {
+//         font-size: 1.75rem;
+//       }
+//     }
+//   }
+// }
+
+// @media screen and (min-width: 1370px) {
+//   .main-nav {
+//     max-width: 1600px;
+//     height: 3.5em;
+//     font-size: 0.7rem;
+//     &__logo{
+//       &-img-container {
+//         font-size: 1.75rem;
+//       }
+//       &-subtext {
+//         font-size: 0.7rem;
+//       }
+//     }
+//   }
+// }
 

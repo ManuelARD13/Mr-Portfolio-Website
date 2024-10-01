@@ -4,7 +4,31 @@
 
 html {
   scroll-behavior: smooth;
-  
+  font-size: clamp(16px, 4vw, 24px)
+}
+
+h1 {
+  font-size: clamp(28px, 7vw, 46px);
+}
+
+h2 {
+  font-size: clamp(24px, 5.5vw, 38px);
+}
+
+h3 {
+  font-size: clamp(18px, 4.5vw, 32px);
+}
+
+h4 {
+  font-size: clamp(20px, 6.25vw, 34px);
+}
+
+h5 {
+  font-size: clamp(18px, 4.25vw, 28px);
+}
+
+h6 {
+  font-size: clamp(16px, 4.5vw, 24px);
 }
 
 body {
@@ -21,12 +45,6 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
   background: $accent-color;
   border-radius: 1em;
-}
-
-section {
-  max-width: 1440px;
-  margin: 0 auto;
-  border-top: 0;
 }
 
 button {
@@ -51,8 +69,33 @@ button {
   box-shadow: 20px 20px 8px rgba(0, 0, 0, 0.75);
 }
 
-@media screen and (min-width: 1370px) {
+
+@media screen and (min-width: 1050px) {
   html {
-    font-size: 22px;
+    font-size: clamp(13px, 1.15vw, 24px)
+  }
+  
+  h1 {
+    font-size: clamp(30px, 2vw, 48px);
+  }
+  
+  h2 {
+    font-size: clamp(25px, 1.75vw, 40px);
+  }
+  
+  h3 {
+    font-size: clamp(18px, 1.375vw, 34px);
+  }
+  
+  h4 {
+    font-size: clamp(17px, 1.25vw, 30px);
+  }
+  
+  h5 {
+    font-size: clamp(14px, 1.1vw, 25px);
+  }
+  
+  h6 {
+    font-size: clamp(12px, 1vw, 20px);
   }
 }

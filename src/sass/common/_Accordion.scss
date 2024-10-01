@@ -9,12 +9,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-inline: 1.25em;
-    padding-block: 1em;
+    gap: 2em;
+    padding: 1em 1.25em;
     border-bottom: 1px solid $accent-text;
-    font-size: 0.6135rem;
-    min-height: 3.25rem;
+    min-height: 5em;
     background: rgba(0, 0, 0, 0.75);
+    h2 {
+      font-size: 1.25rem;
+    }
     &-icon {
       display: grid;
       place-content: center;
@@ -38,7 +40,6 @@
     & + label > svg {
       max-width: 100%;
       display: block;
-      font-size: 1.5rem;
     }
     &:checked + label {
       transition: 0.35s ease-in-out;
@@ -49,22 +50,31 @@
     display: none;
     flex-direction: column;
     gap: 1em;
-    font-size: 0.75rem;
-    padding: 2em;
+    padding: 2em 2em 4em 2em;
     border-bottom: 1px solid $accent-text;
     background: rgba(0, 0, 0, 0.75);
+    .divider {
+      width: 100%;
+      border-width: 1px;
+      margin-block: 1em 0;
+    }
     img {
       width: 100%;
       margin: 0 auto;
       border: 1px solid $accent-text;
     }
     p {
-      text-indent: 1.5em;
-      font-size: 0.8135rem;
+      margin-block: 1em;
     }
     li {
       list-style: disc;
       margin-left: 1.5em;
+    }
+    a {
+      margin-top: 2em;
+      button {
+        width: 100%;
+      }
     }
   }
 }

@@ -50,23 +50,31 @@
     display: none;
     flex-direction: column;
     gap: 1em;
-    font-size: 0.75rem;
-    padding: 4em 3em;
+    padding: 2em 2em 4em 2em;
     border-bottom: 1px solid $accent-text;
     background: rgba(0, 0, 0, 0.75);
+    .divider {
+      width: 100%;
+      border-width: 1px;
+      margin-block: 1em 0;
+    }
     img {
       width: 100%;
       margin: 0 auto;
       border: 1px solid $accent-text;
     }
     p {
-      margin-block: 2em 1em;
-      text-indent: 1.5em;
-      font-size: 0.8135rem;
+      margin-block: 1em;
     }
     li {
       list-style: disc;
       margin-left: 1.5em;
+    }
+    a {
+      margin-top: 2em;
+      button {
+        width: 100%;
+      }
     }
   }
 }

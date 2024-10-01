@@ -1,4 +1,4 @@
-import { RxHamburgerMenu } from 'react-icons/rx';
+import MobileMenu from "./MobileMenu";
 
 function MobileNav() {
   /*TODO: Finish Mobile Nav: 
@@ -8,16 +8,19 @@ function MobileNav() {
   */
   return (
     <div className="main-nav__mobile">
-      <div className="main-nav__mobile-logo" onClick={() => (location.href = "/")}>
-          <div className="main-nav__mobile-logo-img-container">
-            <p className="main-nav__mobile-logo-img">Mr.</p>
-          </div>
-          <p className="main-nav__mobile-logo-subtext">Front-end <br /> Engineer</p>
+      <div
+        className="main-nav__mobile-logo"
+        onClick={() => (location.href = "/")}
+      >
+        <div className="main-nav__mobile-logo-img-container">
+          <p className="main-nav__mobile-logo-img">Mr.</p>
         </div>
-      <RxHamburgerMenu />
-      
+        <p className="main-nav__mobile-logo-subtext">
+          Front-end <br /> Engineer
+        </p>
+      </div>
+      <MobileMenu />
     </div>
-
   );
 }
 

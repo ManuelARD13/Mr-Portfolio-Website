@@ -4,6 +4,31 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: clamp(16px, 4vw, 24px)
+}
+
+h1 {
+  font-size: clamp(28px, 7vw, 46px);
+}
+
+h2 {
+  font-size: clamp(24px, 5.5vw, 38px);
+}
+
+h3 {
+  font-size: clamp(18px, 4.5vw, 32px);
+}
+
+h4 {
+  font-size: clamp(20px, 6.25vw, 34px);
+}
+
+h5 {
+  font-size: clamp(18px, 4.25vw, 28px);
+}
+
+h6 {
+  font-size: clamp(16px, 4.5vw, 24px);
 }
 
 body {

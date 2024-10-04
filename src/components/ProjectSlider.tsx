@@ -145,10 +145,10 @@ function ProjectSlider({ projects }: { projects: Project[] }) {
           {projects[projectIndex].description}
         </div>
         <aside className="project-slider__aside rounded-corners">
-          <h3>LoremIpsum Lor Ipsum Lorem</h3>
+          <h3>Development highlights</h3>
           <p className="divider"></p>
           <ul className="project-slider__aside-details">
-            {projects[projectIndex].mainFeatures.map((feature) => (
+            {projects[projectIndex].mainFeatures.slice(0, 4).map((feature) => (
               <li
                 key={feature + Math.random()}
                 className="project-slider__aside-item"

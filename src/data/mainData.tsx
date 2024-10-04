@@ -52,10 +52,10 @@ import { TbBrandFramerMotion, TbBrandNpm, TbDatabaseCog } from "react-icons/tb";
 export const projects: Project[] = [
   {
     title:
-      "Japanese learning app, met lo consectetur adipisicing elit. Itaque, harum.",
+      "Japanese Learning App: Keep your daily practices with you at any time with Hiragana Shuffle!",
     mobileTitle: "Japanese Learning App",
     subtext:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima optio facilis at necessitatibus quasi praesentium aliquam quod nam,earum exercitationem aperiam nulla dolores dolor tempora.",
+      "This app satisfies the need of a tool to practice the japanese lenguage characters and their combinations. Some of these where not available to practice by phonetic asociation in other apps, they just mention and highlight them grammatically.",
     technologies: [
       <BiLogoReact />,
       <BiLogoTypescript />,
@@ -64,22 +64,25 @@ export const projects: Project[] = [
     ],
     description: (
       <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nobis
-        saepe unde mollitia aperiam repudiandae nemo ex impedit sapiente aliquid
-        accusamus ut necessitatibus harum rerum blanditiis sint delectus,
-        possimus placeat molestias. Voluptatum reprehenderit doloremque
-        voluptatem alias. Saepe, pariatur minima voluptatibus eaque quae culpa
-        fugiat officia et odio vitae dolore magni.
+        This web app was builded using React.js powerful capabilities of
+        component-based architecture, and Typescript for code quality and
+        readability. It works with a system of 'screen views' to navigate
+        throught a mode selection process. Practice or play with 4 different
+        main modes using a base logic of user input and displayed data
+        comparison.
       </p>
     ),
     githubLink: "https://github.com/ManuelARD13/hiragana-shuffle-app",
     liveLink: "https://manuelard13.github.io/hiragana-shuffle-app/",
     pageLink: "https://github.com/ManuelARD13/hiragana-shuffle-app",
     mainFeatures: [
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+      "React.js and Typescript",
+      "Screen views system to simulate mobile app behavior",
+      "Non-desctructive array manipulation",
+      "Data and state shared via React Context",
+      "User input and displayed data comparison",
+      "Sass for styling",
+      "Framer Motion for animations",
     ],
     image: hiraganaShuffleImg,
     logo: HSLOGO,
@@ -87,10 +90,10 @@ export const projects: Project[] = [
   },
   {
     title:
-      "Front-end Portfolio Website, o consectetur adipisicing elit. Itaque, harum.",
+      "Front-end Portfolio Website: Display your professional front end skills in a modern and elegant space",
     mobileTitle: "Web Dev Portfolio Website",
     subtext:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima optio facilis at necessitatibus quasi praesentium aliquam quod nam,earum exercitationem aperiam nulla dolores dolor tempora.",
+      "Show a fundamental knowledge of front-end development applying the best practices, common patterns, responsive design and a theme based logic switching color palettes and even lenguages, showcasing good architecture and code quality.",
     technologies: [
       <BiLogoReact />,
       <BiLogoTypescript />,
@@ -99,22 +102,24 @@ export const projects: Project[] = [
     ],
     description: (
       <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nobis
-        saepe unde mollitia aperiam repudiandae nemo ex impedit sapiente aliquid
-        accusamus ut necessitatibus harum rerum blanditiis sint delectus,
-        possimus placeat molestias. Voluptatum reprehenderit doloremque
-        voluptatem alias. Saepe, pariatur minima voluptatibus eaque quae culpa
-        fugiat officia et odio vitae dolore magni.
+        Using Vite and Typescript taking adventage of React and Sass features,
+        this site displayed the developer front-end skills using common patterns
+        and responsive design. The site was build thinking in a centralized
+        source of profile data that customizes the entire content of the page
+        from a single file, making it reusable across different developers.
       </p>
     ),
     githubLink: "https://github.com/ManuelARD13/Mr-Portfolio-Website-draft",
     liveLink: "https://manuelrojas.tech",
     pageLink: "https://github.com/ManuelARD13/Mr-Portfolio-Website-draft",
     mainFeatures: [
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+      "Vite and Typescript",
+      "Theme based architecture enabling switching color palettes and languages",
+      "Common front end patterns",
+      "Responsive design",
+      "Easy content customization through a single main data file",
+      "Sass for styling",
+      "Framer Motion for animations"
     ],
     image: "",
     logo: MRLOGO,
@@ -122,10 +127,10 @@ export const projects: Project[] = [
   },
   {
     title:
-      "Videogame UI DEMO, sit amet lo consectetur adipisicing elit. Itaque, harum.",
+      "Videogame UI DEMO: Create a playable character for a fantasy role playing game like Pathfinders",
     mobileTitle: "Videogame UI DEMO",
     subtext:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima optio facilis at necessitatibus quasi praesentium aliquam quod nam,earum exercitationem aperiam nulla dolores dolor tempora.",
+      "A simple role playing game character creator based on classic role games system like Pathfinder's or Dungeons and Dragon's. Throw the dices, select your raze and favorite class, and get ready to role pley in a fantasy world.",
     technologies: [
       <BiLogoReact />,
       <BiLogoTypescript />,
@@ -134,22 +139,18 @@ export const projects: Project[] = [
     ],
     description: (
       <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, nobis
-        saepe unde mollitia aperiam repudiandae nemo ex impedit sapiente aliquid
-        accusamus ut necessitatibus harum rerum blanditiis sint delectus,
-        possimus placeat molestias. Voluptatum reprehenderit doloremque
-        voluptatem alias. Saepe, pariatur minima voluptatibus eaque quae culpa
-        fugiat officia et odio vitae dolore magni.
+        This app works building a character Object assignin its properties from user input throught a features selection process. Use randomized values to achive different results each time and giving different character options depending on them. Keep the created characters data persistent implementing Local Storage
       </p>
     ),
     githubLink: "https://github.com/ManuelARD13/pathfinders-adventures-demo",
     liveLink: "https://pathfinders-adventures-demo-6s4r.vercel.app/",
     pageLink: "https://github.com/ManuelARD13/pathfinders-adventures-demo",
     mainFeatures: [
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+      "Developed with React.js",
+      "Based in a board game system",
+      "Basic knowledge of complex user data obtaining and manipulation",
+      "Switching stages and screens via conditional rendering",
+      "Data persistency with Local Storage"
     ],
     image: pathfinderDemoImg,
     logo: PFCQLOGO,
@@ -785,4 +786,22 @@ export const aboutInfo = {
 //       </p>
 //     </>
 //   ),
+// };
+
+// const JPLApp = {
+//   cardTitle:
+//     "Japanese Learning App: Keep your hiragana and katakana practices with you at any time with Hiragana Shuffle! Only a few minutes per day of quiet study or an exciting challenge to improve your japanese lenguage skills.",
+//   cardSubtext:
+//     "A Mobile-first web app builded with React.js and Typescript. This app satisfies the need of a tool to practice the japanese lenguage characters and their combinations while forming complete words. Some of these where not available to practice by phonetic asociation in other apps, they just mention and highlight them grammatically",
+//   cardDescription:
+//     "This web app was builded using React.js powerful capabilities to create modular code and reusable easy-mantainable components, while using Typescript for type safety and code quality. It uses a system of 'screen views' to navigate throught a mode selection process. You can practice or play with 4 main modes that use the basic logic of user input and displayed data comparison, each of them sightly modified. Non-desctructive array manipulation, data and state shared via React Context, API Request simulation, mobile app UI behavior simulation, and other features has been implemented in this project",
+//   features: [
+//     "React.js and Typescript",
+//     "Screen views system to simulate mobile app behavior",
+//     "Non-desctructive array manipulation",
+//     "Data and state shared via React Context",
+//     "User input and displayed data comparison",
+//     "Sass for styling",
+//     "Framer Motion for animations",
+//   ],
 // };

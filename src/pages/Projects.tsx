@@ -104,10 +104,17 @@ function Projects() {
       </section>
       <section className="projects__bullet-points">
         <h3 className="projects__bullet-points-title">
-          Lorem ipsum dolor sit amet.
+          Project Development Highlights
         </h3>
         <ul className="projects__bullet-points-list">
-          <li className="projects__bullet-points-list-item">
+          {
+            currentProject.mainFeatures.map((feature, index) => (
+              <li className="projects__bullet-points-list-item" key={index}>
+                {feature}
+              </li>
+            ))
+          }
+          {/* <li className="projects__bullet-points-list-item">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus,
             ullam?
           </li>
@@ -141,6 +148,7 @@ function Projects() {
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus,
             ullam?
           </li>
+        </ul> */}
         </ul>
       </section>
       <section className="projects__showcase">

@@ -28,12 +28,9 @@ function Academics() {
       />
 
       <section className="academics__projects box-shadow">
-        <h2>Lorem ipsum dolor sit amet</h2>
+        <h2>Working code speaks more than a 1000 certifications!</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum non
-          aperiam laudantium doloribus nobis labore necessitatibus, sit
-          reprehenderit dolorem sint et, est dolores enim dolore deserunt sequi.
-          Officiis ipsum quis ut esse fugit, laboriosam delectus?
+          Most of my skills i've earned them by hours and hours of coding, building, breaking and fixing back projects outside the typical tutorial apps. Most of this projects has been simple ideas or funny experiments born from the passion to code and discipline to growth better. Wanna see them?
         </p>
         <button onClick={() => (location.href = "/projects")}>Explore Live Projects</button>
       </section>

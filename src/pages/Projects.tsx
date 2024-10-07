@@ -56,10 +56,10 @@ function Projects() {
       </section>
       <section className="projects__main-content">
         <div className="projects__main-content-row">
-          <img src={currentProject.image} alt={currentProject.mobileTitle} />
+          <img src={currentProject.image} alt={currentProject.mobileTitle.toString()} />
           <div>
             <h3 className="projects__main-content-row-title">
-              Lorem ipsum dolor
+              A problem to solve, a product to build
             </h3>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -79,10 +79,10 @@ function Projects() {
           </div>
         </div>
         <div className="projects__main-content-row">
-          <img src={currentProject.image} alt={currentProject.mobileTitle} />
+          <img src={currentProject.image} alt={currentProject.mobileTitle.toString()} />
           <div>
             <h3 className="projects__main-content-row-title">
-              Lorem ipsum dolor
+              How this project has been built?
             </h3>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -114,41 +114,6 @@ function Projects() {
               </li>
             ))
           }
-          {/* <li className="projects__bullet-points-list-item">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus,
-            ullam?
-          </li>
-          <li className="projects__bullet-points-list-item">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus,
-            ullam?
-          </li>
-          <li className="projects__bullet-points-list-item">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus,
-            ullam?
-          </li>
-          <li className="projects__bullet-points-list-item">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus,
-            ullam?
-          </li>
-        </ul>
-        <ul className="projects__bullet-points-list">
-          <li className="projects__bullet-points-list-item">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus,
-            ullam?
-          </li>
-          <li className="projects__bullet-points-list-item">
-            Lorem ipsum, dolor ssit amet consectetur adipisicing elit. Natus,
-            ullam?
-          </li>
-          <li className="projects__bullet-points-list-item">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus,
-            ullam?
-          </li>
-          <li className="projects__bullet-points-list-item">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus,
-            ullam?
-          </li>
-        </ul> */}
         </ul>
       </section>
       <section className="projects__showcase">
@@ -156,7 +121,7 @@ function Projects() {
           <video src={video} controls poster={currentProject.image} />
         </div>
         <div className="projects__showcase-text">
-          <h4>Lorem ipsum dolor sit.</h4>
+          <h4>Great ideas coming to life</h4>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Repellendus, modi sit facilis delectus odit illum neque nam aliquam
@@ -173,7 +138,7 @@ function Projects() {
       </section>
       <section className="projects__header">
         <div className="projects__header-title">
-          <h4>Lorem ipsum dolor sit amet.</h4>
+          <h4>Latest Projects Live</h4>
         </div>
         <div className="projects__header-selector">
           {projects.map((project, index) => (

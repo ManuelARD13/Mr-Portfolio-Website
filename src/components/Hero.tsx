@@ -20,6 +20,8 @@ import {
   BiLogoGmail,
 } from "react-icons/bi";
 /*Types*/
+import { ProjectName } from "@models/index";
+
 interface HeroFeatures {
   title: string;
   icon: JSX.Element;
@@ -91,8 +93,6 @@ const socialMediaIcons: { icon: JSX.Element; link: string }[] = [
 ];
 
 function Hero({ cards }: { cards: HeroCard[] }) {
-  /* TODO: add scroll behavior to features aside list */
-
   const [indexBounderies, setIndexBounderies] = useState<IndexBounderies>({
     indexMin: 0,
     indexMax: 2,
@@ -101,9 +101,7 @@ function Hero({ cards }: { cards: HeroCard[] }) {
 
   useEffect(() => {
     const changeSlide = () => {
-      if (
-        indexBounderies.indexMax < cards.length
-      ) {
+      if (indexBounderies.indexMax < cards.length) {
         setIndexBounderies({
           ...indexBounderies,
           indexMin: indexBounderies.indexMin + 2,
@@ -154,7 +152,8 @@ function Hero({ cards }: { cards: HeroCard[] }) {
             ))}
           </ul>
           <a href="/academics" className="hero__features-bottom">
-            Explore More</a>
+            Explore More
+          </a>
         </aside>
         <div className="hero__img rounded-corners box-shadow">
           <div className="hero__img-social-media">
@@ -178,7 +177,7 @@ function Hero({ cards }: { cards: HeroCard[] }) {
       </div>
       <div className="hero__cards-container">
         <div className="hero__cards-container-left rounded-corners box-shadow">
-          <ProjectCard />
+          <ProjectCard projectName={ProjectName.JapaneseLearningApp} />
         </div>
         <div className="hero__cards-container-right">
           {slicedCards.map((card, index) => (

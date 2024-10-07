@@ -1,45 +1,42 @@
+//React
+import { useEffect, useState } from "react";
 // Components
 import CustomIcon from "@common/CustomIcon";
-// Icons
-import { BiLogoReact, BiLogoSass, BiLogoTypescript } from "react-icons/bi";
-import { TbBrandFramerMotion } from "react-icons/tb";
-// Images
-import projectoLogo from "@assets/hiragana-shuffle-logo.png";
+//Data
+import { projects } from "@data/mainData";
 //Types
+import { Project, ProjectName } from "@models/index";
 
-interface ProjectCard {
-  title: string;
-  description: string;
-  logo: string;
-  technologies: JSX.Element[];
-  liveLink: string;
-}
-
-const projectTechs: JSX.Element[] = [
-  <BiLogoReact />,
-  <BiLogoTypescript />,
-  <BiLogoSass />,
-  <TbBrandFramerMotion />,
-];
-
-const featuredProjectInfo: ProjectCard = {
-  title: "Japanese Learning App",
-  description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, doloremque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, doloremque? Lorem ipsum dolor sit amet",
-  logo: projectoLogo,
-  technologies: projectTechs,
-  liveLink: "https://manuelard13.github.io/hiragana-shuffle-app/",
+const selectFeaturedProject = (projectName: ProjectName): Project => {
+  const selectedProject = projects.find(
+    (project) =>
+      project.mobileTitle ===
+      projectName
+  );
+  console.log(projectName);
+  return selectedProject ? selectedProject : projects[0];
 };
 
-function FeaturedProjectCard() {
+function FeaturedProjectCard({ projectName }: { projectName: ProjectName }) {
+  const [featuredProject, setFeaturedProject] = useState<Project>(
+    {} as Project
+  );
+
+  useEffect(() => {
+    setFeaturedProject(selectFeaturedProject(projectName));
+  }, [projectName]);
+
   return (
-    <div className="featured-project-card" onClick={() => (location.href = `/projects/${featuredProjectInfo.title}`)}>
+    <div
+      className="featured-project-card"
+      onClick={() => (location.href = `/projects/${featuredProject.title}`)}
+    >
       <div className="featured-project-card__icons-container">
         <div className="featured-project-card__icon-text">
           <h3>Featured Project</h3>
         </div>
         <div className="featured-project-card__icons">
-          {featuredProjectInfo.technologies.map((tech, index) => (
+          {featuredProject?.technologies?.map((tech, index) => (
             <CustomIcon key={index} color="#FAFAFA">
               {tech}
             </CustomIcon>
@@ -52,13 +49,13 @@ function FeaturedProjectCard() {
       <div className="featured-project-card__content">
         <div className="featured-project-card__text">
           <h3 className="featured-project-card__text-title">
-            {featuredProjectInfo.title}
+            {featuredProject.mobileTitle}
           </h3>
           <p className="featured-project-card__text-description">
-            {featuredProjectInfo.description}
+            {featuredProject.description}
           </p>
           <a
-            href={`/projects/${featuredProjectInfo.title}`}
+            href={`/projects/${featuredProject.mobileTitle}`}
             target="_blank"
             className="featured-project-card__text-link"
           >
@@ -67,7 +64,7 @@ function FeaturedProjectCard() {
         </div>
         <div className="featured-project-card__logo">
           <img
-            src={featuredProjectInfo.logo}
+            src={featuredProject.logo}
             alt="hiragana shuffle"
             className="featured-project-card__logo-img"
           />

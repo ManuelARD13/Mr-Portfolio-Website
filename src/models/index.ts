@@ -14,7 +14,7 @@ export interface FeaturedCertification extends Omit<Certification, "detailsList"
 
 export interface Project {
   title: string;
-  mobileTitle: string;
+  mobileTitle: ProjectName;
   subtext: string;
   technologies: JSX.Element[];
   description: JSX.Element;
@@ -34,4 +34,10 @@ export interface Project {
   video: string;
   videoDescription: JSX.Element;
   */
+}
+
+export enum ProjectName {
+  JapaneseLearningApp = "Japanese Learning App",
+  WebDevPortfolioWebsite = "Web Dev Portfolio Website",
+  VideogameDEMOUI = "Videogame UI DEMO",
 }

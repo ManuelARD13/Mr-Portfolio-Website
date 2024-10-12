@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 interface CardProps {
   cardInfo: {
     title: string;
@@ -35,7 +37,7 @@ function DescriptionCard({className, cardInfo} : CardProps) {
         </a>
       </div>
       <div className="description-card__button">
-        <a href={`academics/#certifications`}><button>View Details</button></a>
+        <Link to={`academics/#certifications`}><button>View Details</button></Link>
       </div>
     </div>
   );

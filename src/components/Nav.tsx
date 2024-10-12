@@ -2,6 +2,29 @@ import LenguageSwitch from "@common/LenguageSwitch/LenguageSwitch";
 import Menu from "@common/Menu/Menu";
 import ThemeSwitch from "@common/ThemeSwitch/ThemeSwitch";
 
+const menuTags = [
+  {
+    title: "Home",
+    link: "/",
+  },
+  {
+    title: "About",
+    link: "/#about",
+  },
+  {
+    title: "Projects",
+    link: "/#projects",
+  },
+  {
+    title: "Contact",
+    link: "/#contact",
+  },
+  {
+    title: "Academics",
+    link: "/academics",
+  },
+];
+
 function Nav() {
   return (
     <div className="nav-container">
@@ -12,7 +35,7 @@ function Nav() {
           </div>
           <p className="main-nav__logo-subtext">Front-end <br /> Engineer</p>
         </div>
-        <Menu className="main-nav__menu" />
+        <Menu className="main-nav__menu" items={menuTags} />
         <LenguageSwitch />
         <ThemeSwitch />
       </nav>

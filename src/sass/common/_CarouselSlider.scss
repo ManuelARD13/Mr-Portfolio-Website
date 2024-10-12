@@ -11,8 +11,10 @@
       width: 50%;
       display: grid;
       justify-items: end;
+      align-items: center;
       img {
         max-width: 80%;
+        box-shadow: 20px 20px 4px rgb(0, 0, 0, 0.75);
       }
     }
     &-right {
@@ -24,7 +26,6 @@
       font-size: 1.75rem;
     }
     &-description {
-      font-size: 1rem;
       margin-block: 1.5em 1em;
       max-width: 50ch;
     }
@@ -42,8 +43,9 @@
     position: relative;
     display: flex;
     gap: 1em;
-    width: 60em;
+    width: min(71%, 63em);
     margin: 0 auto;
+    padding-block: 0 1em;
     overflow-x: auto;
     &::-webkit-scrollbar {
       display: none;
@@ -51,7 +53,10 @@
     &-slide {
       min-width: 10em;
       img {
+        display: block;
         height: 8em;
+        border: 1px solid $accent-text;
+        box-shadow: 10px 10px 4px rgb(0, 0, 0, 0.75);
       }
     }
     &-controls {

@@ -1,4 +1,4 @@
-import profilePic from "@assets/about-image-mobile.png";
+import profilePic from "@assets/about-image.png";
 import mobilePic from "@assets/about-image.png";
 import { useAppContext } from "@context/AppContext";
 

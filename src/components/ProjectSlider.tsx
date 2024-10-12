@@ -70,7 +70,7 @@ function ProjectSlider({ projects }: { projects: Project[] }) {
     <section className="project-slider">
       <div
         className="project-slider__container"
-        style={{ backgroundImage: `url(${projects[projectIndex].image})` }}
+        style={{ backgroundImage: `url(${projects[projectIndex].image})`, borderColor: projects[projectIndex].mainColor }}
         onMouseOver={() => setIsMouseOver(true)}
         onMouseLeave={() => setIsMouseOver(false)}
       >

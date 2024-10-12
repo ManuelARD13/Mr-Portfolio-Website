@@ -4,10 +4,8 @@
   position: relative;
   width: 100%;
   background: $background-300;
-  font-size: 0.8135rem;
   h5 {
     text-transform: uppercase;
-    font-size: 0.8135rem;
     letter-spacing: 0.1em;
   }
   &-container {
@@ -17,7 +15,7 @@
     max-width: 1440px;
     padding-block: 2em 10em; 
     margin: 0 auto;
-    padding-inline: 5em; 
+    padding-inline: 3em; 
   }
   &__text-container {
     display: none; 
@@ -46,7 +44,7 @@
     width: 75%;
     height: 100%;
     text-align: center;
-    font-size: 20px;
+    font-size: clamp(14px, 1.5vw, 24px);
     &-icons {
       display: flex;
       flex-wrap: wrap;
@@ -74,11 +72,13 @@
   }
   &__contact-footer {
     @extend .footer__contact-details-item;
+    gap: 1em;
     margin-top: 1em;
     svg {
       position: relative;
       top: -12px;
-      font-size: 1rem;
+      font-size: 1.5rem;
+      max-width: 40px;
     }
   }
   &__copyright {
@@ -111,6 +111,7 @@
 
 @media screen and (min-width: 1050px) {
   .footer {
+    font-size: 0.8135rem;
     &-container {
       display: grid;
       height: 28em; 
@@ -131,6 +132,12 @@
     }
     &__contact_container {
       margin-top: 0;
+    }
+    &__contact-footer {
+      gap: 0.5em;
+      svg {
+        font-size: 1rem;
+      }
     }
     &__copyright {
       font-size: 0.8135rem;

@@ -10,6 +10,29 @@ import {
 import { FaMapLocationDot } from "react-icons/fa6";
 import { useAppContext } from "@context/AppContext";
 
+const menuTags = [
+  {
+    title: "Home",
+    link: "/",
+  },
+  {
+    title: "About",
+    link: "/#about",
+  },
+  {
+    title: "Projects",
+    link: "/#projects",
+  },
+  {
+    title: "Contact",
+    link: "/#contact",
+  },
+  {
+    title: "Academics",
+    link: "/academics",
+  },
+];
+
 const socialMediaIcons: { icon: JSX.Element; link: string }[] = [
   {
     icon: <BiLogoGithub />,
@@ -50,7 +73,7 @@ function Footer() {
         </div>
         <div className="footer__menu-container">
           <h5>Menu</h5>
-          <Menu className="footer__menu" />
+          <Menu className="footer__menu" items={menuTags} />
         </div>
         <div className="footer__social-media">
           <h5>

@@ -41,25 +41,25 @@ function GroupSlider({
   }, [currentSlides]);
 
   return (
-    <section className={`grouped-slider__container ${className}`}>
+    <section className={`grouped-slider ${className}`}>
       <div className="grouped-slider__mobile-title">
         {lenguage === "en" && <h1>Featured Certifications</h1>}
         {lenguage === "es" && <h1>Certificaciones Destacadas</h1>}
       </div>
-      <div className={`grouped-slider grouped-slider__left`}>
+      <div className={`grouped-slider__img-slider grouped-slider__left`}>
         {currentSlides.map((slide, index) => (
           <img
             key={index}
             src={slide.img}
             alt={slide.title}
-            className={`grouped-slider__item slide-${index + 1}`}
+            className={`grouped-slider__img-slider-item slide-${index + 1}`}
           />
         ))}
       </div>
       {withDescription ? (
         <div className="grouped-slider__right">
           <div className="grouped-slider__right-title">
-            <h1>{currentSlides[0].title}</h1>
+            <h2>{currentSlides[0].title}</h2>
             {currentSlides[0].techIcon}
           </div>
           <div className="grouped-slider__right-description">

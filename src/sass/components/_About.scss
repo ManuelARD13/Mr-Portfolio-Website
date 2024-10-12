@@ -33,7 +33,7 @@
   &__column-2 {
     position: relative;
     z-index: 1;
-    width: 75%;
+    width: 85%;
     padding: 2em;
     background: $background-200;
     border-radius: 1rem;
@@ -47,36 +47,43 @@
   &__description {
     margin-block: 2em;
     position: relative;
-    font-size: 0.8135rem;
   }
   &__img-container--mobile {
     position: relative;
     clip-path: circle();
-    min-width: 150px;
-    min-height: 150px;
+    min-width: 10rem;
+    min-height: 10rem;
     margin: 1em auto 2em auto;
-    background: $accent-color;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: $gradient-test-2;
+      clip-path: circle();
+    }
   }
   &__img {
     position: relative;
-    margin-right: 1em;
     z-index: 2;
-    width: 15.1em;
-    scale: 1.1;
-    translate: 0 -4.9%;
+    height: 32.5em;
+    scale: 1.135;
+    translate: -12.5% -6.25%;
     display: none;
     max-width: none;
   }
   &__img--mobile {
     position: absolute;
     translate: -50% -50%;
-    transform: translateX(10%) translateY(15%);
+    transform: translateY(27.5%) translateX(-25%);
+    width: 100vw;
+    min-width: 300px;
+    max-width: min(110%, 450px);
+    rotate: -5deg;
     top: 50%;
     left: 50%;
   }
   &__btn {
     margin-top: 2em;
-    font-size: 0.8135rem;
   }
 }
 

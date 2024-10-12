@@ -7,6 +7,9 @@ import ProjectsAccordion from "@components/CertificationsAccordion";
 import { useAppContext } from "@context/AppContext";
 /* Type Casting Functions */
 import { filterPropertiesOfObjsInArray } from "@models/functions";
+import { Link } from "react-router-dom";
+
+
 
 function Academics() {
   const { certifications, lenguage } = useAppContext();
@@ -53,9 +56,9 @@ function Academics() {
               por programar y un compromiso continuo con el crecimiento.
               ¡Míralos en acción!
             </p>
-            <button onClick={() => (location.href = "/projects")}>
+            <Link to="/projects"><button>
               Proyectos Desplegados
-            </button>
+            </button></Link>
           </>
         )}
       </section>

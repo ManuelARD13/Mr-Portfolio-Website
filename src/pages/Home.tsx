@@ -41,7 +41,9 @@ function Home() {
           <MobileProjects mobileProjects={projects} />
         </section>
       ) : (
-        <ProjectSlider projects={projects} />
+        <div id="projects">
+          <ProjectSlider projects={projects} />
+        </div>
       )}
       {/*Section #3*/}
       <Contact />

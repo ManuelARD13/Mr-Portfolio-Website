@@ -1,4 +1,4 @@
-import { RxHamburgerMenu } from "react-icons/rx";
+import MobileMenu from "./MobileMenu";
 
 function MobileNav() {
   /*TODO: Finish Mobile Nav: 
@@ -19,7 +19,7 @@ function MobileNav() {
           Front-end <br /> Engineer
         </p>
       </div>
-      <RxHamburgerMenu />
+      <MobileMenu />
     </div>
   );
 }

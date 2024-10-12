@@ -7,8 +7,10 @@ import {
   BiLogoGithub,
   BiLogoLinkedinSquare,
 } from "react-icons/bi";
+import { useAppContext } from "@context/AppContext";
 
 function Contact() {
+  const { lenguage } = useAppContext();
   return (
     <section className="contact" id="contact">
       <div className="contact__card box-shadow">
@@ -23,7 +25,9 @@ function Contact() {
           </div>
         </div>
         <div className="contact__card-right">
-          <h6 className="contact__card-title">Contact Info</h6>
+          <h6 className="contact__card-title">{lenguage === "en" &&
+                "Contact Info"}
+              {lenguage === "es" && "Contacto"}</h6>
           <ul className="contact__card-details">
             <li className="contact__card-details-item">
               <CustomIcon>
@@ -54,7 +58,9 @@ function Contact() {
             <CustomIcon>
               <FaMapLocationDot />
             </CustomIcon>
-            <p>Autonomous City of Buenos Aires, Argentina. 2024</p>
+            <p>{lenguage === "en" &&
+                "Autonomous City of Buenos Aires, Argentina. 2024"}
+              {lenguage === "es" && "Ciudad Autónoma de Buenos Aires, Argentina. 2024"}</p>
           </div>
         </div>
       </div>

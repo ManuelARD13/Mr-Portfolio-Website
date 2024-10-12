@@ -1,4 +1,3 @@
-import { Certification, Project } from "@models/index";
 /* Certifications Assets */
 import AsyncJSImg from "@assets/certifications/diploma-asincronismo-js.jpg";
 import AsyncJSLogo from "@assets/certifications/diploma-asincronismo-js-logo.png";
@@ -46,16 +45,23 @@ import {
   BiLogoReact,
   BiLogoSass,
   BiLogoWindows,
+  BiLogoHtml5,
+  BiLogoGit,
 } from "react-icons/bi";
 import { TbBrandFramerMotion, TbBrandNpm, TbDatabaseCog } from "react-icons/tb";
+/* Types */
+import { Certification, Project, AboutData, ProjectName } from "@models/index";
+import { RiHomeGearFill } from "react-icons/ri";
 
-export const projects: Project[] = [
+/* English Content */
+
+export const projectsData: Project[] = [
   {
     title:
       "Japanese Learning App: Keep your daily practices with you at any time with Hiragana Shuffle!",
-    mobileTitle: "Japanese Learning App",
+    mobileTitle: ProjectName.JapaneseLearningApp,
     subtext:
-      "This app satisfies the need of a tool to practice the japanese lenguage characters and their combinations. Some of these where not available to practice by phonetic asociation in other apps, they just mention and highlight them grammatically.",
+      "This app satisfies the need of a tool to practice the japanese lenguage characters and their combinations. Some of these where not available to practice by phonetic asociation in other apps, they just mention and highlight them grammatically",
     technologies: [
       <BiLogoReact />,
       <BiLogoTypescript />,
@@ -64,12 +70,11 @@ export const projects: Project[] = [
     ],
     description: (
       <p>
-        This web app was builded using React.js powerful capabilities of
-        component-based architecture, and Typescript for code quality and
-        readability. It works with a system of 'screen views' to navigate
-        throught a mode selection process. Practice or play with 4 different
-        main modes using a base logic of user input and displayed data
-        comparison.
+        This web app was built using React.js's powerful component-based
+        architecture and TypeScript to enhance code quality and readability. It
+        features a system of 'screen views' to navigate through a mode selection
+        process. Users can practice or play with four different main modes,
+        using a core logic of comparison between inputs and data
       </p>
     ),
     githubLink: "https://github.com/ManuelARD13/hiragana-shuffle-app",
@@ -91,7 +96,7 @@ export const projects: Project[] = [
   {
     title:
       "Front-end Portfolio Website: Display your professional front end skills in a modern and elegant space",
-    mobileTitle: "Web Dev Portfolio Website",
+    mobileTitle: ProjectName.WebDevPortfolioWebsite,
     subtext:
       "Show a fundamental knowledge of front-end development applying the best practices, common patterns, responsive design and a theme based logic switching color palettes and even lenguages, showcasing good architecture and code quality.",
     technologies: [
@@ -102,11 +107,12 @@ export const projects: Project[] = [
     ],
     description: (
       <p>
-        Using Vite and Typescript taking adventage of React and Sass features,
-        this site displayed the developer front-end skills using common patterns
-        and responsive design. The site was build thinking in a centralized
-        source of profile data that customizes the entire content of the page
-        from a single file, making it reusable across different developers.
+        Using Vite and TypeScript, taking advantage of React and Sass features,
+        this site showcases the developer's front-end skills through the use of
+        common patterns and responsive design. The site was built with the idea
+        of a centralized source of profile data that customizes the entire
+        content of the page from a single file, making it reusable across
+        different developers.
       </p>
     ),
     githubLink: "https://github.com/ManuelARD13/Mr-Portfolio-Website-draft",
@@ -119,7 +125,7 @@ export const projects: Project[] = [
       "Responsive design",
       "Easy content customization through a single main data file",
       "Sass for styling",
-      "Framer Motion for animations"
+      "Framer Motion for animations",
     ],
     image: "",
     logo: MRLOGO,
@@ -128,7 +134,7 @@ export const projects: Project[] = [
   {
     title:
       "Videogame UI DEMO: Create a playable character for a fantasy role playing game like Pathfinders",
-    mobileTitle: "Videogame UI DEMO",
+    mobileTitle: ProjectName.VideogameDEMOUI,
     subtext:
       "A simple role playing game character creator based on classic role games system like Pathfinder's or Dungeons and Dragon's. Throw the dices, select your raze and favorite class, and get ready to role pley in a fantasy world.",
     technologies: [
@@ -139,7 +145,11 @@ export const projects: Project[] = [
     ],
     description: (
       <p>
-        This app works building a character Object assignin its properties from user input throught a features selection process. Use randomized values to achive different results each time and giving different character options depending on them. Keep the created characters data persistent implementing Local Storage
+        This app works by building a character object, assigning its properties
+        based on user input through a features selection process. It uses
+        randomized values to achieve different results each time, providing
+        various character options accordingly. The created characters' data is
+        kept persistent by implementing Local Storage
       </p>
     ),
     githubLink: "https://github.com/ManuelARD13/pathfinders-adventures-demo",
@@ -148,9 +158,9 @@ export const projects: Project[] = [
     mainFeatures: [
       "Developed with React.js",
       "Based in a board game system",
-      "Basic knowledge of complex user data obtaining and manipulation",
+      "Basic knowledge of complex user data obtain and manipulation",
       "Switching stages and screens via conditional rendering",
-      "Data persistency with Local Storage"
+      "Data persistency with Local Storage",
     ],
     image: pathfinderDemoImg,
     logo: PFCQLOGO,
@@ -158,7 +168,7 @@ export const projects: Project[] = [
   },
 ];
 
-export const certifications: Certification[] = [
+export const certificationsData: Certification[] = [
   {
     title: "Javascript Basics",
     img: JSBasicsImg,
@@ -433,6 +443,67 @@ export const certifications: Certification[] = [
     techIcon: <BiLogoGithub />,
   },
 ];
+
+export const skillList = [
+  {
+    icon: <BiLogoReact />,
+    title: "React.js Development",
+  },
+  {
+    icon: <BiLogoTypescript />,
+    title: "TypeScript Developer",
+  },
+  {
+    icon: <BiLogoJavascript />,
+    title: "JavaScript Fundamentals",
+  },
+  {
+    icon: <BiLogoSass />,
+    title: "Sass proficiency",
+  },
+  {
+    icon: <BiLogoHtml5 />,
+    title: "HTML & CSS Fundamentals",
+  },
+  {
+    icon: <BiLogoGit />,
+    title: "Git Basics Knowledge",
+  },
+  {
+    icon: <RiHomeGearFill />,
+    title: "Home Office Experience",
+  },
+];
+
+export const aboutInfo: AboutData = {
+  info: (
+    <>
+      <p>
+        I am a Front-End Developer with 2 years of experience, specializing in
+        building dynamic, high-performance web applications using React and
+        TypeScript. I have expertise in creating responsive, intuitive user
+        interfaces, with a strong emphasis on professional and maintainable
+        layouts
+      </p>
+      <br />
+      <p>
+        {" "}
+        I excel in modern development workflows, where the objective of every
+        project is to produce clean, scalable, and easily maintainable code that
+        benefits the entire team
+        <br />
+        <br /> I am dedicated to maximizing the value of investments and
+        delivering top-notch solutions to meet even the most challenging client
+        demands
+      </p>
+    </>
+  ),
+};
+
+export const footerInfo: string =
+  "Manuel Rojas(Mr.) is a Front end engineer currently based in Argentina, aiming to reach the highest levels of software development by delivering impactful and innovative solutions to modern society. Working hard since 2021, he faces a long journey ahead, full of major milestones, big challenges, and exciting projects";
+
+/* Spanish Content */
 
 export const certificaciones: Certification[] = [
   {
@@ -719,11 +790,155 @@ export const certificaciones: Certification[] = [
   },
 ];
 
-export const sobreMiInfo = {
-  descriptionSobreMi: (
+export const proyectos: Project[] = [
+  {
+    title:
+      "App de Aprendizaje en Japonés: ¡Tus prácticas diarias contigo en todo momento con Hiragana Shuffle!",
+    mobileTitle: ProjectName.JapaneseLearningApp,
+    subtext:
+      "Esta aplicación satisface la necesidad de una herramienta para practicar los caracteres del idioma japonés y sus combinaciones. Algunos de estos solo son mencionados y destacados gramaticalmente en otras aplicaciones, no se puede practicar mediante asociación fonética",
+    technologies: [
+      <BiLogoReact />,
+      <BiLogoTypescript />,
+      <BiLogoSass />,
+      <TbBrandFramerMotion />,
+    ],
+    description: (
+      <p>
+        Web app construida con la potente arquitectura de componentes de
+        React.js, así como TypeScript, para mayor calidad y legibilidad del
+        código. Usa un sistema de 'Vistas' para navegar por un proceso de
+        selección de modos. Practica o juega con 4 modos principales a través de
+        una lógica central de comparación entre inputs y datos
+      </p>
+    ),
+    githubLink: "https://github.com/ManuelARD13/hiragana-shuffle-app",
+    liveLink: "https://manuelard13.github.io/hiragana-shuffle-app/",
+    pageLink: "https://github.com/ManuelARD13/hiragana-shuffle-app",
+    mainFeatures: [
+      "React.js y Typescript",
+      "Sistema de 'Vistas' para simular el comportamiento en aplicación móvil",
+      "Manipulación de Arrays no destructiva",
+      "Datos y estados compartidos via React Context",
+      "Comparacion de inputs de usuarios y datos del sistema",
+      "Sass para estilos",
+      "Framer Motion para animaciones",
+    ],
+    image: hiraganaShuffleImg,
+    logo: HSLOGO,
+    mainColor: "#FF5572",
+  },
+  {
+    title:
+      "Front-end Portafolio Website: Tus habilidades profesionales front end en un espacio moderno y elegante",
+    mobileTitle: ProjectName.WebDevPortfolioWebsite,
+    subtext:
+      "Muestra un conocimiento fundamental del desarrollo front end aplicando las mejores prácticas, patrones comunes, diseño responsive y lógica basada en 'Temas' que cambia paletas de colores e idiomas; mostrando buena arquitectura y calidad de código",
+    technologies: [
+      <BiLogoReact />,
+      <BiLogoTypescript />,
+      <BiLogoSass />,
+      <TbBrandFramerMotion />,
+    ],
+    description: (
+      <p>
+        Usando Vite y TypeScript y aprovechando las funcionalidades de React y
+        Sass, se demuestran las habilidades del desarrollador mediante el uso de
+        patrones comunes y diseño responsivo. El sitio fue construido sobre una
+        fuente centralizada de datos que personaliza todo el contenido de la
+        página desde un solo archivo, haciéndolo reutilizable para diferentes
+        desarrolladores
+      </p>
+    ),
+    githubLink: "https://github.com/ManuelARD13/Mr-Portfolio-Website-draft",
+    liveLink: "https://manuelrojas.tech",
+    pageLink: "https://github.com/ManuelARD13/Mr-Portfolio-Website-draft",
+    mainFeatures: [
+      "Vite y Typescript",
+      "Arquitectura basada en Temas que permiten cambiar paletas de colores e idiomas",
+      "Patrones front end comunes",
+      "Diseño Responsive",
+      "Personalización de contenido sencilla a través de un único archivo de datos principal",
+      "Sass para estilos",
+      "Framer Motion para animaciones",
+    ],
+    image: "",
+    logo: MRLOGO,
+    mainColor: "hsl(178, 90%, 50%)",
+  },
+  {
+    title:
+      "DEMO UI Videojuego RPG: Crea un personaje para un juegos de rol de fantasía como Pathfinders",
+    mobileTitle: ProjectName.VideogameDEMOUI,
+    subtext:
+      "Un creador de personajes simple, basado en sistemas de juegos de rol clásicos como Pathfinder o Dungeons & Dragons. Tira los dados, selecciona tu raza y clase favorita, y prepárate para jugar en un mundo de fantasía",
+    technologies: [
+      <BiLogoReact />,
+      <BiLogoTypescript />,
+      <BiLogoSass />,
+      <TbBrandFramerMotion />,
+    ],
+    description: (
+      <p>
+        Esta app crea un objeto Personaje y asigna sus propiedades en función de
+        inputs del usuario en un proceso de selección de características.
+        Utiliza valores aleatorios para lograr diferentes resultados, generando
+        varias opciones de personajes cada vez. Los datos creados persisten
+        mediante la implementación de Local Storage
+      </p>
+    ),
+    githubLink: "https://github.com/ManuelARD13/pathfinders-adventures-demo",
+    liveLink: "https://pathfinders-adventures-demo-6s4r.vercel.app/",
+    pageLink: "https://github.com/ManuelARD13/pathfinders-adventures-demo",
+    mainFeatures: [
+      "Desarrollado con React.js",
+      "Basado en sistemas de juegos de mesa",
+      "Conocimientos basicos sobre manipulacion y uso de datos de usuario complejos",
+      "Cambio de fases y pantallas via conditional rendering",
+      "Persistencia de datos con Local Storage",
+    ],
+    image: pathfinderDemoImg,
+    logo: PFCQLOGO,
+    mainColor: "#CCAE27",
+  },
+];
+
+export const listaDeHabilidades = [
+  {
+    icon: <BiLogoReact />,
+    title: "Desarrollo React.js",
+  },
+  {
+    icon: <BiLogoTypescript />,
+    title: "Desarrollador Typescript",
+  },
+  {
+    icon: <BiLogoJavascript />,
+    title: "Fundamentos Javascript",
+  },
+  {
+    icon: <BiLogoSass />,
+    title: "Proficiencia con Sass",
+  },
+  {
+    icon: <BiLogoHtml5 />,
+    title: "HTML & CSS Basico",
+  },
+  {
+    icon: <BiLogoGit />,
+    title: "Manejo de Git",
+  },
+  {
+    icon: <RiHomeGearFill />,
+    title: "Experiencia Home Office",
+  },
+];
+
+export const sobreMiInfo: AboutData = {
+  info: (
     <>
       <p>
-        Soy un desarrollador Front-end con 2 años de experiencia. Me especializo
+        Soy un desarrollador Front end con 2 años de experiencia. Me especializo
         en la creación de aplicaciones web dinámicas y de alto rendimiento
         utilizando React y TypeScript. Competente en el desarrollo de interfaces
         de usuario responsivas e intuitivas trabajando estilos profesionales y
@@ -743,65 +958,5 @@ export const sobreMiInfo = {
   ),
 };
 
-export const aboutInfo = {
-  aboutInfo: (
-    <>
-      <p>
-        I am a Front-End Developer with 2 years of experience, specializing in
-        building dynamic, high-performance web applications using React and
-        TypeScript. I am skilled in creating responsive and intuitive user
-        interfaces, focusing on professional and maintainable styling
-      </p>
-      <br />
-      <p>
-        {" "}
-        I excel in modern development workflows, where the goal of every project
-        is to produce clean, scalable, and easily maintainable code by and for
-        the team
-        <br />
-        <br /> I am committed to maximizing the value of investments and
-        delivering the best possible outcomes to meet the most demanding
-        challenges of our clients
-      </p>
-    </>
-  ),
-};
-
-// export const sobreMiInfo = {
-//   descriptionSobreMi: (
-//     <>
-//       <p>
-//         Soy un desarrollador Front-end con 2 años de experiencia. Me especializo en la creación de aplicaciones web
-//         dinámicas y de alto rendimiento utilizando React y TypeScript.
-//         Competente en el desarrollo de interfaces de usuario responsivas e
-//         intuitivas trabajando estilos profesionales y mantenibles
-//       </p>
-//       <br />
-//       <p>
-//         {" "}
-//         Domino los flujos de trabajo modernos, enfocados en
-//         la escalabilidad, mantenibilidad y compatibilidad. La meta en cada proyecto es construir un código limpio y fácilmente mantenible por el equipo de trabajo
-//         <br />
-//         <br /> Con un compromiso firme para hacer valer lo invertido y generar el mayor beneficio posible en la superacion de los retos más exigentes de nuestros clientes.
-//       </p>
-//     </>
-//   ),
-// };
-
-// const JPLApp = {
-//   cardTitle:
-//     "Japanese Learning App: Keep your hiragana and katakana practices with you at any time with Hiragana Shuffle! Only a few minutes per day of quiet study or an exciting challenge to improve your japanese lenguage skills.",
-//   cardSubtext:
-//     "A Mobile-first web app builded with React.js and Typescript. This app satisfies the need of a tool to practice the japanese lenguage characters and their combinations while forming complete words. Some of these where not available to practice by phonetic asociation in other apps, they just mention and highlight them grammatically",
-//   cardDescription:
-//     "This web app was builded using React.js powerful capabilities to create modular code and reusable easy-mantainable components, while using Typescript for type safety and code quality. It uses a system of 'screen views' to navigate throught a mode selection process. You can practice or play with 4 main modes that use the basic logic of user input and displayed data comparison, each of them sightly modified. Non-desctructive array manipulation, data and state shared via React Context, API Request simulation, mobile app UI behavior simulation, and other features has been implemented in this project",
-//   features: [
-//     "React.js and Typescript",
-//     "Screen views system to simulate mobile app behavior",
-//     "Non-desctructive array manipulation",
-//     "Data and state shared via React Context",
-//     "User input and displayed data comparison",
-//     "Sass for styling",
-//     "Framer Motion for animations",
-//   ],
-// };
+export const piedepaginaInfo: string =
+  "Manuel Rojas (Mr.) es un desarrollador Front end actualmente en Argentina, con el objetivo de alcanzar los más altos niveles en el desarrollo de software, brindando soluciones impactantes e innovadoras para la sociedad moderna. Trabajando duro desde 2021, enfrenta un largo camino por delante, lleno de grandes desafíos y proyectos emocionantes";

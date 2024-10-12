@@ -5,6 +5,7 @@ import { BiLogoGithub } from "react-icons/bi";
 import { CgFileDocument } from "react-icons/cg";
 /* Types */
 import { Project } from "@models/index";
+import { useAppContext } from "@context/AppContext";
 
 function MobileProjects({
   mobileProjects,
@@ -14,6 +15,7 @@ function MobileProjects({
   className?: string
 }) {
   //TODO: style description scrollbar
+  const { lenguage } = useAppContext();
   return (
     <div className={`mobile-projects ${className}`}>
       {mobileProjects.map((project, index) => (
@@ -51,7 +53,8 @@ function MobileProjects({
                 )
               }
             >
-              Watch it live
+             { lenguage === "en" && "Watch it live"}
+             { lenguage === "es" && "Ver en vivo"}
             </button>
             <a
               href="https://github.com/ManuelARD13/hiragana-shuffle-app"

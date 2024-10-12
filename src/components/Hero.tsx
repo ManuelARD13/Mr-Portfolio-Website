@@ -5,15 +5,8 @@ import CustomIcon from "@common/CustomIcon";
 import DescriptionCard from "@common/DescriptionCard/DescriptionCard";
 import ProjectCard from "@common/FeaturedProjectCard/FeaturedProjectCard";
 /* Icons */
-import { RiHomeGearFill } from "react-icons/ri";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import {
-  BiLogoJavascript,
-  BiLogoHtml5,
-  BiLogoTypescript,
-  BiLogoReact,
-  BiLogoSass,
-  BiLogoGit,
   BiLogoGithub,
   BiLogoLinkedinSquare,
   BiLogoTelegram,
@@ -21,11 +14,8 @@ import {
 } from "react-icons/bi";
 /*Types*/
 import { ProjectName } from "@models/index";
-
-interface HeroFeatures {
-  title: string;
-  icon: JSX.Element;
-}
+/*Context*/
+import { useAppContext } from "@context/AppContext";
 
 interface HeroCard {
   title: string;
@@ -41,37 +31,6 @@ interface IndexBounderies {
   indexMin: number;
   indexMax: number;
 }
-/*Data*/
-const features: HeroFeatures[] = [
-  {
-    icon: <BiLogoReact />,
-    title: "React.js Development",
-  },
-  {
-    icon: <BiLogoTypescript />,
-    title: "TypeScript Developer",
-  },
-  {
-    icon: <BiLogoJavascript />,
-    title: "JavaScript Fundamentals",
-  },
-  {
-    icon: <BiLogoSass />,
-    title: "Sass proficiency",
-  },
-  {
-    icon: <BiLogoHtml5 />,
-    title: "HTML & CSS Fundamentals",
-  },
-  {
-    icon: <BiLogoGit />,
-    title: "Git Basics Knowledge",
-  },
-  {
-    icon: <RiHomeGearFill />,
-    title: "Home Office Experience",
-  },
-];
 
 const socialMediaIcons: { icon: JSX.Element; link: string }[] = [
   {
@@ -93,6 +52,7 @@ const socialMediaIcons: { icon: JSX.Element; link: string }[] = [
 ];
 
 function Hero({ cards }: { cards: HeroCard[] }) {
+  const { skills, lenguage } = useAppContext();
   const [indexBounderies, setIndexBounderies] = useState<IndexBounderies>({
     indexMin: 0,
     indexMax: 2,
@@ -131,20 +91,28 @@ function Hero({ cards }: { cards: HeroCard[] }) {
     <section className="hero">
       <div className="hero__header">
         <aside className="hero__features rounded-corners box-shadow">
-          <h3 className="hero__features-title">Main Skills</h3>
+          <h3 className="hero__features-title">
+            {lenguage === "en" && "Main Skills"}
+            {lenguage === "es" && "Habilidades"}
+          </h3>
           <div className="hero__features-top">
-            <p>+2 Years Experience in Front-end Development Technologies:</p>
+            <p>
+              {lenguage === "en" &&
+                "+2 Years Experience in Front end Development Technologies:"}
+              {lenguage === "es" &&
+                "+2 Años de Experiencia como Desarrollador Front end"}
+            </p>
           </div>
           <ul className="hero__features-list">
-            {features.map((feature) => (
+            {skills.map((skill) => (
               <li
-                key={feature.title + Math.random()}
+                key={skill.title + Math.random()}
                 className="hero__features-item"
               >
                 <div className="hero__features-icon">
-                  <CustomIcon>{feature.icon}</CustomIcon>
+                  <CustomIcon>{skill.icon}</CustomIcon>
                 </div>
-                <p>{feature.title}</p>
+                <p>{skill.title}</p>
                 <div className="hero__features-arrow">
                   <MdKeyboardDoubleArrowRight />
                 </div>
@@ -152,7 +120,8 @@ function Hero({ cards }: { cards: HeroCard[] }) {
             ))}
           </ul>
           <a href="/academics" className="hero__features-bottom">
-            Explore More
+            {lenguage === "en" && "Explore More"}
+            {lenguage === "es" && "Conocer Mas"}
           </a>
         </aside>
         <div className="hero__img rounded-corners box-shadow">
@@ -168,10 +137,15 @@ function Hero({ cards }: { cards: HeroCard[] }) {
           </h1>
           <p className="hero__img-subtitle">Front-end Engineer</p>
           <a href="#about">
-            <button className="hero__img-button">My Experience</button>
+            <button className="hero__img-button">
+              {lenguage === "en" && "My Experience"}
+              {lenguage === "es" && "Mi Experiencia"}
+            </button>
           </a>
           <a href="#projects" className="hero__img-link">
-            Live Projects {<MdKeyboardDoubleArrowRight />}
+            {lenguage === "en" && "Live Projects"}
+            {lenguage === "es" && "Mis Proyectos"}{" "}
+            {<MdKeyboardDoubleArrowRight />}
           </a>
         </div>
       </div>

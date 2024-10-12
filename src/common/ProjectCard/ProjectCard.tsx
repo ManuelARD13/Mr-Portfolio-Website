@@ -1,17 +1,19 @@
 import CustomIcon from "@common/CustomIcon";
 import { Project } from "@models/index";
+import { Link } from "react-router-dom";
 // import { CgFileDocument } from "react-icons/cg";
 // import { BiLogoGithub } from "react-icons/bi";
 
 function ProjectCard({ project, className }: { project: Project; className?: string }) {
   return (
+    <Link
+      to={`/projects/${project.mobileTitle}`}>
     <div
       className={`project-card ${className}`}
       style={{
         borderColor: project.mainColor,
         backgroundImage: `url(${project.image})`,
       }}
-      onClick={() => (location.href = `/projects/${project.mobileTitle}`)}
     >
       <div className="project-card__img">
         <img src={project.logo} alt={project.mobileTitle} />
@@ -67,6 +69,7 @@ function ProjectCard({ project, className }: { project: Project; className?: str
         ))}
       </div>
     </div>
+    </Link>
   );
 }
 

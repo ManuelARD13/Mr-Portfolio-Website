@@ -36,6 +36,10 @@ export interface Project {
   */
 }
 
+export type AboutData = {
+  info: JSX.Element
+}
+
 export enum ProjectName {
   JapaneseLearningApp = "Japanese Learning App",
   WebDevPortfolioWebsite = "Web Dev Portfolio Website",

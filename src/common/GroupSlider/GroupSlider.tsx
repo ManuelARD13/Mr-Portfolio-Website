@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 /* Types */
 import { FeaturedCertification } from "@models/index";
+/* Context */
+import { useAppContext } from "@context/AppContext";
 
 function GroupSlider({
   slides,
@@ -12,6 +14,7 @@ function GroupSlider({
   className?: string;
   withDescription?: boolean;
 }) {
+  const { lenguage } = useAppContext();
   const [currentSlides, setCurrentSlides] =
     useState<FeaturedCertification[]>(slides);
 
@@ -27,8 +30,12 @@ function GroupSlider({
   };
 
   useEffect(() => {
+    setCurrentSlides(slides);
+  }, [slides]);
+
+  useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlides((slides) => reorderSlides(slides));
+      setCurrentSlides(() => reorderSlides(currentSlides));
     }, 3000);
     return () => clearInterval(interval);
   }, [currentSlides]);
@@ -36,7 +43,8 @@ function GroupSlider({
   return (
     <section className={`grouped-slider__container ${className}`}>
       <div className="grouped-slider__mobile-title">
-        <h1>Featured Certifications</h1>
+        {lenguage === "en" && <h1>Featured Certifications</h1>}
+        {lenguage === "es" && <h1>Certificaciones Destacadas</h1>}
       </div>
       <div className={`grouped-slider grouped-slider__left`}>
         {currentSlides.map((slide, index) => (
@@ -59,7 +67,8 @@ function GroupSlider({
           </div>
           <a href={currentSlides[0].link} target="_blank">
             <button className="grouped-slider__right-button">
-              Go to Course Content
+              {lenguage === "en" && "Go to Course Content"}
+              {lenguage === "es" && "Ir al contenido del curso"}
             </button>
           </a>
           <div className="grouped-slider__right-slide-arrow">{">"}</div>

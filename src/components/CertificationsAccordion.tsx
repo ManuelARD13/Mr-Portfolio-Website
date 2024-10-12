@@ -14,15 +14,15 @@ interface CertificationItem {
 }
 
 function CertificationsAccordion() {
-  const { certifications } = useAppContext();
+  const { certifications, lenguage } = useAppContext();
 
   const [search, setSearch] = useState<string>("");
   const [formattedCertifications, setFormattedCertifications] = useState<
     CertificationItem[]
   >([] as CertificationItem[]);
-  const [filteredProjects, setFilteredProjects] = useState<CertificationItem[]>(
-    formattedCertifications
-  );
+  const [filteredCertifications, setFilteredCertifications] = useState<
+    CertificationItem[]
+  >(formattedCertifications);
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);
@@ -51,17 +51,22 @@ function CertificationsAccordion() {
                   <li key={detail}>{detail}</li>
                 ))}
               </ul>
-              <a href={certification.link} target="_blank"><button>Go to course content</button></a>
+              <a href={certification.link} target="_blank">
+                <button>
+                  {lenguage === "en" && "Go to Course Content"}
+                  {lenguage === "es" && "Ir al contenido del curso"}
+                </button>
+              </a>
             </>
           ),
         } as CertificationItem)
     );
 
     setFormattedCertifications(formattedCertifications);
-  }, [certifications]);
+  }, [certifications, lenguage]);
 
   useEffect(() => {
-    setFilteredProjects(
+    setFilteredCertifications(
       formattedCertifications.filter((certification) =>
         certification.title.toLowerCase().includes(search)
       )
@@ -70,7 +75,10 @@ function CertificationsAccordion() {
 
   return (
     <section className="certifications-accordion">
-      <h2>All Certificactions</h2>
+      <h2>
+        {lenguage === "en" && "All Certifications"}
+        {lenguage === "es" && "Todas las Certificaciones"}
+      </h2>
       <div className="certifications-accordion__search">
         <input
           type="text"
@@ -80,7 +88,10 @@ function CertificationsAccordion() {
           placeholder="Search"
         />
       </div>
-      <Accordion items={filteredProjects} className="glass-card box-shadow" />
+      <Accordion
+        items={filteredCertifications}
+        className="glass-card box-shadow"
+      />
     </section>
   );
 }

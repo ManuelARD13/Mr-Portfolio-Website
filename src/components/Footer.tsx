@@ -33,6 +33,29 @@ const menuTags = [
   },
 ];
 
+const etiquetasDelMenu = [
+  {
+    title: "Inicio",
+    link: "/",
+  },
+  {
+    title: "Sobre mi",
+    link: "/#about",
+  },
+  {
+    title: "Proyectos",
+    link: "/#projects",
+  },
+  {
+    title: "Contacto",
+    link: "/#contact",
+  },
+  {
+    title: "Educación",
+    link: "/academics",
+  },
+];
+
 const socialMediaIcons: { icon: JSX.Element; link: string }[] = [
   {
     icon: <BiLogoGithub />,
@@ -73,7 +96,7 @@ function Footer() {
         </div>
         <div className="footer__menu-container">
           <h5>Menu</h5>
-          <Menu className="footer__menu" items={menuTags} />
+          <Menu className="footer__menu" items={lenguage === "es" ? etiquetasDelMenu : menuTags} />
         </div>
         <div className="footer__social-media">
           <h5>

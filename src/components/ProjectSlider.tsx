@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 /* Types */
 import { Project } from "@models/index";
 import { Link } from "react-router-dom";
+import { useAppContext } from "@context/AppContext";
 
 /*TODO: Finish Slider component:
     - use css variables manipulation to set theme colors
@@ -13,6 +14,7 @@ import { Link } from "react-router-dom";
     - add slide transition animations
 */
 function ProjectSlider({ projects }: { projects: Project[] }) {
+  const { lenguage } = useAppContext();
   const [projectIndex, setprojectIndex] = useState<number>(0);
   const [isMouseOver, setIsMouseOver] = useState<boolean>(false);
 
@@ -59,7 +61,7 @@ function ProjectSlider({ projects }: { projects: Project[] }) {
       };
       const interval = setInterval(() => {
         changeSlide(projectIndex);
-      }, 2500);
+      }, 4000);
       return () => clearInterval(interval);
     }
   }, [projectIndex, isMouseOver, projects]);
@@ -113,12 +115,14 @@ function ProjectSlider({ projects }: { projects: Project[] }) {
             <ul className="links__list">
               <li className="links__list-item">
                 <Link to={`/projects/${projects[projectIndex].mobileTitle}`}>
-                  Read More
+                  {lenguage === "en" && "Read More"}
+                  {lenguage === "es" && "Saber Más"}
                 </Link>
               </li>
               <li className="links__list-item">
                 <a href={projects[projectIndex].liveLink} target="_blank">
-                  Watch it live!
+                  {lenguage === "en" && "Watch it live!"}
+                  {lenguage === "es" && "App en vivo!"}
                 </a>
               </li>
               <li className="links__list-item last-item">
@@ -145,10 +149,13 @@ function ProjectSlider({ projects }: { projects: Project[] }) {
           {projects[projectIndex].description}
         </div>
         <aside className="project-slider__aside rounded-corners">
-          <h3>LoremIpsum Lor Ipsum Lorem</h3>
+          <h3>
+            {lenguage === "en" && "Development Highlights"}
+            {lenguage === "es" && "Caracteristicas Destacadas"}
+          </h3>
           <p className="divider"></p>
           <ul className="project-slider__aside-details">
-            {projects[projectIndex].mainFeatures.map((feature) => (
+            {projects[projectIndex].mainFeatures.slice(0, 4).map((feature) => (
               <li
                 key={feature + Math.random()}
                 className="project-slider__aside-item"
@@ -159,7 +166,8 @@ function ProjectSlider({ projects }: { projects: Project[] }) {
           </ul>
           <div className="project-slider__aside-link">
             <a href={`/projects/${projects[projectIndex].mobileTitle}`}>
-              Read More
+              {lenguage === "en" && "Read More"}
+              {lenguage === "es" && "Saber Más"}
             </a>
           </div>
         </aside>

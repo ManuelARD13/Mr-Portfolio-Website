@@ -12,6 +12,8 @@ function ProjectCard({
   className?: string;
 }) {
   return (
+    <Link
+      to={`/projects/${project.mobileTitle}`}>
     <div
       className={`project-card ${className}`}
       style={{
@@ -75,6 +77,7 @@ function ProjectCard({
         </div>
       </Link>
     </div>
+    </Link>
   );
 }
 

@@ -1,24 +1,19 @@
+import { Link } from "react-router-dom";
 import MobileMenu from "./MobileMenu";
 
 function MobileNav() {
-  /*TODO: Finish Mobile Nav: 
-              - Open and Close Funcionality
-              - Open Menu Behavior
-              - Animations
-  */
   return (
     <div className="main-nav__mobile">
-      <div
-        className="main-nav__mobile-logo"
-        onClick={() => (location.href = "/")}
-      >
-        <div className="main-nav__mobile-logo-img-container">
-          <p className="main-nav__mobile-logo-img">Mr.</p>
+      <Link to={"/"}>
+        <div className="main-nav__mobile-logo">
+          <div className="main-nav__mobile-logo-img-container">
+            <p className="main-nav__mobile-logo-img">Mr.</p>
+          </div>
+          <p className="main-nav__mobile-logo-subtext">
+            Front-end <br /> Engineer
+          </p>
         </div>
-        <p className="main-nav__mobile-logo-subtext">
-          Front-end <br /> Engineer
-        </p>
-      </div>
+      </Link>
       <MobileMenu />
     </div>
   );

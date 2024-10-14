@@ -2,6 +2,9 @@
 import { useEffect, useState } from "react";
 /* Types */
 import { FeaturedCertification } from "@models/index";
+/* Context */
+import { useAppContext } from "@context/AppContext";
+import { BsArrowRightCircle } from "react-icons/bs";
 
 function GroupSlider({
   slides,
@@ -12,6 +15,7 @@ function GroupSlider({
   className?: string;
   withDescription?: boolean;
 }) {
+  const { lenguage } = useAppContext();
   const [currentSlides, setCurrentSlides] =
     useState<FeaturedCertification[]>(slides);
 
@@ -27,16 +31,21 @@ function GroupSlider({
   };
 
   useEffect(() => {
+    setCurrentSlides(slides);
+  }, [slides]);
+
+  useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlides((slides) => reorderSlides(slides));
-    }, 3000);
+      setCurrentSlides(() => reorderSlides(currentSlides));
+    }, 5000);
     return () => clearInterval(interval);
   }, [currentSlides]);
 
   return (
     <section className={`grouped-slider ${className}`}>
       <div className="grouped-slider__mobile-title">
-        <h1>Featured Certifications</h1>
+        {lenguage === "en" && <h1>Featured Certifications</h1>}
+        {lenguage === "es" && <h1>Certificaciones Destacadas</h1>}
       </div>
       <div className={`grouped-slider__img-slider grouped-slider__left`}>
         {currentSlides.map((slide, index) => (
@@ -51,7 +60,11 @@ function GroupSlider({
       {withDescription ? (
         <div className="grouped-slider__right">
           <div className="grouped-slider__right-title">
-            <h2>{currentSlides[0].title}</h2>
+            <h2>
+              {currentSlides[0].title.length > 30
+                ? currentSlides[0].title.slice(0, 30) + "..."
+                : currentSlides[0].title}
+            </h2>
             {currentSlides[0].techIcon}
           </div>
           <div className="grouped-slider__right-description">
@@ -59,10 +72,16 @@ function GroupSlider({
           </div>
           <a href={currentSlides[0].link} target="_blank">
             <button className="grouped-slider__right-button">
-              Go to Course Content
+              {lenguage === "en" && "Go to Course Content"}
+              {lenguage === "es" && "Ir al contenido del curso"}
             </button>
           </a>
-          <div className="grouped-slider__right-slide-arrow">{">"}</div>
+          <div
+            className="grouped-slider__right-slide-arrow"
+            onClick={() => setCurrentSlides(reorderSlides(currentSlides))}
+          >
+            <BsArrowRightCircle />
+          </div>
         </div>
       ) : null}
     </section>

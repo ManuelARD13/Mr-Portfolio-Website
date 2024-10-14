@@ -8,6 +8,7 @@ import {
   BiLogoWhatsapp,
 } from "react-icons/bi";
 import { FaMapLocationDot } from "react-icons/fa6";
+import { useAppContext } from "@context/AppContext";
 
 const menuTags = [
   {
@@ -28,6 +29,29 @@ const menuTags = [
   },
   {
     title: "Academics",
+    link: "/academics",
+  },
+];
+
+const etiquetasDelMenu = [
+  {
+    title: "Inicio",
+    link: "/",
+  },
+  {
+    title: "Sobre mi",
+    link: "/#about",
+  },
+  {
+    title: "Proyectos",
+    link: "/#projects",
+  },
+  {
+    title: "Contacto",
+    link: "/#contact",
+  },
+  {
+    title: "Educación",
     link: "/academics",
   },
 ];
@@ -56,25 +80,29 @@ const socialMediaIcons: { icon: JSX.Element; link: string }[] = [
 ];
 
 function Footer() {
+  const { footerData, lenguage } = useAppContext();
   //TODO: Adjust spacing between colums in the right section
   //TODO: Add grid columns adjusting behavior depending on the screen size
   //TODO: Check the footer position behavior
- 
+
   return (
     <footer className="footer">
       <div className="footer-container">
         <div className="footer__text-container">
           <p className="footer__text-logo">Mr.</p>
           <p>
-            Mr. Manuel Rojas is a Front-end engineer currently in Argentina pointing to reach the highest levels of software development, delivering impactful and innovative solutions to modern society. Working hard since 2021, there's a long way up full of big challenges, mayor milestones and a lot of fun projects ahead
+            {footerData}
           </p>
         </div>
         <div className="footer__menu-container">
           <h5>Menu</h5>
-          <Menu className="footer__menu" items={menuTags} />
+          <Menu className="footer__menu" items={lenguage === "es" ? etiquetasDelMenu : menuTags} />
         </div>
         <div className="footer__social-media">
-          <h5>Social Media</h5>
+          <h5>
+            {lenguage === "en" && "Social Media"}
+            {lenguage === "es" && "Redes Sociales"}
+          </h5>
           <div className="footer__social-media-icons">
             {socialMediaIcons.map(({ icon, link }) => (
               <a href={link} target="_blank" key={link}>
@@ -84,7 +112,10 @@ function Footer() {
           </div>
         </div>
         <div className="footer__contact_container">
-          <h5>Contact</h5>
+          <h5>
+            {lenguage === "en" && "Contact"}
+            {lenguage === "es" && "Contacto"}
+          </h5>
           <ul className="footer__contact-details">
             <li className="footer__contact-details-item">
               <CustomIcon>
@@ -123,18 +154,30 @@ function Footer() {
             <CustomIcon>
               <FaMapLocationDot />
             </CustomIcon>
-            <p>Autonomous City of Buenos Aires, Argentina. 2024</p>
+            <p>
+              {lenguage === "en" &&
+                "Autonomous City of Buenos Aires, Argentina. 2024"}
+              {lenguage === "es" && "Ciudad Autónoma de Buenos Aires, Argentina. 2024"}
+            </p>
           </div>
         </div>
         <div className="footer__copyright">
           <div className="footer__copyright-container">
             <p>Copyright © 2024. Manuel Rojas</p>
             <div className="footer__copyright-links">
-              <a href="https://www.freeprivacypolicy.com/live/78160001-6cbb-4963-82db-d7dfa2080341" target="_blank">
-                Privacy Policy
+              <a
+                href="https://www.freeprivacypolicy.com/live/78160001-6cbb-4963-82db-d7dfa2080341"
+                target="_blank"
+              >
+                {lenguage === "en" && "Privacy Policy"}
+                {lenguage === "es" && "Política de Privacidad"}
               </a>
-              <a href="https://www.freeprivacypolicy.com/live/20508db2-1d13-4760-9855-336763a722d8" target="_blank">
-                Terms of Service
+              <a
+                href="https://www.freeprivacypolicy.com/live/20508db2-1d13-4760-9855-336763a722d8"
+                target="_blank"
+              >
+                {lenguage === "en" && "Terms of Service"}
+                {lenguage === "es" && "Términos de Servicio"}
               </a>
             </div>
           </div>

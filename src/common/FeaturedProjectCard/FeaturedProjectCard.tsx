@@ -1,47 +1,45 @@
+//React
+import { useEffect, useState } from "react";
 // Components
 import CustomIcon from "@common/CustomIcon";
-// Icons
-import { BiLogoReact, BiLogoSass, BiLogoTypescript } from "react-icons/bi";
-import { TbBrandFramerMotion } from "react-icons/tb";
-// Images
-import projectoLogo from "@assets/hiragana-shuffle-logo.png";
-import { Link } from "react-router-dom";
 //Types
+import { Project, ProjectName } from "@models/index";
+//Context
+import { useAppContext } from "@context/AppContext";
+import { Link } from "react-router-dom";
 
-interface ProjectCard {
-  title: string;
-  description: string;
-  logo: string;
-  technologies: JSX.Element[];
-  liveLink: string;
-}
-
-const projectTechs: JSX.Element[] = [
-  <BiLogoReact />,
-  <BiLogoTypescript />,
-  <BiLogoSass />,
-  <TbBrandFramerMotion />,
-];
-
-const featuredProjectInfo: ProjectCard = {
-  title: "Japanese Learning App",
-  description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, doloremque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, doloremque? Lorem ipsum dolor sit amet",
-  logo: projectoLogo,
-  technologies: projectTechs,
-  liveLink: "https://manuelard13.github.io/hiragana-shuffle-app/",
+const selectFeaturedProject = (
+  projectName: ProjectName,
+  projects: Project[]
+): Project => {
+  const selectedProject = projects.find(
+    (project) => project.mobileTitle === projectName
+  );
+  return selectedProject ? selectedProject : projects[0];
 };
 
-function FeaturedProjectCard() {
+function FeaturedProjectCard({ projectName }: { projectName: ProjectName }) {
+  const { projects, lenguage } = useAppContext();
+  const [featuredProject, setFeaturedProject] = useState<Project>(
+    {} as Project
+  );
+
+  useEffect(() => {
+    setFeaturedProject(selectFeaturedProject(projectName, projects));
+  }, [projectName, projects]);
+
   return (
-    <div className="featured-project-card">
-      <Link to={`/projects/${featuredProjectInfo.title}`}>
+    <Link to={`/projects/${featuredProject.mobileTitle}`}>
+      <div className="featured-project-card">
         <div className="featured-project-card__icons-container">
           <div className="featured-project-card__icon-text">
-            <h3>Featured Project</h3>
+            <h3>
+              {lenguage === "en" && "Featured Project"}
+              {lenguage === "es" && "Proyecto Destacado"}
+            </h3>
           </div>
           <div className="featured-project-card__icons">
-            {featuredProjectInfo.technologies.map((tech, index) => (
+            {featuredProject?.technologies?.map((tech, index) => (
               <CustomIcon key={index} color="#FAFAFA">
                 {tech}
               </CustomIcon>
@@ -49,34 +47,39 @@ function FeaturedProjectCard() {
           </div>
         </div>
         <div className="featured-project-card__label">
-          <p>Mobile Web App made with React/Typescript</p>
+          <p>
+            {lenguage === "en" && "Mobile Web App made with React/Typescript"}
+            {lenguage === "es" &&
+              "Aplicación Web Móvil desarrollada con React/Typescript"}
+          </p>
         </div>
         <div className="featured-project-card__content">
           <div className="featured-project-card__text">
             <h3 className="featured-project-card__text-title">
-              {featuredProjectInfo.title}
+              {featuredProject.mobileTitle}
             </h3>
             <p className="featured-project-card__text-description">
-              {featuredProjectInfo.description}
+              {featuredProject?.subtext?.slice(0, 175) + " ..."}
             </p>
             <Link
-              to={`/projects/${featuredProjectInfo.title}`}
+              to={`/projects/${featuredProject.mobileTitle}`}
               target="_blank"
               className="featured-project-card__text-link"
             >
-              View More!
+              {lenguage === "en" && "View More"}
+              {lenguage === "es" && "Conocer Más"}
             </Link>
           </div>
           <div className="featured-project-card__logo">
             <img
-              src={featuredProjectInfo.logo}
+              src={featuredProject.logo}
               alt="hiragana shuffle"
               className="featured-project-card__logo-img"
             />
           </div>
         </div>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 }
 

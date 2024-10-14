@@ -30,7 +30,6 @@
     max-width: 75ch;
     text-indent: 1.5em;
     margin-block: 2em 4em;
-    text-wrap: balance;
   }
 
   &__main-content {
@@ -84,8 +83,6 @@
     display: flex;
     flex-direction: column;
     place-items: center;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 10% 90%;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 3.5em 3em 5em 3em;
     max-width: 1920px;
@@ -112,6 +109,8 @@
       font-size: 1.5rem;
       text-align: center;
       text-wrap: wrap;
+      padding-bottom: 1em;
+      border-bottom: 1px solid var(--themeColor);
     }
     &-list {
       position: relative;
@@ -246,15 +245,22 @@
       }
     }
     &__bullet-points {
-      display: grid;
-      padding: 5em 5em 3.5em 5em;
+      align-items: center;
+      padding: 2em 5em 3.5em 5em;
       &-title {
         text-align: left;
         text-wrap: balance;
+        width: 70%;
+        text-align: center;
       }
       &-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 80%;
         &-item {
+          min-width: 100%;
           text-wrap: balance;
+          margin-left: 1em;
         }
       }
     }

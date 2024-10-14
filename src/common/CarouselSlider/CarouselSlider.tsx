@@ -1,4 +1,5 @@
 /* React */
+import { useAppContext } from "@context/AppContext";
 import React, { useEffect, useState } from "react";
 /* Types */
 interface Slide {
@@ -15,6 +16,7 @@ function CarouselSlider({
   slides: Slide[];
   className?: string;
 }) {
+  const { lenguage } = useAppContext();
   const [currentSlide, setCurrentSlide] = useState(slides[0]);
   const [slicedSlides, setSlicedSlides] = useState(slides.slice(0, 6));
   const [indexBounderies, setIndexBounderies] = useState({
@@ -46,6 +48,10 @@ function CarouselSlider({
         });
     }
   };
+
+  useEffect(() => {
+    setCurrentSlide(slides[0]);
+  }, [lenguage, slides]);
 
   useEffect(() => {
     if (!isMouseOver) {

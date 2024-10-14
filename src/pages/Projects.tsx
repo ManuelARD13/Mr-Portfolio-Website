@@ -1,11 +1,16 @@
-import { useAppContext } from "@context/AppContext";
-import video from "@assets/background-waves.webm";
-import { useParams } from "react-router-dom";
+/* React */
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+/* Components */
 import ProjectCard from "@common/ProjectCard/ProjectCard";
+/* Context */
+import { useAppContext } from "@context/AppContext";
+/* Assets */
+import video from "@assets/background-waves.webm";
 
 function Projects() {
-  const { projects } = useAppContext();
+  const { projects, lenguage } = useAppContext();
+
   const { projectTitle } = useParams();
 
   const [currentProject, setCurrentProject] = useState(projects[0]);
@@ -29,6 +34,7 @@ function Projects() {
         selectedProject.mainColor
       );
     } else {
+      setCurrentProject(projects[0]);
       document.documentElement.style.setProperty(
         "--bgImg",
         `url('../../../${currentProject.image}')`
@@ -56,10 +62,15 @@ function Projects() {
       </section>
       <section className="projects__main-content">
         <div className="projects__main-content-row">
-          <img src={currentProject.image} alt={currentProject.mobileTitle} />
+          <img
+            src={currentProject.image}
+            alt={currentProject.mobileTitle.toString()}
+          />
           <div>
             <h3 className="projects__main-content-row-title">
-              Lorem ipsum dolor
+              {lenguage === "en" && "A Problem to Solve, A Product to Build"}
+              {lenguage === "es" &&
+                "Un Problema para Resolver Es Un Producto por Construir"}
             </h3>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -74,15 +85,20 @@ function Projects() {
               className="projects__main-content-button"
               onClick={() => window.open(currentProject.liveLink, "_blank")}
             >
-              Watch it working!
+              {lenguage === "en" && "Watch it working!"}
+              {lenguage === "es" && "¡Míralo en acción!"}
             </button>
           </div>
         </div>
         <div className="projects__main-content-row">
-          <img src={currentProject.image} alt={currentProject.mobileTitle} />
+          <img
+            src={currentProject.image}
+            alt={currentProject.mobileTitle.toString()}
+          />
           <div>
             <h3 className="projects__main-content-row-title">
-              Lorem ipsum dolor
+              {lenguage === "en" && "How this project was built?"}
+              {lenguage === "es" && "¿Cómo se construyó este proyecto?"}
             </h3>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -97,50 +113,23 @@ function Projects() {
               className="projects__main-content-button"
               onClick={() => window.open(currentProject.githubLink, "_blank")}
             >
-              Watch repository
+              {lenguage === "en" && "Watch repository"}
+              {lenguage === "es" && "Ver repositorio"}
             </button>
           </div>
         </div>
       </section>
       <section className="projects__bullet-points">
         <h3 className="projects__bullet-points-title">
-          Lorem ipsum dolor sit amet.
+          {lenguage === "en" && "Project Features Highlight"}
+          {lenguage === "es" && "Características Destacadas del Proyecto"}
         </h3>
         <ul className="projects__bullet-points-list">
-          <li className="projects__bullet-points-list-item">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus,
-            ullam?
-          </li>
-          <li className="projects__bullet-points-list-item">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus,
-            ullam?
-          </li>
-          <li className="projects__bullet-points-list-item">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus,
-            ullam?
-          </li>
-          <li className="projects__bullet-points-list-item">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus,
-            ullam?
-          </li>
-        </ul>
-        <ul className="projects__bullet-points-list">
-          <li className="projects__bullet-points-list-item">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus,
-            ullam?
-          </li>
-          <li className="projects__bullet-points-list-item">
-            Lorem ipsum, dolor ssit amet consectetur adipisicing elit. Natus,
-            ullam?
-          </li>
-          <li className="projects__bullet-points-list-item">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus,
-            ullam?
-          </li>
-          <li className="projects__bullet-points-list-item">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus,
-            ullam?
-          </li>
+          {currentProject.mainFeatures.map((feature, index) => (
+            <li className="projects__bullet-points-list-item" key={index}>
+              {feature}
+            </li>
+          ))}
         </ul>
       </section>
       <section className="projects__showcase">
@@ -148,7 +137,10 @@ function Projects() {
           <video src={video} controls poster={currentProject.image} />
         </div>
         <div className="projects__showcase-text">
-          <h4>Lorem ipsum dolor sit.</h4>
+          <h4>
+            {lenguage === "en" && "Great ideas coming to life!"}
+            {lenguage === "es" && "¡Grandes ideas llegan a la luz!"}
+          </h4>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Repellendus, modi sit facilis delectus odit illum neque nam aliquam
@@ -159,13 +151,17 @@ function Projects() {
             className="projects__showcase-btn"
             onClick={() => window.open(currentProject.liveLink, "_blank")}
           >
-            Watch it live!
+            {lenguage === "en" && "Watch it live"}
+            {lenguage === "es" && "¡Míralo en línea!"}
           </button>
         </div>
       </section>
       <section className="projects__header">
         <div className="projects__header-title">
-          <h4>Lorem ipsum dolor sit amet.</h4>
+          <h4>
+            {lenguage === "en" && "Lastest Projects"}
+            {lenguage === "es" && "Últimos Proyectos"}
+          </h4>
         </div>
         <div className="projects__header-selector">
           {projects.map((project, index) => (

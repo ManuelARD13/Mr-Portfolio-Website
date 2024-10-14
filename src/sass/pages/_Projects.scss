@@ -119,6 +119,7 @@
         list-style: inside;
         margin-bottom: 1em;
         text-wrap: pretty;
+        list-style-position: outside;
       }
     }
   }
@@ -256,9 +257,10 @@
       &-list {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        width: 80%;
+        width: 75%;
+        padding-left: 1em;
         &-item {
-          min-width: 100%;
+          min-width: 90%;
           text-wrap: balance;
           margin-left: 1em;
         }

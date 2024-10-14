@@ -1,7 +1,7 @@
 @use "../abstracts/variables" as *;
 
 .project-slider {
-  padding-block: 1em 4em;
+  padding-block: 4em 4em;
   display: none;
   justify-content: center;
   max-width: none;
@@ -12,7 +12,7 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    min-width: 92.5%;
+    width: 92.5%;
     padding: 1.5em;
     padding-top: 7.5em;
     border: 0.1em solid $accent-text;
@@ -72,8 +72,8 @@
     cursor: pointer;
     &-arrow-right:hover,
     &-arrow-left:hover {
-      scale: 1.25;
-      color: var(--accent-color, $accent-text);
+      scale: 1.1;
+      color: rgba($hight-contrast-color, 0.75);
     }
     &-arrow-left,
     &-arrow-right {

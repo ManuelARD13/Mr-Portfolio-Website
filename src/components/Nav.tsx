@@ -1,6 +1,8 @@
 import LenguageSwitch from "@common/LenguageSwitch/LenguageSwitch";
 import Menu from "@common/Menu/Menu";
 import ThemeSwitch from "@common/ThemeSwitch/ThemeSwitch";
+import { useAppContext } from "@context/AppContext";
+import { Link } from "react-router-dom";
 
 const menuTags = [
   {
@@ -25,17 +27,48 @@ const menuTags = [
   },
 ];
 
+const etiquetasDelMenu = [
+  {
+    title: "Inicio",
+    link: "/",
+  },
+  {
+    title: "Sobre Mi",
+    link: "/#about",
+  },
+  {
+    title: "Proyectos",
+    link: "/#projects",
+  },
+  {
+    title: "Contacto",
+    link: "/#contact",
+  },
+  {
+    title: "Educación",
+    link: "/academics",
+  },
+];
+
 function Nav() {
+  const { lenguage } = useAppContext();
   return (
     <div className="nav-container">
       <nav className="main-nav">
-        <div className="main-nav__logo" onClick={() => (location.href = "/")}>
-          <div className="main-nav__logo-img-container">
-            <p className="main-nav__logo-img">Mr.</p>
+        <Link to={"/"}>
+          <div className="main-nav__logo">
+            <div className="main-nav__logo-img-container">
+              <p className="main-nav__logo-img">Mr.</p>
+            </div>
+            <p className="main-nav__logo-subtext">
+              Front-end <br /> Engineer
+            </p>
           </div>
-          <p className="main-nav__logo-subtext">Front-end <br /> Engineer</p>
-        </div>
-        <Menu className="main-nav__menu" items={menuTags} />
+        </Link>
+        <Menu
+          className="main-nav__menu"
+          items={lenguage === "es" ? etiquetasDelMenu : menuTags}
+        />
         <LenguageSwitch />
         <ThemeSwitch />
       </nav>

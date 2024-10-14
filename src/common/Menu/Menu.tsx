@@ -1,4 +1,3 @@
-import { useAppContext } from "@context/AppContext";
 import { Link } from "react-router-dom";
 import { motion, Variants } from "framer-motion";
 

@@ -1,5 +1,7 @@
 import CustomIcon from "@common/CustomIcon";
+import LenguageSwitch from "@common/LenguageSwitch/LenguageSwitch";
 import Menu from "@common/Menu/Menu";
+import { useAppContext } from "@context/AppContext";
 import { motion, Variants } from "framer-motion";
 import { useState } from "react";
 import {
@@ -21,6 +23,21 @@ const menuTags = [
   },
   {
     title: "Live Projects",
+    link: "/projects",
+  },
+];
+
+const etiquetasDelMenu = [
+  {
+    title: "Inicio",
+    link: "/",
+  },
+  {
+    title: "Educación",
+    link: "/academics",
+  },
+  {
+    title: "Proyectos",
     link: "/projects",
   },
 ];
@@ -86,6 +103,7 @@ const animationState = {
 };
 
 function MobileMenu() {
+  const { lenguage } = useAppContext();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
     <motion.nav
@@ -94,15 +112,21 @@ function MobileMenu() {
       className="mobile-menu"
     >
       <motion.div className="mobile-menu__background" variants={animationState}>
+        <LenguageSwitch />
         <Menu
           className="mobile-menu__menu"
-          items={menuTags}
+          items={ lenguage === "es" ? etiquetasDelMenu : menuTags }
           toggleSettings={menuItemsVariants}
-          callback = {() => setIsOpen(false)}
+          callback={() => setIsOpen(false)}
         />
         <div className="mobile-menu__social-media-icons">
           {socialMediaIcons.map(({ icon, link }) => (
-            <motion.a href={link} target="_blank" key={link} variants={menuItemsVariants}>
+            <motion.a
+              href={link}
+              target="_blank"
+              key={link}
+              variants={menuItemsVariants}
+            >
               <CustomIcon>{icon}</CustomIcon>
             </motion.a>
           ))}

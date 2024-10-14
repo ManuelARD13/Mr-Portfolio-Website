@@ -55,15 +55,13 @@ function Nav() {
   return (
     <div className="nav-container">
       <nav className="main-nav">
-        <Link to={"/"}>
-          <div className="main-nav__logo">
-            <div className="main-nav__logo-img-container">
-              <p className="main-nav__logo-img">Mr.</p>
-            </div>
-            <p className="main-nav__logo-subtext">
-              Front-end <br /> Engineer
-            </p>
+        <Link to={"/"} className="main-nav__logo">
+          <div className="main-nav__logo-img-container">
+            <p className="main-nav__logo-img">Mr.</p>
           </div>
+          <p className="main-nav__logo-subtext">
+            Front-end <br /> Engineer
+          </p>
         </Link>
         <Menu
           className="main-nav__menu"

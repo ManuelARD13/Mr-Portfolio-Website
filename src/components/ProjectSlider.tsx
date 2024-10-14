@@ -61,7 +61,7 @@ function ProjectSlider({ projects }: { projects: Project[] }) {
       };
       const interval = setInterval(() => {
         changeSlide(projectIndex);
-      }, 2500);
+      }, 4000);
       return () => clearInterval(interval);
     }
   }, [projectIndex, isMouseOver, projects]);

@@ -59,7 +59,7 @@ function FeaturedProjectCard({ projectName }: { projectName: ProjectName }) {
               {featuredProject.mobileTitle}
             </h3>
             <p className="featured-project-card__text-description">
-              {featuredProject.description}
+              {featuredProject?.subtext?.slice(0, 175) + " ..."}
             </p>
             <Link
               to={`/projects/${featuredProject.mobileTitle}`}

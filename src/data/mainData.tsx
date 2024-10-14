@@ -505,6 +505,119 @@ export const footerInfo: string =
 
 /* Spanish Content */
 
+export const proyectos: Project[] = [
+  {
+    title:
+      "App de Aprendizaje en Japonés: ¡Tus prácticas diarias contigo en todo momento con Hiragana Shuffle!",
+    mobileTitle: ProjectName.JapaneseLearningApp,
+    subtext:
+      "Nace de la necesidad de una herramienta para practicar los caracteres especiales del idioma japonés. Algunos de estos solo son mencionados y destacados gramaticalmente en otras aplicaciones, no se puede practicar mediante asociación fonética",
+    technologies: [
+      <BiLogoReact />,
+      <BiLogoTypescript />,
+      <BiLogoSass />,
+      <TbBrandFramerMotion />,
+    ],
+    description: (
+      <p>
+        Web app construida con la potente arquitectura de componentes de
+        React.js, así como TypeScript, para mayor calidad y legibilidad del
+        código. Usa un sistema de 'Vistas' para navegar por un proceso de
+        selección de modos. Practica o juega con 4 modos principales a través de
+        una lógica central de comparación entre inputs y datos
+      </p>
+    ),
+    githubLink: "https://github.com/ManuelARD13/hiragana-shuffle-app",
+    liveLink: "https://manuelard13.github.io/hiragana-shuffle-app/",
+    pageLink: "https://github.com/ManuelARD13/hiragana-shuffle-app",
+    mainFeatures: [
+      "React.js y Typescript",
+      "Sistema de 'Vistas' para simular el comportamiento en aplicación móvil",
+      "Manipulación de Arrays no destructiva",
+      "Datos y estados compartidos via React Context",
+      "Comparacion de inputs de usuarios y datos del sistema",
+      "Sass para estilos",
+      "Framer Motion para animaciones",
+    ],
+    image: hiraganaShuffleImg,
+    logo: HSLOGO,
+    mainColor: "#FF5572",
+  },
+  {
+    title:
+      "Front-end Portafolio Website: Tus habilidades profesionales front end en un espacio moderno y elegante",
+    mobileTitle: ProjectName.WebDevPortfolioWebsite,
+    subtext:
+      "Muestra un conocimiento fundamental del desarrollo front end aplicando las mejores prácticas, patrones comunes, diseño responsive y lógica basada en 'Temas' que cambia paletas de colores e idiomas; mostrando buena arquitectura y calidad de código",
+    technologies: [
+      <BiLogoReact />,
+      <BiLogoTypescript />,
+      <BiLogoSass />,
+      <TbBrandFramerMotion />,
+    ],
+    description: (
+      <p>
+        Usando Vite y TypeScript y aprovechando las funcionalidades de React y
+        Sass, se demuestran las habilidades del desarrollador mediante el uso de
+        patrones comunes y diseño responsivo. El sitio fue construido sobre una
+        fuente centralizada de datos que personaliza todo el contenido de la
+        página desde un solo archivo, haciéndolo reutilizable para diferentes
+        desarrolladores
+      </p>
+    ),
+    githubLink: "https://github.com/ManuelARD13/Mr-Portfolio-Website-draft",
+    liveLink: "https://manuelrojas.tech",
+    pageLink: "https://github.com/ManuelARD13/Mr-Portfolio-Website-draft",
+    mainFeatures: [
+      "Vite y Typescript",
+      "Arquitectura basada en Temas que permiten cambiar paletas de colores e idiomas",
+      "Patrones front end comunes",
+      "Diseño Responsive",
+      "Personalización de contenido sencilla a través de un único archivo de datos principal",
+      "Sass para estilos",
+      "Framer Motion para animaciones",
+    ],
+    image: "",
+    logo: MRLOGO,
+    mainColor: "hsl(178, 90%, 50%)",
+  },
+  {
+    title:
+      "DEMO UI Videojuego RPG: Crea un personaje para un juegos de rol de fantasía como Pathfinders",
+    mobileTitle: ProjectName.VideogameDEMOUI,
+    subtext:
+      "Un creador de personajes simple, basado en sistemas de juegos de rol clásicos como Pathfinder o Dungeons & Dragons. Lanza los dados, selecciona tu raza y clase favorita, y prepárate para jugar en un mundo de fantasía",
+    technologies: [
+      <BiLogoReact />,
+      <BiLogoTypescript />,
+      <BiLogoSass />,
+      <TbBrandFramerMotion />,
+    ],
+    description: (
+      <p>
+        Esta app crea un objeto Personaje y asigna sus propiedades en función de
+        inputs del usuario en un proceso de selección de características.
+        Utiliza valores aleatorios para lograr diferentes resultados, generando
+        varias opciones de personajes cada vez. Los datos creados persisten
+        mediante la implementación de Local Storage
+      </p>
+    ),
+    githubLink: "https://github.com/ManuelARD13/pathfinders-adventures-demo",
+    liveLink: "https://pathfinders-adventures-demo-6s4r.vercel.app/",
+    pageLink: "https://github.com/ManuelARD13/pathfinders-adventures-demo",
+    mainFeatures: [
+      "Desarrollado con React.js",
+      "Basado en sistemas de juegos de mesa",
+      "Conocimientos basicos sobre manipulacion y uso de datos de usuario complejos",
+      "Cambio de fases y pantallas via conditional rendering",
+      "Persistencia de datos con Local Storage",
+    ],
+    image: pathfinderDemoImg,
+    logo: PFCQLOGO,
+    mainColor: "#CCAE27",
+  },
+];
+
 export const certificaciones: Certification[] = [
   {
     title: "Javascript desde cero",
@@ -787,119 +900,6 @@ export const certificaciones: Certification[] = [
     date: "Octubre 2022",
     institution: "Platzi.com",
     techIcon: <BiLogoGithub />,
-  },
-];
-
-export const proyectos: Project[] = [
-  {
-    title:
-      "App de Aprendizaje en Japonés: ¡Tus prácticas diarias contigo en todo momento con Hiragana Shuffle!",
-    mobileTitle: ProjectName.JapaneseLearningApp,
-    subtext:
-      "Esta aplicación satisface la necesidad de una herramienta para practicar los caracteres del idioma japonés y sus combinaciones. Algunos de estos solo son mencionados y destacados gramaticalmente en otras aplicaciones, no se puede practicar mediante asociación fonética",
-    technologies: [
-      <BiLogoReact />,
-      <BiLogoTypescript />,
-      <BiLogoSass />,
-      <TbBrandFramerMotion />,
-    ],
-    description: (
-      <p>
-        Web app construida con la potente arquitectura de componentes de
-        React.js, así como TypeScript, para mayor calidad y legibilidad del
-        código. Usa un sistema de 'Vistas' para navegar por un proceso de
-        selección de modos. Practica o juega con 4 modos principales a través de
-        una lógica central de comparación entre inputs y datos
-      </p>
-    ),
-    githubLink: "https://github.com/ManuelARD13/hiragana-shuffle-app",
-    liveLink: "https://manuelard13.github.io/hiragana-shuffle-app/",
-    pageLink: "https://github.com/ManuelARD13/hiragana-shuffle-app",
-    mainFeatures: [
-      "React.js y Typescript",
-      "Sistema de 'Vistas' para simular el comportamiento en aplicación móvil",
-      "Manipulación de Arrays no destructiva",
-      "Datos y estados compartidos via React Context",
-      "Comparacion de inputs de usuarios y datos del sistema",
-      "Sass para estilos",
-      "Framer Motion para animaciones",
-    ],
-    image: hiraganaShuffleImg,
-    logo: HSLOGO,
-    mainColor: "#FF5572",
-  },
-  {
-    title:
-      "Front-end Portafolio Website: Tus habilidades profesionales front end en un espacio moderno y elegante",
-    mobileTitle: ProjectName.WebDevPortfolioWebsite,
-    subtext:
-      "Muestra un conocimiento fundamental del desarrollo front end aplicando las mejores prácticas, patrones comunes, diseño responsive y lógica basada en 'Temas' que cambia paletas de colores e idiomas; mostrando buena arquitectura y calidad de código",
-    technologies: [
-      <BiLogoReact />,
-      <BiLogoTypescript />,
-      <BiLogoSass />,
-      <TbBrandFramerMotion />,
-    ],
-    description: (
-      <p>
-        Usando Vite y TypeScript y aprovechando las funcionalidades de React y
-        Sass, se demuestran las habilidades del desarrollador mediante el uso de
-        patrones comunes y diseño responsivo. El sitio fue construido sobre una
-        fuente centralizada de datos que personaliza todo el contenido de la
-        página desde un solo archivo, haciéndolo reutilizable para diferentes
-        desarrolladores
-      </p>
-    ),
-    githubLink: "https://github.com/ManuelARD13/Mr-Portfolio-Website-draft",
-    liveLink: "https://manuelrojas.tech",
-    pageLink: "https://github.com/ManuelARD13/Mr-Portfolio-Website-draft",
-    mainFeatures: [
-      "Vite y Typescript",
-      "Arquitectura basada en Temas que permiten cambiar paletas de colores e idiomas",
-      "Patrones front end comunes",
-      "Diseño Responsive",
-      "Personalización de contenido sencilla a través de un único archivo de datos principal",
-      "Sass para estilos",
-      "Framer Motion para animaciones",
-    ],
-    image: "",
-    logo: MRLOGO,
-    mainColor: "hsl(178, 90%, 50%)",
-  },
-  {
-    title:
-      "DEMO UI Videojuego RPG: Crea un personaje para un juegos de rol de fantasía como Pathfinders",
-    mobileTitle: ProjectName.VideogameDEMOUI,
-    subtext:
-      "Un creador de personajes simple, basado en sistemas de juegos de rol clásicos como Pathfinder o Dungeons & Dragons. Tira los dados, selecciona tu raza y clase favorita, y prepárate para jugar en un mundo de fantasía",
-    technologies: [
-      <BiLogoReact />,
-      <BiLogoTypescript />,
-      <BiLogoSass />,
-      <TbBrandFramerMotion />,
-    ],
-    description: (
-      <p>
-        Esta app crea un objeto Personaje y asigna sus propiedades en función de
-        inputs del usuario en un proceso de selección de características.
-        Utiliza valores aleatorios para lograr diferentes resultados, generando
-        varias opciones de personajes cada vez. Los datos creados persisten
-        mediante la implementación de Local Storage
-      </p>
-    ),
-    githubLink: "https://github.com/ManuelARD13/pathfinders-adventures-demo",
-    liveLink: "https://pathfinders-adventures-demo-6s4r.vercel.app/",
-    pageLink: "https://github.com/ManuelARD13/pathfinders-adventures-demo",
-    mainFeatures: [
-      "Desarrollado con React.js",
-      "Basado en sistemas de juegos de mesa",
-      "Conocimientos basicos sobre manipulacion y uso de datos de usuario complejos",
-      "Cambio de fases y pantallas via conditional rendering",
-      "Persistencia de datos con Local Storage",
-    ],
-    image: pathfinderDemoImg,
-    logo: PFCQLOGO,
-    mainColor: "#CCAE27",
   },
 ];
 

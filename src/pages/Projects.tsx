@@ -1,12 +1,16 @@
-import { useAppContext } from "@context/AppContext";
-import video from "@assets/background-waves.webm";
-import { useParams } from "react-router-dom";
+/* React */
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+/* Components */
 import ProjectCard from "@common/ProjectCard/ProjectCard";
+/* Context */
+import { useAppContext } from "@context/AppContext";
+/* Assets */
+import video from "@assets/background-waves.webm";
 
 function Projects() {
   const { projects, lenguage } = useAppContext();
-  
+
   const { projectTitle } = useParams();
 
   const [currentProject, setCurrentProject] = useState(projects[0]);
@@ -16,7 +20,6 @@ function Projects() {
     page.classList.add("project-page");
     if (projectTitle) {
       const selectedProject = projects.filter(
-        
         (project) => project.mobileTitle === projectTitle
       )[0];
 
@@ -31,6 +34,7 @@ function Projects() {
         selectedProject.mainColor
       );
     } else {
+      setCurrentProject(projects[0]);
       document.documentElement.style.setProperty(
         "--bgImg",
         `url('../../../${currentProject.image}')`
@@ -66,7 +70,7 @@ function Projects() {
             <h3 className="projects__main-content-row-title">
               {lenguage === "en" && "A Problem to Solve, A Product to Build"}
               {lenguage === "es" &&
-                "Un Problema por Resolver, Un Producto por Construir"}
+                "Un Problema para Resolver Es Un Producto por Construir"}
             </h3>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.

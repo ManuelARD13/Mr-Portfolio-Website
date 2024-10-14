@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { FeaturedCertification } from "@models/index";
 /* Context */
 import { useAppContext } from "@context/AppContext";
+import { BsArrowRightCircle } from "react-icons/bs";
 
 function GroupSlider({
   slides,
@@ -36,7 +37,7 @@ function GroupSlider({
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlides(() => reorderSlides(currentSlides));
-    }, 3000);
+    }, 5000);
     return () => clearInterval(interval);
   }, [currentSlides]);
 
@@ -59,7 +60,11 @@ function GroupSlider({
       {withDescription ? (
         <div className="grouped-slider__right">
           <div className="grouped-slider__right-title">
-            <h2>{currentSlides[0].title}</h2>
+            <h2>
+              {currentSlides[0].title.length > 30
+                ? currentSlides[0].title.slice(0, 30) + "..."
+                : currentSlides[0].title}
+            </h2>
             {currentSlides[0].techIcon}
           </div>
           <div className="grouped-slider__right-description">
@@ -71,7 +76,12 @@ function GroupSlider({
               {lenguage === "es" && "Ir al contenido del curso"}
             </button>
           </a>
-          <div className="grouped-slider__right-slide-arrow">{">"}</div>
+          <div
+            className="grouped-slider__right-slide-arrow"
+            onClick={() => setCurrentSlides(reorderSlides(currentSlides))}
+          >
+            <BsArrowRightCircle />
+          </div>
         </div>
       ) : null}
     </section>

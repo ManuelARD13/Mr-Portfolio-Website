@@ -72,8 +72,8 @@
     cursor: pointer;
     &-arrow-right:hover,
     &-arrow-left:hover {
-      scale: 1.25;
-      color: var(--accent-color, $accent-text);
+      scale: 1.1;
+      color: rgba($hight-contrast-color, 0.75);
     }
     &-arrow-left,
     &-arrow-right {

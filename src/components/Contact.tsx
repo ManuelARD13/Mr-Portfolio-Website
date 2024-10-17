@@ -9,12 +9,24 @@ import {
 } from "react-icons/bi";
 import { useAppContext } from "@context/AppContext";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
+const contactCardVariant = {
+  hidden: { rotateY: -90, opacity: 0 },
+  visible: { rotateY: 0, opacity: 1 }
+}
 
 function Contact() {
   const { lenguage } = useAppContext();
   return (
     <section className="contact" id="contact">
-      <div className="contact__card box-shadow">
+      <motion.div
+        variants={contactCardVariant}
+        initial={"hidden"}
+        whileInView={"visible"}
+        transition={{ duration: 0.75 }}
+        className="contact__card box-shadow"
+      >
         <div className="contact__card-left">
           <div className="contact__card-logo">
             <TSIcon />
@@ -78,7 +90,7 @@ function Contact() {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

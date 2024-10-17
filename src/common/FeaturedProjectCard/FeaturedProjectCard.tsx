@@ -7,6 +7,8 @@ import { Project, ProjectName } from "@models/index";
 //Context
 import { useAppContext } from "@context/AppContext";
 import { Link } from "react-router-dom";
+//Framer
+import { motion } from "framer-motion";
 
 const selectFeaturedProject = (
   projectName: ProjectName,
@@ -30,7 +32,12 @@ function FeaturedProjectCard({ projectName }: { projectName: ProjectName }) {
 
   return (
     <Link to={`/projects/${featuredProject.mobileTitle}`}>
-      <div className="featured-project-card">
+      <motion.div
+        initial={{ opacity: 0, x: -300 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.75 }}
+        className="featured-project-card"
+      >
         <div className="featured-project-card__icons-container">
           <div className="featured-project-card__icon-text">
             <h3>
@@ -78,7 +85,7 @@ function FeaturedProjectCard({ projectName }: { projectName: ProjectName }) {
             />
           </div>
         </div>
-      </div>
+      </motion.div>
     </Link>
   );
 }

@@ -2,6 +2,8 @@
 import { Link } from "react-router-dom";
 /* Context */
 import { useAppContext } from "@context/AppContext";
+/* Framer */
+import { motion } from "framer-motion";
 
 interface CardProps {
   cardInfo: {
@@ -19,7 +21,12 @@ interface CardProps {
 function DescriptionCard({ className, cardInfo }: CardProps) {
   const { lenguage } = useAppContext();
   return (
-    <div className={`description-card ${className}`}>
+    <motion.div
+      initial={{rotateY: -90, opacity: 0}}
+      animate={{rotateY: 0, opacity: 1}}
+      transition={{duration: 0.5}} 
+      className={`description-card ${className}`}
+    >
       <div className="description-card__icons-container">
         <div className="description-card__icon-1">{cardInfo.techIcon}</div>
         <div className="description-card__icon-2">
@@ -53,7 +60,7 @@ function DescriptionCard({ className, cardInfo }: CardProps) {
           </button>
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

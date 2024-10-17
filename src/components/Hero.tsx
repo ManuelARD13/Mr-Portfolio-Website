@@ -17,6 +17,8 @@ import { Link } from "react-router-dom";
 import { ProjectName } from "@models/index";
 /*Context*/
 import { useAppContext } from "@context/AppContext";
+/* Framer */
+import { motion } from "framer-motion";
 
 interface HeroCard {
   title: string;
@@ -91,7 +93,12 @@ function Hero({ cards }: { cards: HeroCard[] }) {
   return (
     <section className="hero">
       <div className="hero__header">
-        <aside className="hero__features rounded-corners box-shadow">
+        <motion.aside
+          initial={{ opacity: 0, x: -300 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.75 }}
+          className="hero__features rounded-corners box-shadow"
+        >
           <h3 className="hero__features-title">
             {lenguage === "en" && "Main Skills"}
             {lenguage === "es" && "Habilidades"}
@@ -124,30 +131,63 @@ function Hero({ cards }: { cards: HeroCard[] }) {
             {lenguage === "en" && "Explore More"}
             {lenguage === "es" && "Conocer Mas"}
           </Link>
-        </aside>
+        </motion.aside>
         <div className="hero__img rounded-corners box-shadow">
-          <div className="hero__img-social-media">
+          <motion.div
+            initial={{ opacity: 0, y: -300 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.75 }}
+            className="hero__img-social-media"
+          >
             {socialMediaIcons.map(({ icon, link }) => (
               <a href={link} target="_blank" key={link}>
                 <CustomIcon color="#FAFAFA">{icon}</CustomIcon>
               </a>
             ))}
-          </div>
-          <h1 className="hero__img-title">
+          </motion.div>
+          <motion.h1
+            initial={{ opacity: 0, y: -300 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.75 }}
+            className="hero__img-title"
+          >
             Manuel <br /> Rojas Duran
-          </h1>
-          <p className="hero__img-subtitle">Front-end Engineer</p>
-          <a href="#about">
-            <button className="hero__img-button">
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: -300 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.75 }}
+            className="hero__img-subtitle"
+          >
+            Front-end Engineer
+          </motion.p>
+          <motion.a
+            initial={{ opacity: 0, y: -300 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.75 }}
+            href="#about"
+          >
+            <motion.button
+              initial={{ opacity: 0, y: -300 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.75 }}
+              className="hero__img-button"
+            >
               {lenguage === "en" && "My Experience"}
               {lenguage === "es" && "Mi Experiencia"}
-            </button>
-          </a>
-          <a href="#projects" className="hero__img-link">
+            </motion.button>
+          </motion.a>
+          <motion.a
+            initial={{ opacity: 0, y: -300 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.75 }}
+            href="#projects"
+            className="hero__img-link"
+          >
             {lenguage === "en" && "Live Projects"}
             {lenguage === "es" && "Mis Proyectos"}{" "}
             {<MdKeyboardDoubleArrowRight />}
-          </a>
+          </motion.a>
         </div>
       </div>
       <div className="hero__cards-container">

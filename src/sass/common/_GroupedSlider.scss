@@ -56,8 +56,11 @@
       position: absolute;
       right: 0;
       bottom: 50%;
-      font-size: 3rem;
+      font-size: 2.25rem;
       cursor: pointer;
+      &:hover {
+        color: $accent-text;
+      }
     }
   }
 }

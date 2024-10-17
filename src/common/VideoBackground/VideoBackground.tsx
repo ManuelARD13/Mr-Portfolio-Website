@@ -1,4 +1,4 @@
-import video from "@assets/background-waves.webm";
+import video from "@assets/video/background-waves.webm";
 
 //Evaluate performance enhancement
 

@@ -6,7 +6,7 @@ import ProjectCard from "@common/ProjectCard/ProjectCard";
 /* Context */
 import { useAppContext } from "@context/AppContext";
 /* Assets */
-import video from "@assets/background-waves.webm";
+import video from "@assets/video/background-waves.webm";
 
 function Projects() {
   const { projects, lenguage } = useAppContext();
@@ -63,7 +63,7 @@ function Projects() {
       <section className="projects__main-content">
         <div className="projects__main-content-row">
           <img
-            src={currentProject.image}
+            src={currentProject.images ? currentProject.images[0] : currentProject.image}
             alt={currentProject.mobileTitle.toString()}
           />
           <div>

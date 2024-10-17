@@ -23,13 +23,14 @@ export interface Project {
   pageLink: string;
   mainFeatures: string[];
   image: string; // images
+  images?: string[]
   logo: string;
   mainColor: string;
   secondaryColor?: string;
   /*
   longDescription1: JSX.Element;
   longDescription2: JSX.Element;
-  images: string[]
+ 
   secondaryFeatures: string[];
   video: string;
   videoDescription: JSX.Element;

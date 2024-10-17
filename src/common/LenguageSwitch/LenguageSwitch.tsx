@@ -1,5 +1,5 @@
 import englishIcon from "@assets/english-icon.png";
-import spanishIcon from "@assets/spanish-icon.png";
+import spanishIcon from "@assets/spanish-icon-2.png";
 import { useAppContext } from "@context/AppContext";
 
 //TODO: create a switch for spanish and english logic

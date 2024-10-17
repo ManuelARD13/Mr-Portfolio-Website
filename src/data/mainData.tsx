@@ -32,11 +32,12 @@ import AdvancedTypesLogo from "@assets/certifications/diploma-typescript-tipos-a
 import ProFrontendImg from "@assets/certifications/diploma-frontend-developer-practico.jpg";
 import ProFrontendLogo from "@assets/certifications/diploma-frontend-developer-practico-logo.png";
 /* Projects Assets */
-import pathfinderDemoImg from "@assets/pathfinder-Img.jpg";
-import hiraganaShuffleImg from "@assets/hiragana-shuffle-Img.jpg";
-import MRLOGO from "@assets/Mr-logo.png";
-import HSLOGO from "@assets/hiragana-shuffle-logo.png";
-import PFCQLOGO from "@assets/pathfinder-logo.png";
+import pathfinderDemoImg from "@assets/projects/pathfinder-Img.jpg";
+import hiraganaShuffleImg from "@assets/projects/hiragana-shuffle-Img.jpg";
+import portfolioMRImg from "@assets/projects/Portfolio-img.jpg";
+import MRLOGO from "@assets/projects/Mr-logo.png";
+import HSLOGO from "@assets/projects/hiragana-shuffle-logo.png";
+import PFCQLOGO from "@assets/projects/pathfinder-logo.png";
 /* Icons */
 import {
   BiLogoTypescript,
@@ -127,7 +128,7 @@ export const projectsData: Project[] = [
       "Sass for styling",
       "Framer Motion for animations",
     ],
-    image: "",
+    image: portfolioMRImg,
     logo: MRLOGO,
     mainColor: "hsl(178, 90%, 50%)",
   },

@@ -72,7 +72,7 @@ button {
 
 @media screen and (min-width: 1050px) {
   html {
-    font-size: clamp(13px, 1.15vw, 24px)
+    font-size: clamp(13px, 1.15vw, 21px)
   }
   
   h1 {
@@ -80,7 +80,7 @@ button {
   }
   
   h2 {
-    font-size: clamp(25px, 1.75vw, 40px);
+    font-size: clamp(22px, 2vw, 34px);
   }
   
   h3 {

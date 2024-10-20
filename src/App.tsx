@@ -1,8 +1,7 @@
 import {
   createBrowserRouter,
   RouterProvider,
-  ScrollRestoration,
-  HashRouter as Router,
+  ScrollRestoration
 } from "react-router-dom";
 import Home from "@pages/Home";
 import Academics from "@pages/Academics";
@@ -53,11 +52,9 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <Router>
-      <AppProvider>
-        <RouterProvider router={router} />
-      </AppProvider>
-    </Router>
+    <AppProvider>
+      <RouterProvider router={router} />
+    </AppProvider>
   );
 }
 

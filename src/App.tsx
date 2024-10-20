@@ -1,4 +1,9 @@
-import { createBrowserRouter, RouterProvider, ScrollRestoration } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  ScrollRestoration,
+  HashRouter as Router,
+} from "react-router-dom";
 import Home from "@pages/Home";
 import Academics from "@pages/Academics";
 import NotFound from "@pages/NotFound";
@@ -21,7 +26,7 @@ const router = createBrowserRouter([
   {
     path: "/academics/:certification?",
     element: (
-      <Main videoBackground >
+      <Main videoBackground>
         <Academics />
         <ScrollRestoration />
       </Main>
@@ -34,7 +39,7 @@ const router = createBrowserRouter([
         <Projects />
         <ScrollRestoration />
       </Main>
-    )
+    ),
   },
   {
     path: "*",
@@ -48,6 +53,11 @@ const router = createBrowserRouter([
 
 function App() {
   return (
+    // <Router>
+    //   <AppProvider>
+    //     <RouterProvider router={router} />
+    //   </AppProvider>
+    // </Router>
     <AppProvider>
       <RouterProvider router={router} />
     </AppProvider>

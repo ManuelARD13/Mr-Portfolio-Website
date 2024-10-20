@@ -53,14 +53,11 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    // <Router>
-    //   <AppProvider>
-    //     <RouterProvider router={router} />
-    //   </AppProvider>
-    // </Router>
-    <AppProvider>
-      <RouterProvider router={router} />
-    </AppProvider>
+    <Router>
+      <AppProvider>
+        <RouterProvider router={router} />
+      </AppProvider>
+    </Router>
   );
 }
 
